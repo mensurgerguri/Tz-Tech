@@ -1,0 +1,36 @@
+<mat-toolbar color="warn" class="navbar">
+  <div>
+    <p> TzTech</p>
+  </div>
+  <div>
+    <button mat-raised-button class="mfb" color="primary" (click)="openSignUpDialog()">Sign Up</button>
+    <button mat-raised-button class="mfb" color="primary" (click)="openSignInDialog()">Sign In</button>
+    <button mat-raised-button class="mfb" color="primary">Delivery</button>
+    <button mat-raised-button class="mfb" color="primary">Checkout</button>
+    <button mat-raised-button class="mfb" color="primary">My Account</button>
+  </div>
+</mat-toolbar>
+
+<mat-toolbar color="warn" class="navbar">
+  <div>
+    <a [matMenuTriggerFor]="appMenu" class="ddm">Menu ▼</a>
+    <span>About</span>
+    <span>Services</span>
+  </div>
+  <div>
+    <mat-form-field class="searchbox">
+      <input matInput placeholder="Search">
+    </mat-form-field>
+  </div>
+</mat-toolbar>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
+</mat-menu>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>Subcategory</button>
+  <button mat-menu-item>Subcategory</button>
+  <button mat-menu-item>Subcategory</button>
+</mat-menu>

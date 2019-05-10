@@ -10,6 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { AuthenticationService } from './shared/services/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,9 +32,11 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,16 +9,22 @@ module.exports = seqConfig.sequelize.define(
       primaryKey: true,
       autoIncrement: true
     },
-    first_name: {
-      type: Sequelize.STRING
-    },
-    last_name: {
+    username: {
       type: Sequelize.STRING
     },
     email: {
       type: Sequelize.STRING
     },
     password: {
+      type: Sequelize.STRING
+    },
+    first_name: {
+      type: Sequelize.STRING
+    },
+    last_name: {
+      type: Sequelize.STRING
+    },
+    profile_image: {
       type: Sequelize.STRING
     },
     role_id: {

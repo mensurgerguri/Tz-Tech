@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 
-
-
 export interface PeriodicElement {
 
   position: number;
@@ -20,7 +18,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 7, brand: 'KINGSTON', model: '8GB DDR3' },
   { position: 8, brand: 'COOLERMASTER', model: 'H110' },
   { position: 9, brand: 'SKILL.G', model: '4GB DDR4' },
-  { position: 10,brand: 'MSINDUSTRIAL', model: 'MX7R' },
+  { position: 10, brand: 'MSINDUSTRIAL', model: 'MX7R' },
 ];
 @Component({
   selector: 'app-profile',

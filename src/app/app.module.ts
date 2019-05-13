@@ -13,6 +13,7 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogRef } from '@angular/material';
 
 
 @NgModule({
@@ -35,6 +36,11 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     FormsModule,
     HttpClientModule
+  ],
+  exports: [
+    AppModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

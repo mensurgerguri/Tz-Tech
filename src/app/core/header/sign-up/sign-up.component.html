@@ -14,7 +14,11 @@
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="valuechange()">
     <hr>
     <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="valuechange()">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</mat-checkbox>
-    <button type="submit" class="registerbtn" [disabled]="!allowRegister">Register</button>
+    <button type="submit" class="registerbtn" [disabled]="!allowRegister" >Register</button>
+    <!-- <div mat-dialog-actions>
+      <button mat-button (click)="registerUser()">No Thanks</button>
+      <button mat-button [mat-dialog-close]="1 === 2" cdkFocusInitial>Ok</button>
+    </div> -->
   </div>
   
   <div class="container signin">

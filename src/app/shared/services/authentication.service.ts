@@ -10,83 +10,65 @@ import { UserDetails, TokenPayload, TokenResponse } from '../models/user.model';
 export class AuthenticationService {
 
   private token = '';
-  private warning = '';
 
-  constructor(private http: HttpClient, private router: Router) { }
-
-  setWarningMassage(setWarningMassage: string) {
-    this.warning = setWarningMassage;
-  }
-  getWarningMassage() {
-    return this.warning;
-  }
-
-  private saveToken(token: string): void {
-    localStorage.setItem('usertoken', token);
-    this.token = token;
-  }
-
-  private getToken(): string {
-    if (!this.token) {
-      this.token = localStorage.getItem('usertoken')
-    }
-    return this.token;
-  }
-
-  public getUserDetails(): UserDetails {
-    const token = this.getToken();
-    let payload;
-    if (token) {
-      payload = token.split('.')[1];
-      payload = window.atob(payload);
-      return JSON.parse(payload);
-    } else {
-      return null;
-    }
-  }
-
-  public isLoggedIn(): boolean {
-    const user = this.getUserDetails();
-    if (user) {
-      return user.exp > Date.now() / 1000;
-    } else {
-      return false;
-    }
-  }
+  constructor(private http: HttpClient) { }
 
   public registerUser(user: TokenPayload): Observable<any> {
     return this.http.post(`http://localhost:8080/users/register`, user);
   }
 
-  public sendMail(user: TokenPayload): Observable<any> {
-    return this.http.post(`http://localhost:8080/users/sendMail`, user);
+  // private saveToken(token: string): void {
+  //   localStorage.setItem('usertoken', token);
+  //   this.token = token;
+  // }
 
-  }
+  // private getToken(): string {
+  //   if (!this.token) {
+  //     this.token = localStorage.getItem('usertoken')
+  //   }
+  //   return this.token;
+  // }
 
-  public login(user: TokenPayload): Observable<any> {
-    const base = this.http.post('http://localhost:8080/users/login', user);
+  // public getUserDetails(): UserDetails {
+  //   const token = this.getToken();
+  //   let payload;
+  //   if (token) {
+  //     payload = token.split('.')[1];
+  //     payload = window.atob(payload);
+  //     return JSON.parse(payload);
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
-    const request = base.pipe(
-      map((data: TokenResponse) => {
-        if (data.token) {
-          this.saveToken(data.token);
-        }
-        return data;
-      })
-    );
+  // public isLoggedIn(): boolean {
+  //   const user = this.getUserDetails();
+  //   if (user) {
+  //     return user.exp > Date.now() / 1000;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-    return request;
-  }
+  // public login(user: TokenPayload): Observable<any> {
+  //   const base = this.http.post('http://localhost:8080/users/login', user);
 
-  public profile(): Observable<any> {
-    return this.http.get(`http://localhost:8080/users/profile`, {
-      headers: { Authorization: ` ${this.getToken()}` }
-    });
-  }
+  //   const request = base.pipe(
+  //     map((data: TokenResponse) => {
+  //       if (data.token) {
+  //         this.saveToken(data.token);
+  //       }
+  //       return data;
+  //     })
+  //   );
 
-  public logout(): void {
-    this.token = '';
-    window.localStorage.removeItem('usertoken');
-    this.router.navigateByUrl('/');
-  }
+  //   return request;
+  // }
+
+
+  // public logout(): void {
+  //   this.token = '';
+  //   window.localStorage.removeItem('usertoken');
+  //   this.router.navigateByUrl('/');
+  // }
 }

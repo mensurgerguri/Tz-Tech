@@ -23,10 +23,10 @@ export class SignUpComponent implements OnInit {
 
   repeatPassword = '';
   termsAgreement = false;
-  allowRegister = false;
+  allowRegister = true; //false;
 
 
-  constructor(private authService: AuthenticationService, private router: Router) { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -40,10 +40,9 @@ export class SignUpComponent implements OnInit {
     this.authService.registerUser(this.credentials).subscribe(
       (res) => {
         if (JSON.stringify(res).length < 100) { // is not token
-          let warning = JSON.stringify(res);
-          // this.auth.setWarningMassage(warning.substr(1, warning.length - 2));
+          // 1 redirect to profile
         } else {
-          this.router.navigateByUrl('/signup');
+            // something else
         }
       },
       err => {

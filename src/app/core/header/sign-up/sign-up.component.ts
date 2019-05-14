@@ -24,6 +24,9 @@ export class SignUpComponent implements OnInit {
   repeatPassword = '';
   termsAgreement = false;
   allowRegister = true; //false;
+  loggedInUser;
+  warningMassage;
+  responseFromServer;
 
 
   constructor(private authService: AuthenticationService) { }
@@ -39,10 +42,14 @@ export class SignUpComponent implements OnInit {
     console.log(this.credentials);
     this.authService.registerUser(this.credentials).subscribe(
       (res) => {
-        if (JSON.stringify(res).length < 100) { // is not token
+        console.log('moj resp ' + JSON.stringify(res))
+        this.responseFromServer = JSON.stringify(res);
+        if (JSON.stringify(this.responseFromServer).length < 100) { // is not token
+           this.warningMassage = JSON.stringify(res);
           // 1 redirect to profile
         } else {
             // something else
+            this.loggedInUser = this.credentials;
         }
       },
       err => {

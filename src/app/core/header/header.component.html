@@ -1,36 +1,98 @@
-<mat-toolbar color="warn" class="navbar">
-  <div>
-    <p> TzTech</p>
+<mat-toolbar class="header">
+    <mat-toolbar-row class="navbar upp">
+  <div class="logo">
+    <span class="tz">Tz</span><span class="tech">Tech</span>
   </div>
+  <span>
+    <button mat-raised-button class="mfb" color="accent" (click)="openSignUpDialog()">Sign Up</button>
+    <button mat-raised-button class="mfb" color="accent" (click)="openSignInDialog()">Sign In</button>
+    
+    <button mat-raised-button class="mfb gornji" color="accent">Delivery</button>
+    <button mat-raised-button class="mfb" color="accent">Checkout</button>
+    <button mat-raised-button class="mfb gornji" color="accent">My Account</button>
+  </span>
+    </mat-toolbar-row>
+
+<mat-toolbar-row class="navbar lower">
   <div>
-    <button mat-raised-button class="mfb" color="primary" (click)="openSignUpDialog()">Sign Up</button>
-    <button mat-raised-button class="mfb" color="primary" (click)="openSignInDialog()">Sign In</button>
-    <button mat-raised-button class="mfb" color="primary">Delivery</button>
-    <button mat-raised-button class="mfb" color="primary">Checkout</button>
-    <button mat-raised-button class="mfb" color="primary">My Account</button>
-  </div>
+      <a [matMenuTriggerFor]="appMenu" class="ddm">Menu</a>
+     
+    <a class="options ostali ">Deals</a>
+    <a class="options ostali">About</a>
+    <a class="options ostali">Contact</a>
+ 
+</div>
+  <!-- <div> 
+      <mat-form-field class="searchbox"color="warn" >
+        <input matInput placeholder="Search">
+      </mat-form-field>
+    </div>
+      -->
+
+     
+      <!-- <mat-form-field class="searchbox" color="warn">
+          <input matInput placeholder="Search" color="warn" class="searchinput">
+        </mat-form-field>
+  -->
+  <!-- <form>
+      <input class="form-control searchbox" type="text" placeholder="Search" aria-label="Search">
+    </form>   -->
+
+    <form class="form-inline">
+        <input class="form-control searchbox" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </form>
+
+</mat-toolbar-row>
+  
 </mat-toolbar>
 
-<mat-toolbar color="warn" class="navbar">
-  <div>
-    <a [matMenuTriggerFor]="appMenu" class="ddm">Menu ▼</a>
-    <span>About</span>
-    <span>Services</span>
-  </div>
-  <div>
-    <mat-form-field class="searchbox">
-      <input matInput placeholder="Search">
-    </mat-form-field>
-  </div>
-</mat-toolbar>
-<mat-menu #appMenu="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
-  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
-  <button mat-menu-item [matMenuTriggerFor]="subMenu">Category</button>
+
+<!-- ###################################################### PREPRAVITI KADA SE UNESU KATEGORIJE ###################################################################-->
+<div class="dropdown-menu">
+<mat-menu #appMenu="matMenu" yPosition="below">
+  <button mat-menu-item [matMenuTriggerFor]="computer" class="menu-edit">Computer</button>
+  <button mat-menu-item [matMenuTriggerFor]="laptop" class="menu-edit">Laptop</button>
+  <button mat-menu-item [matMenuTriggerFor]="tablet" class="menu-edit">Tablet</button>
+  <button mat-menu-item [matMenuTriggerFor]="mobile" class="menu-edit">Mobile</button>
+  <button mat-menu-item [matMenuTriggerFor]="tv" class="menu-edit">TV</button>
+  <button mat-menu-item [matMenuTriggerFor]="parts" class="menu-edit">Parts</button>
 </mat-menu>
 
-<mat-menu #subMenu="matMenu">
-  <button mat-menu-item>Subcategory</button>
-  <button mat-menu-item>Subcategory</button>
-  <button mat-menu-item>Subcategory</button>
+<mat-menu #computer="matMenu">
+  <button mat-menu-item>PC</button>
+  <button mat-menu-item>Gaming</button>
+  <button mat-menu-item>All in one</button>
 </mat-menu>
+
+<mat-menu #laptop="matMenu">
+    <button mat-menu-item>Acer</button>
+    <button mat-menu-item>Lenovo</button>
+    <button mat-menu-item>HP</button>
+    <button mat-menu-item>Apple</button>
+  </mat-menu>
+
+  <mat-menu #tablet="matMenu">
+      <button mat-menu-item>Mediacom</button>
+      <button mat-menu-item>Gaming</button>
+    </mat-menu>
+
+    <mat-menu #mobile="matMenu">
+        <button mat-menu-item>Android</button>
+        <button mat-menu-item>Apple</button>
+        <button mat-menu-item>Parts</button>
+      </mat-menu>
+
+      <mat-menu #tv="matMenu">
+          <button mat-menu-item>LCD</button>
+          <button mat-menu-item>Plasma</button>
+        </mat-menu>
+
+        <mat-menu #parts="matMenu">
+            <button mat-menu-item>Graphic</button>
+            <button mat-menu-item>Motherboard</button>
+            <button mat-menu-item>CPU</button>
+            <button mat-menu-item>HDD</button>
+            <button mat-menu-item>SSD</button>
+          </mat-menu>
+          </div>

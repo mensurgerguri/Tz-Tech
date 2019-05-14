@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { TermsComponent } from './terms/terms.component';
 import { MatDialog } from '@angular/material';
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -34,6 +35,7 @@ export class SignUpComponent implements OnInit {
   constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
+    
   }
 
   valuechange() {
@@ -63,3 +65,4 @@ export class SignUpComponent implements OnInit {
   }
 
 }
+

@@ -12,7 +12,7 @@ const sequelize = new Sequelize(dbConfig.database.database, dbConfig.database.us
   pool: dbConfig.database.pool
 })
 
-db.sequelize = sequelize
-db.Sequelize = Sequelize
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
 module.exports = db

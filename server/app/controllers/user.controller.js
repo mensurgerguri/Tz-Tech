@@ -24,13 +24,13 @@ exports.login = (req, res) => {
             }
         })
         .catch(err => {
-            res.send('error: ' + err)
-        })
-}
+            res.send('error: ' + err);
+        });
+};
 
 
 exports.register = (req, res) => {
-    const today = new Date()
+    const today = new Date();
     const userData = {
         first_name: req.body.first_name,
         last_name: req.body.last_name,

@@ -5,13 +5,14 @@ import { Router } from '@angular/router';
 import { TermsComponent } from './terms/terms.component';
 import { MatDialog } from '@angular/material';
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent implements OnInit {
 
+<<<<<<< HEAD
   credentials: TokenPayload = {
     id: 0,
     username: '',
@@ -33,7 +34,13 @@ export class SignUpComponent implements OnInit {
 
   constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
 
+=======
+export class SignUpComponent implements OnInit {
+ 
+  constructor() { }
+>>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
   ngOnInit() {
+    
   }
 
   valuechange() {
@@ -63,3 +70,4 @@ export class SignUpComponent implements OnInit {
   }
 
 }
+

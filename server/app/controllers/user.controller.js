@@ -24,12 +24,25 @@ exports.login = (req, res) => {
             }
         })
         .catch(err => {
-            res.send('error: ' + err)
-        })
-}
+            res.send('error: ' + err);
+        });
+};
 
 
 exports.register = (req, res) => {
+<<<<<<< HEAD
+=======
+    const today = new Date();
+    const userData = {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: req.body.password,
+        role_id: 4,
+        created: today
+    }
+
+>>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
     User.findOne({
         where: {
             email: req.body.email

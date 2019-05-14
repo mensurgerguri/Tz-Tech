@@ -1,16 +1,24 @@
+form{
+  border: 3px solid white;
+  overflow: hidden;
+  background: #0046BE;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-  }
+    background-color: #0046BE;
   
+  }
+ 
   * {
     box-sizing: border-box;
+    width: 600px;
+
   }
   
   /* Add padding to containers */
   .container {
     padding: 16px;
-    background-color: white;
+    background:#0046BE;
   }
   
   /* Full-width input fields */
@@ -36,7 +44,8 @@ body {
   
   /* Set a style for the submit button */
   .registerbtn {
-    background-color: #4CAF50;
+    /* background-color: #4CAF50; */
+    background: darkgrey;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -47,16 +56,78 @@ body {
   }
   
   .registerbtn:hover {
-    opacity: 1;
+    background: #424242;
+    font-size: 1.2rem;
   }
   
   /* Add a blue text color to links */
   a {
-    color: dodgerblue;
+    /* color: dodgerblue; */
   }
   
   /* Set a grey background color and center the text of the "sign in" section */
   .signin {
-    background-color: #f1f1f1;
     text-align: center;
+  }
+
+  .terms-and-agreement{
+    text-align: center;
+  }
+  .terms{
+    color: darkgrey;
+  }
+
+  .sign-in{
+    color: darkgrey;
+  }
+  
+/* 
+  @media(max-width: 700px){
+    width: 300px;
+  } */
+
+  @media(max-width: 800px){
+    *{
+      width: 350px;
+    }
+  }
+
+  @media(max-width: 700px){
+    *{
+      width: 300px;
+    }
+    .terms-and-agreement{
+      width: 250px;
+      display: block;
+    }
+    .already{
+      width: 250px;
+      display: block;
+    }
+    }
+    @media(max-width: 500px){
+      *{
+        width: 200px;
+      }
+      .terms-and-agreement{
+        width: 175px;
+        display: block;
+      }
+
+      .already{
+        width: 175px;
+        display: block;
+      }
+
+      .title{
+        font-size: 1.2rem;
+      }
+
+      .description{
+        font-size: 1rem;
+      }
+
+      input[type=text], input[type=password]{
+        margin: 0;
+      }
   }

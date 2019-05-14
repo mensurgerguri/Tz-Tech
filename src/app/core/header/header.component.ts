@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

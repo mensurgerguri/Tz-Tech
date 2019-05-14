@@ -1,22 +1,22 @@
-<form action="/action_page.php">
+<form (submit)="registerUser()">
   <div class="container">
     <h1 class="title">Register</h1>
     <p class="description">Please fill in this form to create an account.</p>
     <hr>
 
     <label for="email" class="description">Email</label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="credentials.email">
 
-    <label for="psw" class="description">Password</label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="psw" class="description"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="credentials.password" (ngModelChange)="valuechange()">
 
-    <label for="psw-repeat" class="description">Repeat Password</label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <label for="psw-repeat" class="description"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="valuechange()">
     <hr>
-    
-    <p class="terms-and-agreement">By creating an account you agree to our <a class="terms" href="#">Terms & Privacy</a>.</p>
+  
+    <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="valuechange()">By creating an account you agree to our <a (click)="openTermsDialog()" style="cursor: pointer; color: blue">Terms & Privacy</a>.</mat-checkbox>
+    <button type="submit" class="registerbtn" [disabled]="!allowRegister" mat-dialog-close>Register</button>
 
-    <button type="submit" class="registerbtn">Register</button>
   </div>
   
   <div class="container signin">

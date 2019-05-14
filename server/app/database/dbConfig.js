@@ -7,7 +7,6 @@ var config = {
             database: 'tztech',
             multipleStatements: true,
             dialect: 'mysql',
-            operatorsAliases: false,
             pool: {
                 max: 5,
                 min: 0,

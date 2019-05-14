@@ -10,6 +10,11 @@ import { HeaderComponent } from './core/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './core/profile/profile.component';
 import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
+import { AuthenticationService } from './shared/services/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogRef } from '@angular/material';
+import { TermsComponent } from './core/header/sign-up/terms/terms.component';
 
 import { SliderComponent } from './home/slider/slider.component';
 import { NewProductsComponent } from './home/new-products/new-products.component';
@@ -33,15 +38,18 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     SignInComponent,
     SignUpComponent,
     SignInComponent,
+    TermsComponent
     SliderComponent,
     NewProductsComponent,
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
+
   ],
   entryComponents: [
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    TermsComponent
   ],
 
   imports: [
@@ -50,18 +58,23 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
+    HttpClientModule
     MatSortModule,
     MatTableModule,
     MatSelectModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-     MatButtonModule,
-     MatFormFieldModule,
-     MatInputModule
-
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
+  // exports: [
+  //   AppModule,
+  //   HeaderComponent,
+  //   FooterComponent,
+  // ],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material';
+import { TermsComponent } from './core/header/sign-up/terms/terms.component';
 
 
 @NgModule({
@@ -23,11 +24,13 @@ import { MatDialogRef } from '@angular/material';
     FooterComponent,
     HomeComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    TermsComponent
   ],
   entryComponents: [
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,11 +40,11 @@ import { MatDialogRef } from '@angular/material';
     FormsModule,
     HttpClientModule
   ],
-  exports: [
-    AppModule,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  // exports: [
+  //   AppModule,
+  //   HeaderComponent,
+  //   FooterComponent,
+  // ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })

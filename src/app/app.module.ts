@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { MaterialModule } from './material/material.module';
+import { SliderComponent } from './home/slider/slider.component';
+import { NewProductsComponent } from './home/new-products/new-products.component';
+import { FeaturedProductsComponent } from './home/featured-products/featured-products.component';
+import { PokusComponent } from './home/pokus/pokus.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { MaterialModule } from './material/material.module';
     FooterComponent,
     HomeComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    SliderComponent,
+    NewProductsComponent,
+    FeaturedProductsComponent,
+    PokusComponent
   ],
   entryComponents: [
     SignUpComponent,

@@ -1,0 +1,22 @@
+.carousel-caption{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+img{
+    height: 360px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+.view{
+   height: 380px;
+    width: 100%;
+}
+
+.carousel-caption{
+    position: relative;
+    left: 0;
+}
+

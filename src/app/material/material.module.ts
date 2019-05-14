@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatButtonToggleModule, MatToolbarModule, MatMenuModule, MatInputModule, MatIconModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CarouselModule, WavesModule,CardsFreeModule,
+} from 'angular-bootstrap-md'
+
 const MaterialComponents = [
   MatButtonModule,
   MatButtonToggleModule,
@@ -8,7 +11,11 @@ const MaterialComponents = [
   MatMenuModule,
   MatInputModule,
   MatDialogModule,
-  MatIconModule
+  MatIconModule,
+  CarouselModule,
+  WavesModule,
+  CardsFreeModule,
+
 ]
 @NgModule({
   imports: [

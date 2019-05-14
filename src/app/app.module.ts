@@ -10,10 +10,17 @@ import { HeaderComponent } from './core/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './core/profile/profile.component';
 import { MaterialModule } from './material/material.module';
+
+import { SliderComponent } from './home/slider/slider.component';
+import { NewProductsComponent } from './home/new-products/new-products.component';
+import { FeaturedProductsComponent } from './home/featured-products/featured-products.component';
+import { PokusComponent } from './home/pokus/pokus.component';
+
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 
 
 @NgModule({
@@ -25,8 +32,12 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     ProfileComponent,
     SignInComponent,
     SignUpComponent,
+    SignInComponent,
+    SliderComponent,
+    NewProductsComponent,
+    FeaturedProductsComponent,
+    PokusComponent,
     TableComponent,
-
   ],
   entryComponents: [
     SignUpComponent,

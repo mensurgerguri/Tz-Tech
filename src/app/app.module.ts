@@ -39,14 +39,22 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     SignUpComponent,
     SignInComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     TermsComponent
 =======
+=======
+    TermsComponent
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
     SliderComponent,
     NewProductsComponent,
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
+<<<<<<< HEAD
 >>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
+=======
+
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   ],
   entryComponents: [
     SignUpComponent,
@@ -61,21 +69,31 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     MaterialModule,
     BrowserAnimationsModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
     MaterialModule,
     FormsModule,
     HttpClientModule
 =======
+=======
+    HttpClientModule
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
     MatSortModule,
     MatTableModule,
     MatSelectModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
+<<<<<<< HEAD
      MatButtonModule,
      MatFormFieldModule,
      MatInputModule
 
 >>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
+=======
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   ],
   // exports: [
   //   AppModule,

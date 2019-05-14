@@ -31,6 +31,7 @@ exports.login = (req, res) => {
 
 exports.register = (req, res) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     const today = new Date();
     const userData = {
@@ -43,6 +44,8 @@ exports.register = (req, res) => {
     }
 
 >>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
+=======
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
     User.findOne({
         where: {
             email: req.body.email

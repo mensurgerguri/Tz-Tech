@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 export class AppComponent {}
 =======
 export class AppComponent {
@@ -16,3 +17,8 @@ export class AppComponent {
 
 }
 >>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
+=======
+
+export class AppComponent {}
+
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315

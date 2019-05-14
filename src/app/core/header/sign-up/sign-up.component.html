@@ -5,6 +5,7 @@
     <hr>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <label for="email"><b>Email</b></label>
     <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="credentials.email">
 
@@ -31,6 +32,21 @@
 
     <button type="submit" class="registerbtn">Register</button>
 >>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
+=======
+    <label for="email" class="description">Email</label>
+    <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="credentials.email">
+
+    <label for="psw" class="description"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="credentials.password" (ngModelChange)="valuechange()">
+
+    <label for="psw-repeat" class="description"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="valuechange()">
+    <hr>
+  
+    <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="valuechange()">By creating an account you agree to our <a (click)="openTermsDialog()" style="cursor: pointer; color: blue">Terms & Privacy</a>.</mat-checkbox>
+    <button type="submit" class="registerbtn" [disabled]="!allowRegister" mat-dialog-close>Register</button>
+
+>>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   </div>
   
   <div class="container signin">

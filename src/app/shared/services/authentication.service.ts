@@ -20,29 +20,44 @@ export class AuthenticationService {
     return this.http.get('http://localhost:8080/users/getEmails');
   }
 
-  // private saveToken(token: string): void {
-  //   localStorage.setItem('usertoken', token);
-  //   this.token = token;
-  // }
+  public login(user: TokenPayload): Observable<any> {
+    const base = this.http.post('http://localhost:8080/users/login', user);
 
-  // private getToken(): string {
-  //   if (!this.token) {
-  //     this.token = localStorage.getItem('usertoken')
-  //   }
-  //   return this.token;
-  // }
+    const request = base.pipe(
+      map((data: TokenResponse) => {
+        if (data.token) {
+          this.saveToken(data.token);
+        }
+        return data;
+      })
+    );
+    return request;
+  }
 
-  // public getUserDetails(): UserDetails {
-  //   const token = this.getToken();
-  //   let payload;
-  //   if (token) {
-  //     payload = token.split('.')[1];
-  //     payload = window.atob(payload);
-  //     return JSON.parse(payload);
-  //   } else {
-  //     return null;
-  //   }
-  // }
+  private saveToken(token: string): void {
+    localStorage.setItem('usertoken', token);
+    this.token = token;
+  }
+
+  public getUserDetails(): UserDetails {
+    const token = this.getToken();
+    let payload;
+    if (token) {
+      payload = token.split('.')[1];
+      payload = window.atob(payload);
+      return JSON.parse(payload);
+    } else {
+      return null;
+    }
+  }
+
+  private getToken(): string {
+    if (!this.token) {
+      this.token = localStorage.getItem('usertoken')
+    }
+    return this.token;
+  }
+
 
   // public isLoggedIn(): boolean {
   //   const user = this.getUserDetails();
@@ -51,21 +66,6 @@ export class AuthenticationService {
   //   } else {
   //     return false;
   //   }
-  // }
-
-  // public login(user: TokenPayload): Observable<any> {
-  //   const base = this.http.post('http://localhost:8080/users/login', user);
-
-  //   const request = base.pipe(
-  //     map((data: TokenResponse) => {
-  //       if (data.token) {
-  //         this.saveToken(data.token);
-  //       }
-  //       return data;
-  //     })
-  //   );
-
-  //   return request;
   // }
 
 

@@ -1,19 +1,22 @@
 <h2>Login Form</h2>
 
-<form action="/action_page.php">
+<form (submit)="login()">
   <div class="imgcontainer">
     <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="uname">Username</label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="email">Email</label>
+    <input type="email" placeholder="Enter email" name="email" [(ngModel)]="credentials.email" (ngModelChange)="validateRegForm()" required>
 
     <label for="psw">Password</label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="credentials.password" (ngModelChange)="validateRegForm()" required>
 
+    <div *ngIf="showWarning" class="warning">
+      <p>{{ warning }}</p>
+    </div>
         
-    <button mat-raised-button class="login-btn">Login</button>
+    <button type="submit" mat-raised-button class="login-btn" mat-button [disabled]="!formIsValid">Login</button>
     <!-- <div class="remember">
     <label>Remember Me </label>
      <input type="checkbox" checked="checked" name="remember"><p>Remember Me</p>
@@ -24,7 +27,7 @@
   </div>
 
   <div class="container">
-    <button mat-button class="cancelbtn">Cancel</button>
+    <button mat-button class="cancelbtn" mat-dialog-close>Cancel</button>
     <p class="psw">Forgot <a class="fpwd" href="#">password?</a></p>
   </div>
 </form>

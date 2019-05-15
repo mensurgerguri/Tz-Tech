@@ -116,3 +116,14 @@ sendMail = (req, res) => {
         res.render('contact', { msg: 'Email has been sent!' });
     });
 }
+
+exports.emails = (req, res) => {
+    let qry = "SELECT `email` FROM `users`";
+
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+    });
+}

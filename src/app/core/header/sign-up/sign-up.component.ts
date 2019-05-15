@@ -23,28 +23,49 @@ export class SignUpComponent implements OnInit {
     profileImage: '',
     roleId: 3
   };
+  takenUserEmails: string[];
+  loggedInUser: TokenPayload;
+  responseFromServer;
 
+  // form validation fields
   repeatPassword = '';
   termsAgreement = false;
-  allowRegister = false;
-  loggedInUser;
   warningMassage;
-  responseFromServer;
+  userAlreadyExist = false;
+  formIsValid = false;
 
 
   constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
-    
+    this.authService.getExistingEmail().subscribe((res: string[]) => {
+      this.takenUserEmails = res;
+    });
   }
 
-  valuechange() {
-    this.allowRegister = (this.credentials.password === this.repeatPassword) && this.termsAgreement;
+  validateRegForm() {
+    this.userAlreadyExist = false;
+    this.checkIfUserAlreadyExist();
+    console.log(this.userAlreadyExist)
+    this.formIsValid = (this.credentials.email !== '') &&
+      (this.credentials.password === this.repeatPassword) &&
+      (this.credentials.password !== '') &&
+      this.termsAgreement &&
+      !this.userAlreadyExist;
+  }
+
+  checkIfUserAlreadyExist() {
+    this.takenUserEmails.forEach((email) => {
+      if (email['email'] === this.credentials.email) {
+        this.userAlreadyExist = true;
+        return;
+      }
+    });
   }
 
   openTermsDialog() {
     this.dialog.open(TermsComponent)
-   }
+  }
 
   registerUser() {
     console.log(this.credentials);

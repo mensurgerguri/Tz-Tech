@@ -5,18 +5,22 @@
     <hr>
 
     <label for="email" class="description">Email</label>
-    <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="credentials.email">
+    <input type="email" placeholder="Enter Email" name="email" required [(ngModel)]="credentials.email" (ngModelChange)="validateRegForm()">
 
     <label for="psw" class="description"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="credentials.password" (ngModelChange)="valuechange()">
+    <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="credentials.password" (ngModelChange)="validateRegForm()">
 
     <label for="psw-repeat" class="description"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="valuechange()">
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="validateRegForm()">
     <hr>
   
-    <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="valuechange()">By creating an account you agree to our <a (click)="openTermsDialog()" style="cursor: pointer; color: blue">Terms & Privacy</a>.</mat-checkbox>
-    <button type="submit" class="registerbtn" [disabled]="!allowRegister" mat-dialog-close>Register</button>
+    <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="validateRegForm()">By creating an account you agree to our <a (click)="openTermsDialog()" style="cursor: pointer; color: blue">Terms & Privacy</a>.</mat-checkbox>
+    
+    <div *ngIf="userAlreadyExist" class="warning">
+      <p>User with email already exist. Please choose another email in order to register!</p>
+    </div>
 
+    <button type="submit" class="registerbtn" [disabled]="!formIsValid" mat-dialog-close mat-button>Register</button>
   </div>
   
   <div class="container signin">

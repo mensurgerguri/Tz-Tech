@@ -11,13 +11,8 @@ import { MatDialog } from '@angular/material';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
 export class SignUpComponent implements OnInit {
 
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   credentials: TokenPayload = {
     id: 0,
     username: '',
@@ -39,14 +34,6 @@ export class SignUpComponent implements OnInit {
 
   constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
 
-<<<<<<< HEAD
-=======
-export class SignUpComponent implements OnInit {
- 
-  constructor() { }
->>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
-=======
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   ngOnInit() {
     
   }
@@ -78,4 +65,3 @@ export class SignUpComponent implements OnInit {
   }
 
 }
-

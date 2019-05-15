@@ -30,22 +30,6 @@ exports.login = (req, res) => {
 
 
 exports.register = (req, res) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    const today = new Date();
-    const userData = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        password: req.body.password,
-        role_id: 4,
-        created: today
-    }
-
->>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
-=======
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
     User.findOne({
         where: {
             email: req.body.email
@@ -132,4 +116,3 @@ sendMail = (req, res) => {
         res.render('contact', { msg: 'Email has been sent!' });
     });
 }
-

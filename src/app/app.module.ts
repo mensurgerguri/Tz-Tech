@@ -10,17 +10,14 @@ import { HeaderComponent } from './core/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './core/profile/profile.component';
 import { MaterialModule } from './material/material.module';
-import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material';
 import { TermsComponent } from './core/header/sign-up/terms/terms.component';
-
 import { SliderComponent } from './home/slider/slider.component';
 import { NewProductsComponent } from './home/new-products/new-products.component';
 import { FeaturedProductsComponent } from './home/featured-products/featured-products.component';
 import { PokusComponent } from './home/pokus/pokus.component';
-
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
@@ -38,23 +35,13 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     SignInComponent,
     SignUpComponent,
     SignInComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    TermsComponent
-=======
-=======
-    TermsComponent
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
+    TermsComponent,
     SliderComponent,
     NewProductsComponent,
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
-<<<<<<< HEAD
->>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
-=======
 
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   ],
   entryComponents: [
     SignUpComponent,
@@ -68,32 +55,15 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    MaterialModule,
-    FormsModule,
-    HttpClientModule
-=======
-=======
-    HttpClientModule
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
-    MatSortModule,
+    HttpClientModule,
     MatTableModule,
     MatSelectModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-<<<<<<< HEAD
-     MatButtonModule,
-     MatFormFieldModule,
-     MatInputModule
-
->>>>>>> 19e66317bf982c04b55c28f529bd025649a5b5df
-=======
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule
->>>>>>> eb670befc48991ae26a5625daeacc19dea669315
   ],
   // exports: [
   //   AppModule,
@@ -104,4 +74,3 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

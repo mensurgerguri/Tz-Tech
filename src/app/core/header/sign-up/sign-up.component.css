@@ -2,6 +2,12 @@
   border: 1px solid red;
 }
 
+.pswMatch {
+  font-size: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
 form{
   border: 3px solid white;
   overflow: hidden;

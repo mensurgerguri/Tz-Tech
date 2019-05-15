@@ -33,6 +33,7 @@ export class SignUpComponent implements OnInit {
   warningMassage;
   userAlreadyExist = false;
   formIsValid = false;
+  pswMatch = true;
 
 
   constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
@@ -52,6 +53,8 @@ export class SignUpComponent implements OnInit {
       (this.credentials.password !== '') &&
       this.termsAgreement &&
       !this.userAlreadyExist;
+
+    this.pswMatch = (this.credentials.password === this.repeatPassword);
   }
 
   checkIfUserAlreadyExist() {

@@ -12,6 +12,7 @@
 
     <label for="psw-repeat" class="description"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required [(ngModel)]="repeatPassword" (ngModelChange)="validateRegForm()">
+    <p class="pswMatch" *ngIf="!pswMatch">Pasword you entered does not match repeated password.</p>
     <hr>
   
     <mat-checkbox [(ngModel)]="termsAgreement" name="termsAgreement" (ngModelChange)="validateRegForm()">By creating an account you agree to our <a (click)="openTermsDialog()" style="cursor: pointer; color: blue">Terms & Privacy</a>.</mat-checkbox>

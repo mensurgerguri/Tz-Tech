@@ -16,6 +16,9 @@ export class AuthenticationService {
   public registerUser(user: TokenPayload): Observable<any> {
     return this.http.post(`http://localhost:8080/users/register`, user);
   }
+  public getExistingEmail() {
+    return this.http.get('http://localhost:8080/users/getEmails');
+  }
 
   // private saveToken(token: string): void {
   //   localStorage.setItem('usertoken', token);

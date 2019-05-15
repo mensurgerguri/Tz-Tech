@@ -1,3 +1,7 @@
+.warning {
+  border: 1px solid red;
+}
+
 body {font-family: Arial, Helvetica, sans-serif;
 background: #0046BE;}
 form {border: 3px solid #f1f1f1;
@@ -10,7 +14,7 @@ overflow: hidden;}
 
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -29,11 +33,11 @@ button {
   width: 100%;
 }
 
-button:hover {
+/* button:hover {
   opacity: 0.8;
   background: grey;
   font-size: 1.2rem;
-}
+} */
 
 .cancelbtn {
   width: 100px;

@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
   validateRegForm() {
     this.userAlreadyExist = false;
     this.checkIfUserAlreadyExist();
-    console.log(this.userAlreadyExist)
+
     this.formIsValid = (this.credentials.email !== '') &&
       (this.credentials.password === this.repeatPassword) &&
       (this.credentials.password !== '') &&

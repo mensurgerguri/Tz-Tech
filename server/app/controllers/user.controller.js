@@ -20,7 +20,7 @@ exports.login = (req, res) => {
                 })
                 res.json({ token: token })
             } else {
-                res.send('User does not exist')
+                res.send('User with entered credentials does not exist.')
             }
         })
         .catch(err => {

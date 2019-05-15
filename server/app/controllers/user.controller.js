@@ -116,4 +116,3 @@ sendMail = (req, res) => {
         res.render('contact', { msg: 'Email has been sent!' });
     });
 }
-

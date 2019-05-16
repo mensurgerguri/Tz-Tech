@@ -1,6 +1,6 @@
 p{ 
     color: #7F7F7F;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     vertical-align: middle;
 
 }
@@ -14,15 +14,12 @@ p{
     width: 100%;
     display: inline-flex;
     padding: 0 15px;
-    padding-bottom: 3px;
-    margin: 5px 0;
-    border-top: 1px solid #7F7F7F;
-    border-bottom: 1px solid #7F7F7F;
     justify-content: space-between;
+    vertical-align: middle;
 }
 
 a{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-decoration: none;
 }
 

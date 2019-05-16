@@ -22,6 +22,7 @@ import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+// import { ItemProfileComponent } from './core/item-profile/item-profile.component';
 
 
 
@@ -41,6 +42,8 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
+    // ItemProfileComponent,
+  
 
   ],
   entryComponents: [

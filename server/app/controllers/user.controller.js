@@ -28,6 +28,37 @@ exports.login = (req, res) => {
         });
 };
 
+exports.resetPassword = (req, res) => {
+    console.log('evo mail '+ req.body.email)
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+        .then(user => {
+            if (user) {
+                // generate password - works
+                var randomstring = Math.random().toString(36).slice(-8);
+                console.log(randomstring)
+
+                // set new password password - works
+                req.body.password = randomstring;
+
+                // update password in database
+
+                // send email - works - but  there is a text welcome to our site
+                sendMail(req, res);
+
+                // createUser(req, res)
+            } else {
+                console.log("ev ga ovdje sad")
+            }
+        })
+        .catch(err => {
+            res.send('error: ' + err)
+        })
+}
+
 
 exports.register = (req, res) => {
     User.findOne({

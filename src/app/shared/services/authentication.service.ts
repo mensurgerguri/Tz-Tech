@@ -58,6 +58,10 @@ export class AuthenticationService {
     return this.token;
   }
 
+  resetPassword(user: TokenPayload): Observable<any> {
+    return this.http.post(`http://localhost:8080/users/resetPassword`, user);
+  }
+
 
   // public isLoggedIn(): boolean {
   //   const user = this.getUserDetails();

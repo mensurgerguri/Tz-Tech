@@ -22,7 +22,7 @@ import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-
+import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 
 
 @NgModule({
@@ -41,14 +41,14 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
-
+    ForgotPassComponent
   ],
   entryComponents: [
     SignUpComponent,
     SignInComponent,
-    TermsComponent
+    TermsComponent,
+    ForgotPassComponent
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,

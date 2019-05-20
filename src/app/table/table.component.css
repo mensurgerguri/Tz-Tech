@@ -89,10 +89,12 @@
   @media(max-width: 880px){
   
     #user-profile{
-      max-width: 175px;
+    width: 205px;
       height: 300px;
     }
-    
+    .user-profile__title{
+        font-size: 30px;
+    }
     .user-info__data{
       margin-left: 40px;
     }
@@ -108,6 +110,15 @@
     .user-profile__container{
       height: 50px;
     }
+    .row{
+        display: flex;
+              flex-direction: column;
+              align-items: center;
+      }
+    
+      .row :nth-child(1) { order: 3; }
+            .row :nth-child(2) { order:1; }
+            .row :nth-child(3) { order: 2; }
   }
   
   @media(max-width: 835px){

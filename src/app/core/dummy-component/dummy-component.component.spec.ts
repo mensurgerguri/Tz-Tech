@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LaznaKomponentaComponent } from './lazna-komponenta.component';
+import { DummyComponentComponent } from './dummy-component.component';
 
-describe('LaznaKomponentaComponent', () => {
-  let component: LaznaKomponentaComponent;
-  let fixture: ComponentFixture<LaznaKomponentaComponent>;
+describe('DummyComponentComponent', () => {
+  let component: DummyComponentComponent;
+  let fixture: ComponentFixture<DummyComponentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LaznaKomponentaComponent ]
+      declarations: [ DummyComponentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LaznaKomponentaComponent);
+    fixture = TestBed.createComponent(DummyComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

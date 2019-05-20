@@ -26,7 +26,8 @@ import { ProductOverviewComponent } from './core/product-overview/product-overvi
 import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination';
-import { DummyComponentComponent } from './core/dummy-component/dummy-component.component'; // <-- import the module
+import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
+import { ContactComponent } from './contact/contact.component'; // <-- import the module
 
 // import { ItemProfileComponent } from './core/item-profile/item-profile.component';
 
@@ -50,6 +51,7 @@ import { DummyComponentComponent } from './core/dummy-component/dummy-component.
     TableComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
+    ContactComponent,
     // ItemProfileComponent,
   
 

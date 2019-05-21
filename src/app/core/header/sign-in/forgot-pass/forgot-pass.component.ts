@@ -21,6 +21,8 @@ export class ForgotPassComponent implements OnInit {
   };
 
   email = '';
+  sentTo = '';
+  sent = false;
 
   constructor(private authService: AuthenticationService) { }
 
@@ -28,7 +30,9 @@ export class ForgotPassComponent implements OnInit {
   }
 
   resetPassword() {
-    this.authService.resetPassword(this.credentials).subscribe(()=>{});
+    this.authService.resetPassword(this.credentials).subscribe();
+    this.sentTo = this.credentials.email;
+    this.sent = true;
   }
 
 }

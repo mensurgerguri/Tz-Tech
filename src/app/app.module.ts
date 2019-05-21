@@ -24,8 +24,8 @@ import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
-import { Ng2SearchPipeModule} from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component'; // <-- import the module
 

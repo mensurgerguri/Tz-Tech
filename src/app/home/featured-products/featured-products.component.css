@@ -3,17 +3,21 @@
     position: relative;
 }
 
-/* .card-img-top{
-    width: 300px;
-    height: 250px;
-} */
+.card-img-top{
+    max-width: 440px;
+    height: 300px;
+} 
 .card{
      margin: 0 15px 40px 15px; 
 }
-.btn-danger{
+.btn{
     border-radius: 0;
     height: 35px;
     font-size: 0.8rem;
+}
+
+.btn-primary{
+    margin-left: 1px;
 }
 
 .row{

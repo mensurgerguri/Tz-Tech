@@ -42,9 +42,12 @@
           <td class="table-item">{{item.category}}</td>
           <td class="table-item">{{item.price}}</td>
           <td class="table-item"><span>
-            <a href="#" class="btn btn-danger"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#" class="btn btn-primary"><i class="fas fa-heart"></i></a>
-            </span></td>
+            <a href="#" class="btn btn-danger" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#" class="btn btn-primary" (click)="openSnackBar('Item has been added to wishlist', 'X', 'dark-snackbar')"><i class="fas fa-heart"></i></a>
+          </span>
+          <!-- <button mat-button (click)="openSnackBar('Item has been added to wishlist', 'X', 'dark-snackbar')">Show snack-bar</button> -->
+            
+            </td>
         </tr>
       </tbody>
       <div class="page-number d-flex justify-content-center" >

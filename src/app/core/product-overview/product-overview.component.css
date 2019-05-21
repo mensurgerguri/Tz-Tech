@@ -1,6 +1,17 @@
+/* *{
+    background: red; 
+} */
+.blue-snackbar {
+    background: #2196F3;
+}
 thead>tr>th {
     cursor: pointer;
 }
+#snck{
+    background: #424242 !important;
+    font-size: 50px;
+}
+
 
 img{
     height: 120px;

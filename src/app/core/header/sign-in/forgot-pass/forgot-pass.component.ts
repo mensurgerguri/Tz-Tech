@@ -23,6 +23,7 @@ export class ForgotPassComponent implements OnInit {
   email = '';
   sentTo = '';
   sent = false;
+  isValid = false;
 
   constructor(private authService: AuthenticationService) { }
 
@@ -33,6 +34,10 @@ export class ForgotPassComponent implements OnInit {
     this.authService.resetPassword(this.credentials).subscribe();
     this.sentTo = this.credentials.email;
     this.sent = true;
+  }
+
+  validateForm() {
+    this.isValid = this.credentials.email !== '';
   }
 
 }

@@ -5,11 +5,11 @@
     <hr>
 
     <label for="email" class="description">Email</label>
-    <input type="email" placeholder="Enter Email" name="email" [(ngModel)]="credentials.email" required>
+    <input type="email" placeholder="Enter Email" name="email" [(ngModel)]="credentials.email" (ngModelChange)="validateForm()" required>
 
     <hr>
 
-    <button type="submit" class="registerbtn" mat-button>Submit</button>
+    <button type="submit" class="registerbtn" mat-button [disabled]="!isValid">Submit</button>
 
     <hr>
 

@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TokenPayload } from 'src/app/shared/models/user.model';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MatDialog } from '@angular/material';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -26,7 +27,7 @@ export class SignInComponent implements OnInit {
 
   formIsValid = false;
 
-  constructor(private authService: AuthenticationService, private dialogRef: MatDialogRef<SignInComponent>) { }
+  constructor(private authService: AuthenticationService, private dialog: MatDialog, private dialogRef: MatDialogRef<SignInComponent>) { }
 
   ngOnInit() {
   }
@@ -58,6 +59,11 @@ export class SignInComponent implements OnInit {
         }
       }
     );
+  }
+
+
+  openForgotPasswordDialog() {
+    this.dialog.open(ForgotPassComponent)
   }
 
 }

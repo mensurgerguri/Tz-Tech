@@ -22,14 +22,12 @@ import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
-import { Ng2SearchPipeModule} from 'ng2-search-filter';
-import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component'; // <-- import the module
-
-// import { ItemProfileComponent } from './core/item-profile/item-profile.component';
-
 
 
 @NgModule({
@@ -48,18 +46,16 @@ import { DummyComponentComponent } from './core/dummy-component/dummy-component.
     FeaturedProductsComponent,
     PokusComponent,
     TableComponent,
+    ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
-    // ItemProfileComponent,
-  
-
   ],
   entryComponents: [
     SignUpComponent,
     SignInComponent,
-    TermsComponent
+    TermsComponent,
+    ForgotPassComponent
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,

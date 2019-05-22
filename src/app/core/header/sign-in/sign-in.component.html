@@ -7,22 +7,21 @@
 
   <div class="container">
     <label for="email">Email</label>
-    <input type="email" placeholder="Enter email" name="email" [(ngModel)]="credentials.email" (ngModelChange)="validateRegForm()" required>
+    <input type="email" placeholder="Enter email" name="email" [(ngModel)]="credentials.email"
+      (ngModelChange)="validateRegForm()" required>
 
     <label for="psw">Password</label>
-    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="credentials.password" (ngModelChange)="validateRegForm()" required>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="credentials.password"
+      (ngModelChange)="validateRegForm()" required>
 
     <div *ngIf="showWarning" class="warning">
       <p>{{ warning }}</p>
     </div>
-        
+
     <button type="submit" mat-raised-button class="login-btn" mat-button [disabled]="!formIsValid">Login</button>
-    <!-- <div class="remember">
-    <label>Remember Me </label>
-     <input type="checkbox" checked="checked" name="remember"><p>Remember Me</p>
-    </div> -->
-  
-        <label><input type="checkbox" name="remember"> Remember me</label>
+    
+    <span *ngIf="!rememberMeShowing"><mat-checkbox [(ngModel)]="rememberMe" name="rememberMe">Keep me logged in</mat-checkbox></span>
+    <span *ngIf="rememberMeShowing" (click)="forgetMe()" style="cursor: pointer">Do not keep me logged in</span>
 
   </div>
 

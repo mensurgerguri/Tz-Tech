@@ -27,9 +27,19 @@ export class SignInComponent implements OnInit {
 
   formIsValid = false;
 
+  rememberMe = false;
+  rememberMeShowing = false;
+
   constructor(private authService: AuthenticationService, private dialog: MatDialog, private dialogRef: MatDialogRef<SignInComponent>) { }
 
   ngOnInit() {
+    const user = this.authService.getUserDetailsFromRememberMe();
+    if (user) {
+      this.credentials = user;
+      this.rememberMe = true;
+      this.formIsValid = true;
+      this.rememberMeShowing = true;
+    }
   }
 
   validateRegForm() {
@@ -46,10 +56,14 @@ export class SignInComponent implements OnInit {
           console.log(this.loggedInUser.email + ' is logged in app');
         }
 
+        if (this.rememberMe) {
+          this.authService.rememberMe();
+        }
+
         // this.router.navigateByUrl('/profile')
       },
       err => {
-        console.error(err)
+        console.error(err);
 
         const errorMessage = err['error']['text'];
 
@@ -61,9 +75,16 @@ export class SignInComponent implements OnInit {
     );
   }
 
+  forgetMe() {
+    this.authService.removeRememberMe();
+    this.rememberMeShowing = false;
+    this.credentials.email = '';
+    this.credentials.password = '';
+    this.rememberMe = false;
+  }
 
   openForgotPasswordDialog() {
-    this.dialog.open(ForgotPassComponent)
+    this.dialog.open(ForgotPassComponent);
   }
 
 }

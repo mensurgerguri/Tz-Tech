@@ -24,11 +24,9 @@
           <th (click)="sort('brand')" class="table-item">Brand <i class="fas fa-sort"></i>
             <span class="glyphicon sort-icon" *ngIf="key =='brand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
-          <th (click)="sort('category')" class="table-item">Category <i class="fas fa-sort"></i>
-            <span class="glyphicon sort-icon" *ngIf="key =='category'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-          </th>
           <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
             <span class="glyphicon sort-icon" *ngIf="key =='price'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          
           </th>
           <th class="table-item"></th>
         </tr>
@@ -39,20 +37,19 @@
           <td><img src={{item.img}}></td>
           <td class="table-item">{{item.name}}</td>
           <td class="table-item">{{item.brand}}</td>
-          <td class="table-item">{{item.category}}</td>
           <td class="table-item">{{item.price}}</td>
-          <td class="table-item"><span>
-            <a href="#" class="btn btn-primary" (click)="openSnackBar('Item has been added to wishlist', 'X', 'dark-snackbar')"><i class="fas fa-heart"></i></a>
-            <a href="#" class="btn btn-danger" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></a>
-          </span>
-          <!-- <button mat-button (click)="openSnackBar('Item has been added to wishlist', 'X', 'dark-snackbar')">Show snack-bar</button> -->
-            
+          <td class="table-item">
+            <span class="btns">
+                <a href="#" class="btn btn-secondary"><i class="fas fa-times-circle"></i></a>
+                <a href="#" class="btn btn-danger" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></a>
+          </span>            
             </td>
         </tr>
       </tbody>
-      <div class="page-number d-flex justify-content-center" >
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    </div>
     </table>
+    
   </div>
+</div>
+<div class="page-number d-flex justify-content-center" >
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

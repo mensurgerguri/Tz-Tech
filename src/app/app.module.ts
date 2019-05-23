@@ -23,12 +23,14 @@ import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
-import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { ContactComponent } from './contact/contact.component'; // <-- import the module
-
+import { Ng2SmartTableModule} from 'ng2-smart-table';
+import { TableService } from './table/table.service';
+import { Ng2SearchPipeModule} from 'ng2-search-filter';
+import { WishlistTableComponent } from './wishlist-table/wishlist-table.component';
 // import { ItemProfileComponent } from './core/item-profile/item-profile.component';
 
 
@@ -52,6 +54,7 @@ import { ContactComponent } from './contact/contact.component'; // <-- import th
     ProductOverviewComponent,
     DummyComponentComponent,
     ContactComponent,
+    WishlistTableComponent,
     // ItemProfileComponent,
   
 
@@ -79,14 +82,16 @@ import { ContactComponent } from './contact/contact.component'; // <-- import th
     MatInputModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SmartTableModule,
+    HttpClientModule
   ],
   // exports: [
   //   AppModule,
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

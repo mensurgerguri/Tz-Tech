@@ -1,0 +1,28 @@
+{
+    "characters": [
+    {
+        "id": "1",
+        "product": "X700",
+        "price": "450"
+    },
+    {
+        "id": "2",
+        "product": "7s",
+        "price": "1100"
+    },
+    {
+        "id": "3",
+        "product": "G7",
+        "price": "800"
+    },
+    {
+        "id": "4",
+        "product": "XperiaZ",
+        "price": "300"
+    },
+    {
+        "id": "5",
+        "product": "J3+",
+        "price": "50"
+    }]
+}

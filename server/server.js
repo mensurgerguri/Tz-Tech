@@ -43,8 +43,8 @@ global.__basedir = __dirname;
 
 
 // request routers
-let fileRouter = require('./app/routers/file.router.js');
-app.use('/', fileRouter);
+// let fileRouter = require('./app/routers/file.router.js');
+// app.use('/', fileRouter);
 
 let usersRouter = require('./app/routers/user.router.js');
 app.use('/users', usersRouter)

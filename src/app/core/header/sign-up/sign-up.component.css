@@ -1,3 +1,13 @@
+.warning {
+  border: 1px solid red;
+}
+
+.pswMatch {
+  font-size: 1rem;
+  color: red;
+  font-weight: bold;
+}
+
 form{
   border: 3px solid white;
   overflow: hidden;
@@ -55,10 +65,10 @@ body {
     opacity: 0.9;
   }
   
-  .registerbtn:hover {
+  /* .registerbtn:hover {
     background: #424242;
     font-size: 1.2rem;
-  }
+  } */
   
   /* Add a blue text color to links */
   a {

@@ -13,7 +13,7 @@ export class AuthenticationService {
   private rememberMeToken = '';
   private days = 3;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   public registerUser(user: TokenPayload): Observable<any> {
     return this.http.post(`http://localhost:8080/users/register`, user);
@@ -109,7 +109,6 @@ export class AuthenticationService {
     }
   }
 
-
   // public isLoggedIn(): boolean {
   //   const user = this.getUserDetails();
   //   if (user) {
@@ -119,11 +118,10 @@ export class AuthenticationService {
   //   }
   // }
 
-
   public logout(): void {
     this.token = '';
     window.localStorage.removeItem('usertoken');
     window.localStorage.removeItem('expiresOn');
-    // this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/');
   }
 }

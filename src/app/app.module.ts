@@ -31,6 +31,7 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { TableService } from './table/table.service';
 import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import { WishlistTableComponent } from './wishlist-table/wishlist-table.component';
+import { HistoryTableComponent } from './history-table/history-table.component';
 // import { ItemProfileComponent } from './core/item-profile/item-profile.component';
 
 
@@ -55,6 +56,7 @@ import { WishlistTableComponent } from './wishlist-table/wishlist-table.componen
     DummyComponentComponent,
     ContactComponent,
     WishlistTableComponent,
+    HistoryTableComponent,
     // ItemProfileComponent,
   
 

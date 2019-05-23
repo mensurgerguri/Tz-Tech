@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { UserDetails, TokenPayload, TokenResponse } from '../models/user.model';
-import { getToken } from '@angular/router/src/utils/preactivation';
 
 
 @Injectable()
@@ -12,6 +11,7 @@ export class AuthenticationService {
 
   private token = '';
   private rememberMeToken = '';
+  private days = 3;
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +39,13 @@ export class AuthenticationService {
   private saveToken(token: string): void {
     localStorage.setItem('usertoken', token);
     this.token = token;
+
+    this.setExpirationDate(new Date());
+  }
+
+  private setExpirationDate(date: Date) {
+    const expiresOn = new Date(date.setTime(date.getTime() + (this.days * 24 * 60 * 60 * 1000)));
+    localStorage.setItem('expiresOn', expiresOn.toString());
   }
 
   public getUserDetails(): UserDetails {
@@ -79,18 +86,27 @@ export class AuthenticationService {
     return this.rememberMeToken;
   }
 
-  resetPassword(user: TokenPayload): Observable<any> {
+  public resetPassword(user: TokenPayload): Observable<any> {
     return this.http.post(`http://localhost:8080/users/resetPassword`, user);
   }
 
-  rememberMe() {
+  public rememberMe() {
     const token = this.getToken();
     localStorage.setItem('rememberMe', token);
   }
 
-  removeRememberMe() {
+  public removeRememberMe() {
     this.rememberMeToken = '';
     window.localStorage.removeItem('rememberMe');
+  }
+
+  public isTokenValid() {
+    let expiresOn = new Date(localStorage.getItem('expiresOn'));
+    if (new Date() > expiresOn) {
+       this.logout();
+    } else {
+      this.setExpirationDate(expiresOn);
+    }
   }
 
 
@@ -104,9 +120,10 @@ export class AuthenticationService {
   // }
 
 
-  // public logout(): void {
-  //   this.token = '';
-  //   window.localStorage.removeItem('usertoken');
-  //   this.router.navigateByUrl('/');
-  // }
+  public logout(): void {
+    this.token = '';
+    window.localStorage.removeItem('usertoken');
+    window.localStorage.removeItem('expiresOn');
+    // this.router.navigateByUrl('/');
+  }
 }

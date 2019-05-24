@@ -12,6 +12,9 @@ thead>tr>th {
     font-size: 50px;
 }
 
+.container{
+    width: 500px;
+}
 
 img{
     height: 120px;
@@ -26,7 +29,16 @@ img{
 .btn-primary{
     margin-left: 1px;
 }
+.btn-secondary{
+    height: 35px;
+    width: 40px;
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
 
+.btns{
+    display: block;
+}
 .table-item{
     width: 120px;
 }

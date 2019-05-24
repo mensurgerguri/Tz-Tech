@@ -1,16 +1,14 @@
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {PageEvent} from '@angular/material';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
-import { ItemProfileComponent } from '../item-profile/item-profile.component';
-import { ClassName } from 'angular-bootstrap-md/lib/modals/modal.options';
+
 @Component({
-  selector: 'app-product-overview',
-  templateUrl: './product-overview.component.html',
-  styleUrls: ['./product-overview.component.css']
+  selector: 'app-wishlist-table',
+  templateUrl: './wishlist-table.component.html',
+  styleUrls: ['./wishlist-table.component.css']
 })
 
-export class ProductOverviewComponent {
+export class  WishlistTableComponent  {
   img: string;
   name: string;
   brand: string;

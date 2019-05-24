@@ -1,9 +1,7 @@
 <div class="row">
 <div class="purchase-table">
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
-<h4 class="title">Purchase list</h4>
+
+<h4 class="title purchase">Purchase list</h4>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 purchase-table"> 
 
   <!-- Position Column -->
@@ -31,10 +29,8 @@
 
 <div id="user-profile">
   <div class="user-profile__container">
-  <div class="user-profile__image">
-  </div>
+    <h1 class="user-profile__title"> John Doe </h1>
 </div>
-  <h1 class="user-profile__title"> John Doe </h1>
   <p class="user-info__data"><i class="fas fa-user"></i>Username</p>
   <p class="user-info__data"><i class="fas fa-key"></i>Password</p>
   <p class="user-info__data"><i class="fas fa-envelope"></i>Email</p>
@@ -44,11 +40,9 @@
 </div>
 
 <div class="wishlist-table">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
-    <h4 class="title">Wish list</h4>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 purchase-table"> 
+   
+    <h4 class="title wish" >Wish list</h4>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 wishlist-table"> 
     
       <!-- Position Column -->
         <ng-container matColumnDef="position">

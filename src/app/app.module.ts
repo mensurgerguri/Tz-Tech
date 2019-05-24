@@ -1,3 +1,6 @@
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TableService } from './table/table.service';
+import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,6 +27,11 @@ import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
+import { WishListComponent } from './wish-list/wish-list.component';
+import { WishListService } from './shared/services/WishList.service';
+import { Ng2OrderModule} from 'ng2-order-pipe';
+import { NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SmartTableModule} from 'ng2-smart-table';
 
 
 
@@ -46,6 +54,7 @@ import { ProductOverviewComponent } from './core/product-overview/product-overvi
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
+    WishListComponent,
 
   ],
   entryComponents: [
@@ -80,7 +89,7 @@ import { ProductOverviewComponent } from './core/product-overview/product-overvi
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService, TableService],
+  providers: [AuthenticationService, TableService, WishListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

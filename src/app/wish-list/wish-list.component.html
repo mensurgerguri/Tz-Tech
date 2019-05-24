@@ -1,6 +1,7 @@
-<header>
+<div class="wrapper">
+  <header>
   <nav class="navbar navbar-default">
-
+    
   </nav>
 </header>
 
@@ -9,7 +10,6 @@
     <nav class="navbar">
       <form class="form-inline">
 
-        <label class="search-label">Search</label>
         <input class="form-control search-box" type="text" name="search" placeholder="Name, brand, model or price"
           [(ngModel)]="filter">
       </form>
@@ -19,15 +19,15 @@
         <tr>
 
           <th></th>
-          <th (click)="sort('name')" class="table-item">Name <i class="fas fa-sort"></i>
+          <th (click)="sort('name')" class="table-item">Name 
             <span class="glyphicon sort-icon" *ngIf="key =='name'"
               [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
-          <th (click)="sort('brand')" class="table-item">Brand <i class="fas fa-sort"></i>
+          <th (click)="sort('brand')" class="table-item">Brand 
             <span class="glyphicon sort-icon" *ngIf="key =='brand'"
               [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
-          <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
+          <th (click)="sort('price')" class="table-item">Price 
             <span class="glyphicon sort-icon" *ngIf="key =='price'"
               [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
 
@@ -46,9 +46,7 @@
           <td class="table-item">
             <span class="btns">
               <a href="#" class="btn btn-secondary"><i class="fas fa-times-circle"></i></a>
-              <a href="#" class="btn btn-danger"
-                (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i
-                  class="fas fa-shopping-cart"></i></a>
+        
             </span>
           </td>
         </tr>
@@ -57,6 +55,4 @@
 
   </div>
 </div>
-<div class="page-number d-flex justify-content-center">
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

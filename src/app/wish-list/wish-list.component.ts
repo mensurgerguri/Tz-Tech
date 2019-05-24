@@ -118,7 +118,7 @@ export class WishListComponent implements OnInit {
 
   ngOnInit() {
     this.details = this.auth.getUserDetails();
-    this.credentials.id = this.details.id;
+    // this.credentials.id = this.details.id;
   }
 
   sort(key) {
@@ -126,13 +126,5 @@ export class WishListComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
-  openSnackBar(message: string, action: string, className: string) {
-    // this.snackBar.open('Item has been added to wishlist', action, {
-    this.snackBar.open(message, action, {
-
-      duration: 2000,
-      panelClass: [className]
-    });
-
-  }
+ 
 }

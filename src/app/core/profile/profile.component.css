@@ -3,19 +3,6 @@
   margin: 0 auto;
   margin-bottom: 25px;
 }
-/*############################# TABLES ##############################*/
-table{
-  background: #424242;
-}
-
-h4, th, td{
-  color: white;
-}
-.title{
-  color: #424242;
-  text-align: center;
-  padding-top: 10px;
-}
 /*########################## PROFILE CARD #############################*/
 #user-profile{
   border: 1px solid rgba(0,0,0, 0.6);
@@ -83,7 +70,7 @@ h4, th, td{
   .user-info__data i{
     margin-right: 5px;
   }
-  
+
 }
 
 @media(max-width: 880px){
@@ -92,7 +79,7 @@ h4, th, td{
     max-width: 175px;
     height: 300px;
   }
-  
+
   .user-info__data{
     margin-left: 40px;
   }
@@ -130,14 +117,14 @@ h4, th, td{
   }
   .user-info__data i{
     margin-right: 5px;
-  } 
+  }
   .title{
     text-align: center;
   }
   /* .purchase-table{
     display: none;
   } */
-  
+
 }
 
 @media(max-width: 590px){

@@ -2,19 +2,19 @@
 <div class="purchase-table">
 
 <h4 class="title purchase">Purchase list</h4>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 purchase-table"> 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 purchase-table">
 
   <!-- Position Column -->
     <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef> No. </th>
     <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>  
+  </ng-container>
 
   <!-- Weight Column -->
     <ng-container matColumnDef="brand">
     <th mat-header-cell *matHeaderCellDef> Brand </th>
     <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
-  </ng-container>  
+  </ng-container>
 
   <!-- Symbol Column -->
      <ng-container matColumnDef="model">
@@ -24,7 +24,7 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> 
+</table>
 </div>
 
 <div id="user-profile">
@@ -40,31 +40,31 @@
 </div>
 
 <div class="wishlist-table">
-   
+
     <h4 class="title wish" >Wish list</h4>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 wishlist-table"> 
-    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 wishlist-table">
+
       <!-- Position Column -->
         <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef> No. </th>
         <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-      </ng-container>  
-    
+      </ng-container>
+
       <!-- Weight Column -->
         <ng-container matColumnDef="brand">
         <th mat-header-cell *matHeaderCellDef> Brand </th>
         <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
-      </ng-container>  
-    
+      </ng-container>
+
       <!-- Symbol Column -->
          <ng-container matColumnDef="model">
         <th mat-header-cell *matHeaderCellDef> Model </th>
         <td mat-cell *matCellDef="let element"> {{element.model}} </td>
       </ng-container>
-    
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table> 
+    </table>
     </div>
-
   </div>
+

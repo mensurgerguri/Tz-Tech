@@ -74,7 +74,7 @@ export class AuthenticationService {
 
   private getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem('usertoken')
+      this.token = localStorage.getItem('usertoken');
     }
     return this.token;
   }
@@ -122,6 +122,5 @@ export class AuthenticationService {
     this.token = '';
     window.localStorage.removeItem('usertoken');
     window.localStorage.removeItem('expiresOn');
-    this.router.navigateByUrl('/');
   }
 }

@@ -1,0 +1,107 @@
+
+.footer{
+    background: #0046BE;
+    width: 100%;
+     /* position: fixed; 
+    bottom: 0;*/
+    border-top: 3px solid white;
+    height: 50px;
+    margin-top: 10px;
+
+}
+
+h3{
+    margin: 0 auto;
+}
+
+.fab{
+    color: white;
+    padding-right: 5px;
+}
+/*##################################### FOOTER CONTAINER ##########################################*/
+.footer-wrapper{
+    /* width: 100%;
+    background:#0046BE;
+    height: 120px;
+    position: fixed;
+    bottom: 0; */
+    width: 100%;
+    background:#0046BE;
+     position: relative; 
+    height: 120px;
+    /* margin-top: -100px; */
+    clear: both; 
+    padding-bottom: 50px;
+    
+}
+
+.footer-container{
+    width: 100%;
+
+}
+
+.footer-container__element{
+    display: inline-block;
+    width: 25%;
+    border-left: 1px solid white;
+}
+
+.contact-information{
+    position: relative;
+    bottom: 0px; 
+    height: 100%;
+}
+.footer-title{
+    color: white;
+    padding: 5px;
+    border-bottom: 1px solid white;
+    width: 90%;
+    font-size: 1rem;
+}
+
+
+.footer-items{
+    padding: 5px;
+}
+
+.footer-items li{
+    display: block;
+}
+
+ a {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+a:hover{
+    font-size: 1rem;
+}
+
+
+@media (max-width: 560px){
+    /* .footer-wrapper{
+    position: sticky;
+    bottom: 0;
+    height: 400px;
+    }*/
+    .footer-wrapper{
+         position: relative;
+        height: 400px;
+        margin-top: -100px;
+        clear: both;
+        width: 100%; 
+}
+    .footer-container{
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+    .footer-container__element{
+        display: block;
+
+         width: 100% !important; 
+    } 
+    
+}

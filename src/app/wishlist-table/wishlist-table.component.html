@@ -1,0 +1,55 @@
+<header>
+  <nav class="navbar navbar-default">
+  
+  </nav>
+</header>
+
+<div class="container">
+  <div class="row">
+    <nav class="navbar">
+      <form class="form-inline">
+     
+      <label class="search-label">Search</label>
+      <input class="form-control search-box" type="text" name="search" placeholder="Name, brand, model or price" [(ngModel)]="filter">      
+      </form>
+    </nav>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+        
+          <th></th>
+          <th (click)="sort('name')" class="table-item">Name <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th (click)="sort('brand')" class="table-item">Brand <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon" *ngIf="key =='brand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon" *ngIf="key =='price'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          
+          </th>
+          <th class="table-item"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+       
+          <td><img src={{item.img}}></td>
+          <td class="table-item">{{item.name}}</td>
+          <td class="table-item">{{item.brand}}</td>
+          <td class="table-item">{{item.price}}</td>
+          <td class="table-item">
+            <span class="btns">
+                <a href="#" class="btn btn-secondary"><i class="fas fa-times-circle"></i></a>
+                <a href="#" class="btn btn-danger" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></a>
+          </span>            
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+<div class="page-number d-flex justify-content-center" >
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

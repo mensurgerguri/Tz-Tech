@@ -1,0 +1,229 @@
+.header{
+    background: #0046BE !important;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.navbar{
+    justify-content: space-between;
+}
+.logo{
+    display: inline;
+     vertical-align: middle;
+    /* border: 5px solid white; */
+
+}
+
+.tz{
+    border: 5px solid white;
+    border-right: 0px solid white;
+    color:white;
+    border-radius: 5px 0 0 5px;
+    padding: 3px;
+    font-size: 3rem;
+    margin-bottom: 15px;
+
+}
+.tech{
+    color:yellow;
+    border: 5px solid white;
+    border-left: 0px solid white;
+    border-radius: 0 5px 5px 0;
+    padding: 3px; 
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+a {
+    padding-right: 1rem;
+}
+
+a:hover{
+    color: red !important;
+}
+.ddm{
+    padding-right: 1rem;
+}
+.ddm:hover{
+    color:red !important;
+    font-size: 1.5rem;
+}
+
+.mfb{
+    margin-right: 0.2rem;
+    
+}
+
+
+.options:hover{
+color: red;
+font-size: 1.5rem;
+}
+
+/* 
+.bckground{
+    max-width: 500px;
+    padding: 0.2rem;
+    background: white;
+} */
+
+
+.upp{
+    padding: 40px;
+    padding-bottom: 65px;
+    border-bottom: 1px solid white;
+    vertical-align: middle;  
+}
+
+.searchbox{
+   width: 450px;
+  
+}
+
+.dropdown-menu{
+    margin-top: 20px;
+}
+
+.btn{
+    background: #B0BEC5;
+    color: black;
+}
+
+.menu-edit{
+    padding: 5px 10px;
+    width: 250px;
+
+}
+
+@media(max-width: 850px){
+    .tz{
+        border: 3px solid white;
+        border-right: 0px solid white;
+        border-radius: 3px 0 0 3px;
+        padding: 1px;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    
+    }
+    .tech{
+        border: 3px solid white;
+        border-left: 0px solid white;
+        border-radius: 0 3px 3px 0;
+        padding: 1px; 
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .searchbox{
+        width: 400px;
+    }
+}
+@media(max-width: 870px){
+    .ostali{
+        display: none;
+    }
+}
+@media(max-width: 800px){
+    .ostali{
+        display: none;
+    }
+    .menu-edit{
+    width: 180px;
+    }
+}
+@media(max-width: 700px){
+    .gornji{
+        display: none;
+    }
+    .ostali{
+        display: none;
+    }
+    /* .logo{
+        display: none;
+    } */
+   
+}
+
+@media(max-width: 590px){
+    .searchbox{
+        max-width: 300px;
+    }
+}
+@media(max-width: 500px ){
+    .searchbox{
+        max-width: 250px;
+    }
+    .logo{
+        margin-left: 0;
+    }
+    .tz{
+        border: 1px solid white;
+        border-right: 0px solid white;
+        border-radius: 1px 0 0 1px;
+        padding: 1px;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    
+    }
+    .tech{
+        border: 1px solid white;
+        border-left: 0px solid white;
+        border-radius: 0 1px 1px 0;
+        padding: 1px; 
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .ddm{
+        padding-right: 3px;
+        font-size: 0.8rem;
+    }
+    .ddm:hover{
+        color:red !important;
+        font-size: 1rem;
+    }
+
+}
+
+@media(max-width: 440px){
+    .searchbox{
+        max-width: 220px;
+    }
+    .logo{
+        display: none;
+    }
+    .ddm{
+        padding-right: 1px;
+    }
+}
+
+@media(max-width: 380px){
+    .searchbox{
+        max-width: 150px;
+    }
+    .ddm{
+        padding-right: 3px;
+    }
+    .lower{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .menu-edit{
+        width: 120px;
+    
+    }
+    span{
+        margin: 0;
+    }
+}
+
+/* @media(max-width: 310px){
+    .searchbox{
+        width: 150px;
+    }
+    .logo{
+        display: none;
+    }
+    .lower{
+        display: block;
+        padding-bottom: 10px;
+    }
+} */

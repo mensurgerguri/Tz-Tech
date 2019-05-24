@@ -1,0 +1,22 @@
+<form (submit)="resetPassword()">
+  <div class="container">
+    <h1 class="title">Forgot Your Password?</h1>
+    <p class="description">Submit your email account and we will send you new password right away!</p>
+    <hr>
+
+    <label for="email" class="description">Email</label>
+    <input type="email" placeholder="Enter Email" name="email" [(ngModel)]="credentials.email" (ngModelChange)="validateForm()" required>
+
+    <hr>
+
+    <button type="submit" class="registerbtn" mat-button [disabled]="!isValid">Submit</button>
+
+    <hr>
+
+    <div *ngIf="sent" class="notice">
+      <p>Check your email. We sent your new password to: </p>
+      <p>{{ sentTo }}</p>
+      <button mat-button class="cancelbtn" mat-dialog-close>Return to sign in screen</button>
+    </div>
+  </div>
+</form>

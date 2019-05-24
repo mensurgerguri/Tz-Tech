@@ -1,5 +1,8 @@
+import { WishListComponent } from './../../wish-list/wish-list.component';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import { HistoryTableComponent } from 'src/app/history-table/history-table.component';
+
 
 export interface PeriodicElement {
 
@@ -22,9 +25,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  template:
+  `<app-wish-list></app-wish-list>
+  <app-profile-card></app-profile-card>
+  <app-history-table></app-history-table>` ,
+  styleUrls: ['./profile.component.css', '../../history-table/history-table.component.css',
+  '../../wish-list/wish-list.component.css', '../../profile-card/profile-card.component.css']
 })
+
 export class ProfileComponent implements OnInit {
   displayedColumns: string[] = ['position', 'brand', 'model'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);

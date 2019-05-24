@@ -1,5 +1,5 @@
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { TableService } from './table/table.service';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,6 +32,8 @@ import { WishListService } from './shared/services/WishList.service';
 import { Ng2OrderModule} from 'ng2-order-pipe';
 import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SmartTableModule} from 'ng2-smart-table';
+import { HistoryTableComponent } from './history-table/history-table.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 
 
@@ -55,6 +57,9 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
     ProductOverviewComponent,
     DummyComponentComponent,
     WishListComponent,
+    HistoryTableComponent,
+    ProfileCardComponent,
+
 
   ],
   entryComponents: [
@@ -89,7 +94,7 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService, TableService, WishListService],
+  providers: [AuthenticationService, WishListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

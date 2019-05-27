@@ -6,7 +6,7 @@
    width: 300px;
    height: 320px;
     margin: 0 auto;
-    margin-top: 130px;
+    margin-top: 102px;
     /* padding: 10px 25px; */
       /* display: flex; */
   }
@@ -54,16 +54,10 @@
   .btn-block{
     border-radius: 0;
   }
-  @media(max-width: 1150px){
+ 
+  @media(max-width: 1250px){
     #user-profile{
-       width: 250px;
-       height: 320px;
-       float: right;
-    }
-  }
-  @media(max-width: 1000px){
-    #user-profile{
-      max-width: 205px;
+      width: 205px;
     }
   
     .user-info__data{
@@ -76,17 +70,17 @@
   
   }
 
-  @media(max-width: 600px){
+  @media(max-width: 1200px){
     #user-profile{
-    position: absolute;
-    top: 750px;
-    left: 50px;
+      width: 410px;
+      margin-top: 50px;
+
+    }
+    .user-info__data{
+      margin-left: 150px;
+      text-align: left;
+    }
+    .user-info__data i{
+      margin-right: 5px;
     }
   }
-  
-  @media(max-width: 500px){
-  #user-profile{
-    position: absolute;
-    top: 630px;
-    }
-}

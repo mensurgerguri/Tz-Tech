@@ -2,14 +2,18 @@
     background: red; 
 } */
 .wrapper{
-        position: absolute;
+        /* position: absolute;
         left: 0;  
-        top: 160px; 
+        top: 160px;  */
     } 
     .blue-snackbar {
         background: #2196F3;
       }
-      
+      .table-name{
+        margin: 0 auto;
+
+        text-align: center;
+      }
       thead>tr>th {
         cursor: pointer;
       }
@@ -60,6 +64,7 @@
         width: 80%;
         margin: 0 auto;
       }
+
       @media(max-width: 1150px){
         .container {
             width: 350px;
@@ -114,7 +119,7 @@
         }
       
       }
-
+/* 
       @media(max-width: 575px){
         .container {
             width: 250px;
@@ -128,7 +133,7 @@
           .table-item {
             width: 75px;
           }
-      }
+      } */
 
       
       

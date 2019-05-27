@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService, private dialog: MatDialog) { }
+  constructor(private authService: AuthenticationService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -35,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
   signOut() {
     this.authService.logout();
+    this.router.navigateByUrl('/');
   }
 
 }

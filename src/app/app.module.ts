@@ -27,7 +27,9 @@ import { ProductOverviewComponent } from './core/product-overview/product-overvi
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { DummyComponentComponent } from './core/dummy-component/dummy-component.component'; // <-- import the module
+import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
+import { CategoryManagementComponent } from './category-management/category-management.component';
+import { CategoryListComponent } from './category-management/category-list/category-list.component'; // <-- import the module
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { DummyComponentComponent } from './core/dummy-component/dummy-component.
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
+    CategoryManagementComponent,
+    CategoryListComponent,
   ],
   entryComponents: [
     SignUpComponent,
@@ -75,11 +79,6 @@ import { DummyComponentComponent } from './core/dummy-component/dummy-component.
     Ng2OrderModule,
     NgxPaginationModule
   ],
-  // exports: [
-  //   AppModule,
-  //   HeaderComponent,
-  //   FooterComponent,
-  // ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,5 @@
+<h2>Categories</h2>
+<br>
+<mat-action-list>
+  <button mat-list-item (click)="save()" *ngFor="let category of categories"> {{ category.cat_name }} </button>
+</mat-action-list>

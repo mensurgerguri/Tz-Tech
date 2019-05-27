@@ -49,6 +49,9 @@ global.__basedir = __dirname;
 let usersRouter = require('./app/routers/user.router.js');
 app.use('/users', usersRouter)
 
+let categoriesRouter = require('./app/routers/categories.router.js');
+app.use('/categories', categoriesRouter)
+
 let server = app.listen(8080, () => {
 
   let host = server.address().address

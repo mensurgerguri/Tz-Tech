@@ -122,6 +122,5 @@ export class AuthenticationService {
     this.token = '';
     window.localStorage.removeItem('usertoken');
     window.localStorage.removeItem('expiresOn');
-    this.router.navigateByUrl('/');
   }
 }

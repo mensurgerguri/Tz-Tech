@@ -34,6 +34,7 @@ import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { HistoryTableComponent } from './history-table/history-table.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 
 
 
@@ -59,6 +60,7 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
     WishListComponent,
     HistoryTableComponent,
     ProfileCardComponent,
+    TrackingOrderComponent,
 
 
   ],

@@ -25,12 +25,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 @Component({
   selector: 'app-profile',
-  template:
-  `<app-wish-list></app-wish-list>
-  <app-profile-card></app-profile-card>
-  <app-history-table></app-history-table>` ,
-  styleUrls: ['./profile.component.css', '../../history-table/history-table.component.css',
-  '../../wish-list/wish-list.component.css', '../../profile-card/profile-card.component.css']
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
 
 export class ProfileComponent implements OnInit {

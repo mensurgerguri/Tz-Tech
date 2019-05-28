@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../shared/services/category.service';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 @Component({
   selector: 'app-category-management',
@@ -13,7 +15,13 @@ export class CategoryManagementComponent implements OnInit {
   subCategories: [];
   subCategoryFields: [];
 
-  constructor(private categoriesService: CategoryService) { }
+  constructor(private categoriesService: CategoryService, private dialog: MatDialog) {
+    dialog.afterAllClosed
+      .subscribe(() => {
+        this.ngOnInit();
+      }
+      );
+  }
 
   ngOnInit() {
     this.categoriesService.getCategories().subscribe((categories: []) => {
@@ -40,4 +48,14 @@ export class CategoryManagementComponent implements OnInit {
       this.categoryFields = categoryFields;
     });
   }
+
+  openAddCategoryDialog() {
+    this.dialog.open(AddCategoryComponent);
+  }
+
+  deleteCategory(id: number) {
+    // this.categoriesService.deleteCategory(id);
+    console.log(id)
+  }
+
 }

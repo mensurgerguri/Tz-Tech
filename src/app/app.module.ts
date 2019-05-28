@@ -29,6 +29,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { CategoryManagementComponent } from './category-management/category-management.component';
+import { AddCategoryComponent } from './category-management/add-category/add-category.component';
 
 
 @NgModule({
@@ -50,13 +51,15 @@ import { CategoryManagementComponent } from './category-management/category-mana
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
-    CategoryManagementComponent
+    CategoryManagementComponent,
+    AddCategoryComponent
   ],
   entryComponents: [
     SignUpComponent,
     SignInComponent,
     TermsComponent,
-    ForgotPassComponent
+    ForgotPassComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -12,5 +12,7 @@ router.get('/getSubCategories/:id', controller.getSubCategories);
 router.get('/getSubCategoryFields/:id', controller.getSubCategoryFields);
 
 router.get('/getCategoryFields/:id', controller.getCategoryFields);
+
+router.post('/saveNewCategory', controller.saveNewCategory);
  
 module.exports = router;

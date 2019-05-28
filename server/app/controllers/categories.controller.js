@@ -57,6 +57,18 @@ exports.getCategoryFields = (req, res) => {
     });
 }
 
+exports.saveNewCategory = (req, res) => {
+
+    newCategory = req.body.newCategory;
+
+    let qry = "INSERT INTO categories (name) VALUES('" + newCategory + "')";
+    
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({"success": "1 record inserted"});
+      });
+}
+
 
 
 

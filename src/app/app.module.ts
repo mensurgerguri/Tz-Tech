@@ -29,7 +29,6 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { CategoryManagementComponent } from './category-management/category-management.component';
-import { CategoryListComponent } from './category-management/category-list/category-list.component'; // <-- import the module
 
 
 @NgModule({
@@ -51,8 +50,7 @@ import { CategoryListComponent } from './category-management/category-list/categ
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
-    CategoryManagementComponent,
-    CategoryListComponent,
+    CategoryManagementComponent
   ],
   entryComponents: [
     SignUpComponent,

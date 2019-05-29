@@ -7,8 +7,6 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 import { Wish } from 'src/app/shared/models/Wish.model';
 import { Order } from 'src/app/shared/models/order.model';
 import { WishListComponent } from './../../wish-list/wish-list.component';
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { HistoryTableComponent } from 'src/app/history-table/history-table.component';
 
 

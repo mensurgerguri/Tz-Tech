@@ -15,4 +15,14 @@ router.get('/getCategoryFields/:id', controller.getCategoryFields);
 
 router.post('/saveNewCategory', controller.saveNewCategory);
  
+router.get('/deleteCategory/:id', controller.deleteCategory);
+
+router.post('/saveNewSubcategory', controller.saveNewSubcategory);
+
+router.get('/deleteSubcategory/:id', controller.deleteSubcategory);
+
+router.get('/getAllFields', controller.getAllFields);
+
+router.post('/saveNewCategoryField', controller.saveNewCategoryField);
+
 module.exports = router;

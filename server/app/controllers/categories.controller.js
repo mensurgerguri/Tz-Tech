@@ -59,17 +59,77 @@ exports.getCategoryFields = (req, res) => {
 
 exports.saveNewCategory = (req, res) => {
 
-    newCategory = req.body.newCategory;
+    let newCategory = req.body.newCategory;
 
     let qry = "INSERT INTO categories (name) VALUES('" + newCategory + "')";
-    
+
     db.query(qry, function (err, result) {
         if (err) throw err;
-        return res.status(200).send({"success": "1 record inserted"});
-      });
+        return res.status(200).send({ "success": "1 record inserted" });
+    });
 }
 
+exports.deleteCategory = (req, res) => {
 
+    let id = req.params.id;
+    let qry = "DELETE from `categories` WHERE `id` = " + id;
+    
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+    });
+}
+
+exports.saveNewSubcategory = (req, res) => {
+
+    let subcategoryObj = req.body.subcategoryObj;
+
+    let qry = "INSERT INTO subcategories (cat_id, name) VALUES('" + subcategoryObj.categoryID + "', '" + subcategoryObj.subcategoryName + "')";
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record inserted" });
+    });
+}
+
+exports.deleteSubcategory = (req, res) => {
+
+    let id = req.params.id;
+    let qry = "DELETE from `subcategories` WHERE `subcat_id` = " + id;
+    
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+    });
+}
+
+exports.getAllFields = (req, res) => {
+
+    let qry = "SELECT * FROM `category_fields`";
+
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result)
+    });
+}
+
+exports.saveNewCategoryField = (req, res) => {
+
+    let fieldObj = req.body.fieldObj;
+
+    let qry = "INSERT INTO cat_fields_list (cat_sub, cat_subcat_id, field_id) VALUES('" + fieldObj.identifier + "', '" + fieldObj.categoryID + "', '" + fieldObj.fieldID + "')";
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record inserted" });
+    });
+}
 
 
 

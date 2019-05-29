@@ -26,6 +26,26 @@ export class CategoryService {
   }
 
   public saveNewCategory(newCategory: string): Observable<any> {
-    return this.http.post(`http://localhost:8080/categories/saveNewCategory`, {newCategory: newCategory});
+    return this.http.post(`http://localhost:8080/categories/saveNewCategory`, { newCategory });
+  }
+
+  public deleteCategory(id: number) {
+    return this.http.get('http://localhost:8080/categories/deleteCategory/' + id);
+  }
+
+  public saveNewSubcategory(subcategoryObj: any): Observable<any> {
+    return this.http.post(`http://localhost:8080/categories/saveNewSubcategory`, { subcategoryObj });
+  }
+
+  public deleteSubcategory(id: number) {
+    return this.http.get('http://localhost:8080/categories/deleteSubcategory/' + id);
+  }
+
+  public getAllFields() {
+    return this.http.get('http://localhost:8080/categories/getAllFields');
+  }
+
+  public saveNewCategoryField(fieldObj: any): Observable<any> {
+    return this.http.post(`http://localhost:8080/categories/saveNewCategoryField`, { fieldObj });
   }
 }

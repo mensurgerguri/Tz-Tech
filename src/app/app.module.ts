@@ -30,6 +30,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { CategoryManagementComponent } from './category-management/category-management.component';
 import { AddCategoryComponent } from './category-management/add-category/add-category.component';
+import { AddSubcategoryComponent } from './category-management/add-subcategory/add-subcategory.component';
+import { AddSubcategoryFieldsComponent } from './category-management/add-subcategory-fields/add-subcategory-fields.component';
 
 
 @NgModule({
@@ -52,14 +54,18 @@ import { AddCategoryComponent } from './category-management/add-category/add-cat
     ProductOverviewComponent,
     DummyComponentComponent,
     CategoryManagementComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddSubcategoryComponent,
+    AddSubcategoryFieldsComponent
   ],
   entryComponents: [
     SignUpComponent,
     SignInComponent,
     TermsComponent,
     ForgotPassComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddSubcategoryComponent,
+    AddSubcategoryFieldsComponent
   ],
   imports: [
     BrowserModule,

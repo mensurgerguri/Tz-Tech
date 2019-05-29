@@ -1,6 +1,6 @@
+
 import { PurchaseService } from './shared/services/Purchase.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { TableService } from './table/table.service';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,6 +36,10 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
 import { from } from 'rxjs';
+import { HistoryTableComponent } from './history-table/history-table.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+
 
 
 
@@ -61,6 +65,10 @@ import { from } from 'rxjs';
     WishListComponent,
     ProfileCardComponent,
     HistoryTableComponent
+    HistoryTableComponent,
+    ProfileCardComponent,
+    TrackingOrderComponent,
+
 
   ],
   entryComponents: [
@@ -95,7 +103,10 @@ import { from } from 'rxjs';
   //   HeaderComponent,
   //   FooterComponent,
   // ],
+
   providers: [AuthenticationService, TableService, WishListService, PurchaseService],
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

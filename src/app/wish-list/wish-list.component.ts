@@ -15,7 +15,6 @@ import { MatSnackBar } from '@angular/material';
 export class WishListComponent implements OnInit {
   router: any;
 
-
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private auth: AuthenticationService, private WishListService: WishListService, public snackBar: MatSnackBar) { }
 
@@ -36,6 +35,7 @@ export class WishListComponent implements OnInit {
   ngOnInit() {
 
     this.fetchData()
+
   }
   deleteWish() {
   this.WishListService.deleteWish(this.auth.getUserDetails().id).subscribe(()=> {
@@ -47,6 +47,7 @@ export class WishListComponent implements OnInit {
     this.key = key;
     this.reverse = !this.reverse;
   }
+
   openSnackBar(message: string, action: string, className: string) {
     // this.snackBar.open('Item has been added to wishlist', action, {
     this.snackBar.open(message, action, {
@@ -58,8 +59,5 @@ export class WishListComponent implements OnInit {
     }
 
   }
-
-
-
 
 

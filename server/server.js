@@ -50,10 +50,12 @@ global.__basedir = __dirname;
 
 let usersRouter = require('./app/routers/user.router.js');
 let wishRouter = require('./app/routers/wish.router.js');
-let purchaseRouter = require('./app/routers/purchase.router.js');
+
+let PurchaseRouter = require('./app/routers/purchase.router.js');
 app.use('/users', usersRouter)
 app.use('/wish', wishRouter)
 app.use('/order', purchaseRouter)
+
 
 let server = app.listen(8080, () => {
 

@@ -1,3 +1,4 @@
+
 <header>
   <nav class="navbar navbar-default">
     <h3 class="table-name">WishList</h3>
@@ -28,6 +29,7 @@
       </thead>
       <tbody>
         <tr
+
           *ngFor="let wish of wish | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
 
           <td><img src={{wish.Image}}></td>
@@ -39,7 +41,6 @@
                 <button type="button" class="btn btn-primary" (click)="deleteWish()">Delete</button>
                 <br>
                 <button type="button" class="btn btn-secondary"(click)="AddtoCart()">Add cart</button>
-
             </span>
           </td>
         </tr>
@@ -50,4 +51,5 @@
 <div class="page-number d-flex justify-content-center">
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
+
 

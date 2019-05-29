@@ -36,9 +36,9 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
 import { from } from 'rxjs';
-import { HistoryTableComponent } from './history-table/history-table.component';
-import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+import { TableService } from './table/table.service';
+import { TrackOrderComponent } from './track-order/track-order.component';
 
 
 
@@ -64,10 +64,10 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
     DummyComponentComponent,
     WishListComponent,
     ProfileCardComponent,
-    HistoryTableComponent
     HistoryTableComponent,
     ProfileCardComponent,
     TrackingOrderComponent,
+    TrackOrderComponent,
 
 
   ],

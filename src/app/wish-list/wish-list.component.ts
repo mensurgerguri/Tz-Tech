@@ -29,18 +29,18 @@ export class WishListComponent implements OnInit {
   fetchData() {
     this.WishListService.getWishes(this.auth.getUserDetails().id).subscribe((res: Wish[]) => {
       this.wish = res;
-    })
+    });
   }
 
   ngOnInit() {
 
-    this.fetchData()
+    this.fetchData();
 
   }
   deleteWish() {
-  this.WishListService.deleteWish(this.auth.getUserDetails().id).subscribe(()=> {
-    this.fetchData()
-  })
+  this.WishListService.deleteWish(this.auth.getUserDetails().id).subscribe(() => {
+    this.fetchData();
+  });
 }
 
   sort(key) {

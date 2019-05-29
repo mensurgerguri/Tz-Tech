@@ -1,5 +1,5 @@
 /* *{
-    background: red; 
+    background: red;
 } */
 .blue-snackbar {
     background: #2196F3;
@@ -59,7 +59,7 @@ img{
         width: 90px;
     }
 
-    .table-item {
+    .table-order {
         width: 90px;
     }
 
@@ -89,5 +89,5 @@ img{
     .fa-sort{
         display: none;
     }
-    
+
 }

@@ -1,3 +1,53 @@
-<p>
-  wish-list works!
-</p>
+<header>
+  <nav class="navbar navbar-default">
+    <h3 class="table-name">WishList</h3>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <nav class="navbar">
+    </nav>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th></th>
+          <th (click)="sort('name')" class="table-item">Name <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon"
+              [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th (click)="sort('brand')" class="table-item">Brand <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon"
+              [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon"
+              [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
+          <th class="table-wish"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let wish of wish | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
+
+          <td><img src={{wish.Image}}></td>
+          <td class="table-item">{{wish.name}}</td>
+          <td class="table-item">{{wish.brand}}</td>
+          <td class="table-item">{{wish.Price}}</td>
+          <td class="table-item">
+            <span class="btns">
+                <button type="button" class="btn btn-primary" (click)="deleteWish()">Delete</button>
+                <br>
+                <button type="button" class="btn btn-secondary"(click)="AddtoCart()">Add cart</button>
+
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="page-number d-flex justify-content-center">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+

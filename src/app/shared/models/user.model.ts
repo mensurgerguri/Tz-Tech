@@ -1,4 +1,5 @@
 export interface UserDetails {
+  subscribe(arg0: (data: any) => any);
     id: number;
     username: string;
     email: string;

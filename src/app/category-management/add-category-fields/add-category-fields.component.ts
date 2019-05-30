@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
 
 @Component({
-  selector: 'app-add-subcategory-fields',
-  templateUrl: './add-subcategory-fields.component.html',
-  styleUrls: ['./add-subcategory-fields.component.css']
+  selector: 'app-add-category-fields',
+  templateUrl: './add-category-fields.component.html',
+  styleUrls: ['./add-category-fields.component.css']
 })
-export class AddSubcategoryFieldsComponent implements OnInit {
+export class AddCategoryFieldsComponent implements OnInit {
 
   selectedCategory: any;
   categoryFields = [];

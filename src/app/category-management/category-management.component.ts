@@ -3,7 +3,7 @@ import { CategoryService } from '../shared/services/category.service';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { AddSubcategoryComponent } from './add-subcategory/add-subcategory.component';
-import { AddSubcategoryFieldsComponent } from './add-subcategory-fields/add-subcategory-fields.component';
+import { AddCategoryFieldsComponent } from './add-category-fields/add-category-fields.component';
 
 @Component({
   selector: 'app-category-management',
@@ -92,7 +92,7 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   openAddCategoryFields() {
-    const dialogRef = this.dialog.open(AddSubcategoryFieldsComponent);
+    const dialogRef = this.dialog.open(AddCategoryFieldsComponent);
     const instance = dialogRef.componentInstance;
     instance.selectedCategory = this.selectedCategory;
     instance.categoryFields = this.categoryFields;

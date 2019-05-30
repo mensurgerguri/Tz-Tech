@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddSubcategoryFieldsComponent } from './add-subcategory-fields.component';
+import { AddCategoryFieldsComponent } from './add-category-fields.component';
 
 describe('AddSubcategoryFieldsComponent', () => {
-  let component: AddSubcategoryFieldsComponent;
-  let fixture: ComponentFixture<AddSubcategoryFieldsComponent>;
+  let component: AddCategoryFieldsComponent;
+  let fixture: ComponentFixture<AddCategoryFieldsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddSubcategoryFieldsComponent ]
+      declarations: [ AddCategoryFieldsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddSubcategoryFieldsComponent);
+    fixture = TestBed.createComponent(AddCategoryFieldsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,7 +11,7 @@ export class AddSubcategoryFieldsComponent implements OnInit {
   selectedCategory: any;
   categoryFields = [];
   allFields = [];
-  newCategoryField = '';
+  newField = '';
   successMsg = false;
   selectedValue;
 
@@ -23,20 +23,35 @@ export class AddSubcategoryFieldsComponent implements OnInit {
     });
   }
 
+  fetchCategoryFields() {
+    this.categoryService.getCategoryFields(this.selectedCategory.id).subscribe((categoryFields: []) => {
+      this.categoryFields = categoryFields;
+    });
+  }
+
   saveNewCategoryField() {
     this.categoryService.saveNewCategoryField({ identifier: 1, categoryID: this.selectedCategory.id, fieldID: this.selectedValue.field_id }).subscribe(
       (res) => {
 
         if (res.success) {
           this.successMsg = true;
-          // this.fetchSubcategories();
-          // this.savedSubcategory = this.newSubcategory.valueOf();
+          this.fetchCategoryFields();
+          this.newField = this.getFieldName(this.selectedValue.field_id);
         }
       },
       err => {
         console.error(err);
       }
     );
+  }
+
+  private getFieldName(id: number): string {
+    for (let i = 0; i < this.allFields.length; i++) {
+      const element = this.allFields[i];
+      if (element.field_id === id) {
+        return element.name;
+      }
+    }
   }
 
 }

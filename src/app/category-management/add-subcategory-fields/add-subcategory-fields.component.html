@@ -23,15 +23,13 @@
       <select class="btn btn-primary" [(ngModel)]="selectedValue">
           <option *ngFor="let field of allFields" [ngValue]="field" >{{ field.name }}</option>
       </select>
-      <div class="col-sm-12" *ngIf="successMsg">
-        <p>Successfully saved!</p>
-      </div>
       <div class="col-sm-12">
         <button mat-button class="" (click)="saveNewCategoryField()">Save</button>
         <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
       </div>
       <div class="col-sm-12" *ngIf="successMsg">
-        <p><i>{{ savedSubcategory }}</i> successfuly saved!</p>
+        <br>
+        <p><i>{{ newField }}</i> successfuly saved to {{ selectedCategory.name }}'s fields!</p>
       </div>
     </div>
   </div>

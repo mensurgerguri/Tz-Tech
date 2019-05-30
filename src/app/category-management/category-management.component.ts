@@ -29,6 +29,9 @@ export class CategoryManagementComponent implements OnInit {
   ngOnInit() {
     this.fetchCategories();
     this.fetchSubcategories();
+    if(this.categoryFields) {
+      this.getCategoryFields(this.selectedCategory.id);
+    }
   }
 
   getSubcategories(category: any) {
@@ -87,6 +90,12 @@ export class CategoryManagementComponent implements OnInit {
       this.fetchSubcategories();
     });
   }
+
+  // fetchCategoryFields() {
+  //   this.categoryService.getCategoryFields(this.selectedCategory.id).subscribe((categoryFields: []) => {
+  //     this.categoryFields = categoryFields;
+  //   });
+  // }
 
   openAddCategoryFields() {
     const dialogRef = this.dialog.open(AddSubcategoryFieldsComponent);

@@ -29,7 +29,7 @@ export class CategoryManagementComponent implements OnInit {
   ngOnInit() {
     this.fetchCategories();
     this.fetchSubcategories();
-    if(this.categoryFields) {
+    if (this.categoryFields) {
       this.getCategoryFields(this.selectedCategory.id);
     }
   }
@@ -66,7 +66,7 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   deleteCategory(id: number) {
-    this.categoryService.deleteCategory(id).subscribe((res) => {
+    this.categoryService.deleteCategory(id).subscribe(() => {
       this.fetchCategories();
     });
   }
@@ -86,22 +86,22 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   deleteSubcategory(id: number) {
-    this.categoryService.deleteSubcategory(id).subscribe((res) => {
+    this.categoryService.deleteSubcategory(id).subscribe(() => {
       this.fetchSubcategories();
     });
   }
-
-  // fetchCategoryFields() {
-  //   this.categoryService.getCategoryFields(this.selectedCategory.id).subscribe((categoryFields: []) => {
-  //     this.categoryFields = categoryFields;
-  //   });
-  // }
 
   openAddCategoryFields() {
     const dialogRef = this.dialog.open(AddSubcategoryFieldsComponent);
     const instance = dialogRef.componentInstance;
     instance.selectedCategory = this.selectedCategory;
     instance.categoryFields = this.categoryFields;
+  }
+
+  deleteCategoryField(field) {
+    this.categoryService.deleteCategoryField({ categoryID: this.selectedCategory.id, fieldID: field.field_id }).subscribe(() => {
+      this.getCategoryFields(this.selectedCategory.id);
+    });
   }
 
 }

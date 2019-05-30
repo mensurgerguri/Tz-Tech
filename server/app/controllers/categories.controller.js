@@ -131,6 +131,17 @@ exports.saveNewCategoryField = (req, res) => {
     });
 }
 
+exports.deleteCategoryField = (req, res) => {
+
+    let tempObj = req.body.tempObj;console.log(tempObj)
+
+    let qry = "DELETE from `cat_fields_list` WHERE `cat_sub` = 1 AND `cat_subcat_id` = " + tempObj.categoryID + " AND `field_id` = " + tempObj.fieldID;
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record deleted" });
+    });
+}
 
 
 

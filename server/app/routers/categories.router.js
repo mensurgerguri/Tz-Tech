@@ -25,4 +25,6 @@ router.get('/getAllFields', controller.getAllFields);
 
 router.post('/saveNewCategoryField', controller.saveNewCategoryField);
 
+router.post('/deleteCategoryField', controller.deleteCategoryField);
+
 module.exports = router;

@@ -109,9 +109,9 @@ export class CategoryManagementComponent implements OnInit {
     });
   }
 
-  deleteSubcategoryField(subcategoryField: any) {console.log(subcategoryField)
+  deleteSubcategoryField(subcategoryField: any) {
     this.categoryService.deleteSubcategoryField({ identifier: 2, subcategoryID: this.selectedSubcategory.subcat_id, fieldID: subcategoryField.field_id }).subscribe(() => {
-      this.getSubcategoryFields(this.selectedSubcategory.subcat_id);
+      this.getSubcategoryFields(this.selectedSubcategory);
     });
   }
 

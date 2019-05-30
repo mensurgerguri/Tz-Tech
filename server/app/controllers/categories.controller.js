@@ -133,7 +133,7 @@ exports.saveNewCategoryField = (req, res) => {
 
 exports.deleteCategoryField = (req, res) => {
 
-    let tempObj = req.body.tempObj;console.log(tempObj)
+    let tempObj = req.body.tempObj;
 
     let qry = "DELETE from `cat_fields_list` WHERE `cat_sub` = 1 AND `cat_subcat_id` = " + tempObj.categoryID + " AND `field_id` = " + tempObj.fieldID;
 
@@ -157,7 +157,7 @@ exports.saveNewSubcategoryField = (req, res) => {
 
 exports.deleteSubcategoryField = (req, res) => {
 
-    let tempObj = req.body.tempObj;console.log(tempObj)
+    let tempObj = req.body.tempObj;
 
     let qry = "DELETE from `cat_fields_list` WHERE `cat_sub` = 2 AND `cat_subcat_id` = " + tempObj.subcategoryID + " AND `field_id` = " + tempObj.fieldID;
 

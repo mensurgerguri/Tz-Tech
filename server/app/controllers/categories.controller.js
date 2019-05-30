@@ -167,5 +167,27 @@ exports.deleteSubcategoryField = (req, res) => {
     });
 }
 
+exports.saveNewField = (req, res) => {
 
+    let fieldObj = req.body.fieldObj;
 
+    let qry = "INSERT INTO category_fields (name) VALUES('" + fieldObj.newField + "')";
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record inserted" });
+    });
+}
+
+exports.deleteField = (req, res) => {
+
+    let id = req.params.id;
+    let qry = "DELETE from `category_fields` WHERE `field_id` = " + id;
+    
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+    });
+}

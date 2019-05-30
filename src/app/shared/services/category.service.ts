@@ -60,6 +60,13 @@ export class CategoryService {
   public deleteSubcategoryField(tempObj: any): Observable<any> {
     return this.http.post(`http://localhost:8080/categories/deleteSubcategoryField`, { tempObj });
   }
+  
+  public saveNewField(fieldObj: any): Observable<any> {
+    return this.http.post(`http://localhost:8080/categories/saveNewField`, { fieldObj });
+  }
 
+  public deleteField(id: number) {
+    return this.http.get('http://localhost:8080/categories/deleteField/' + id);
+  }
 
 }

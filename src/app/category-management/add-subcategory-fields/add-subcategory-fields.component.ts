@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { MatDialog } from '@angular/material';
+import { FieldsComponent } from '../fields/fields.component';
 
 @Component({
   selector: 'app-add-subcategory-fields',
@@ -15,7 +17,7 @@ export class AddSubcategoryFieldsComponent implements OnInit {
   successMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -52,6 +54,12 @@ export class AddSubcategoryFieldsComponent implements OnInit {
         return element.name;
       }
     }
+  }
+
+  opetFieldsDialog() {
+    const dialogRef = this.dialog.open(FieldsComponent);
+    const instance = dialogRef.componentInstance;
+    instance.allFields = this.allFields;
   }
 
 }

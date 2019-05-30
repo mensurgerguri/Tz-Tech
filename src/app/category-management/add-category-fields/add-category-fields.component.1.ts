@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
-import { MatDialog } from '@angular/material';
-import { FieldsComponent } from '../fields/fields.component';
 
 @Component({
   selector: 'app-add-category-fields',
@@ -17,7 +15,7 @@ export class AddCategoryFieldsComponent implements OnInit {
   successMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -56,9 +54,4 @@ export class AddCategoryFieldsComponent implements OnInit {
     }
   }
 
-  opetFieldsDialog() {
-    const dialogRef = this.dialog.open(FieldsComponent);
-    const instance = dialogRef.componentInstance;
-    instance.allFields = this.allFields;
-  }
 }

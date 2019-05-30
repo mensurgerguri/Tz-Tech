@@ -5,6 +5,6 @@ let router = express.Router();
 let controller = require('../controllers/wishlist.controller.js');
 
 
-router.post('/addwish', controller.addwish);
+router.post('/addWish', controller.addwish);
 
 module.exports = router;

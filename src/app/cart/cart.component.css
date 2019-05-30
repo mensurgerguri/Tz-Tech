@@ -1,0 +1,14 @@
+.wrapper{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.nav{
+    color: white;
+    padding: 0 10px;
+}
+
+.btns a{
+    margin: 1px;
+}

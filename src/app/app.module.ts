@@ -35,6 +35,9 @@ import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { HistoryTableComponent } from './history-table/history-table.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './shared/services/cart.service';
+import { ItemsService } from './shared/services/items.service';
 
 
 
@@ -61,6 +64,7 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
     HistoryTableComponent,
     ProfileCardComponent,
     TrackingOrderComponent,
+    CartComponent,
 
 
   ],
@@ -96,7 +100,7 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService, WishListService],
+  providers: [AuthenticationService, WishListService, CartService, ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

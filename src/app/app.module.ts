@@ -32,6 +32,7 @@ import { CategoryManagementComponent } from './category-management/category-mana
 import { AddCategoryComponent } from './category-management/add-category/add-category.component';
 import { AddSubcategoryComponent } from './category-management/add-subcategory/add-subcategory.component';
 import { AddCategoryFieldsComponent } from './category-management/add-category-fields/add-category-fields.component';
+import { AddSubcategoryFieldsComponent } from './category-management/add-subcategory-fields/add-subcategory-fields.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { AddCategoryFieldsComponent } from './category-management/add-category-f
     CategoryManagementComponent,
     AddCategoryComponent,
     AddSubcategoryComponent,
-    AddCategoryFieldsComponent
+    AddCategoryFieldsComponent,
+    AddSubcategoryFieldsComponent
   ],
   entryComponents: [
     SignUpComponent,
@@ -65,7 +67,8 @@ import { AddCategoryFieldsComponent } from './category-management/add-category-f
     ForgotPassComponent,
     AddCategoryComponent,
     AddSubcategoryComponent,
-    AddCategoryFieldsComponent
+    AddCategoryFieldsComponent,
+    AddSubcategoryFieldsComponent
   ],
   imports: [
     BrowserModule,

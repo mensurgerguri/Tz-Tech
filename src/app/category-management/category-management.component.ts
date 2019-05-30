@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { AddSubcategoryComponent } from './add-subcategory/add-subcategory.component';
 import { AddCategoryFieldsComponent } from './add-category-fields/add-category-fields.component';
+import { AddSubcategoryFieldsComponent } from './add-subcategory-fields/add-subcategory-fields.component';
 
 @Component({
   selector: 'app-category-management',
@@ -15,8 +16,9 @@ export class CategoryManagementComponent implements OnInit {
   categories: [] = [];
   categoryFields: [];
   subCategories: [];
-  subCategoryFields: [];
+  subcategoryFields: [];
   selectedCategory: any;
+  selectedSubcategory: any;
 
   constructor(private categoryService: CategoryService, private dialog: MatDialog) {
     dialog.afterAllClosed
@@ -32,21 +34,24 @@ export class CategoryManagementComponent implements OnInit {
     if (this.categoryFields) {
       this.getCategoryFields(this.selectedCategory.id);
     }
+    if (this.subcategoryFields) {
+      this.getSubcategoryFields(this.selectedSubcategory);
+    }
   }
 
   getSubcategories(category: any) {
     this.categoryService.getSubcategories(category.id).subscribe((subCategories: []) => {
       this.subCategories = subCategories;
-      this.subCategoryFields = [];
     });
     this.selectedCategory = category;
     this.getCategoryFields(category.id);
   }
 
-  getSubcategoryFields(id: number) {
-    this.categoryService.getSubcategoryFields(id).subscribe((subCategoryFields: []) => {
-      this.subCategoryFields = subCategoryFields;
+  getSubcategoryFields(subCategory: any) {
+    this.categoryService.getSubcategoryFields(subCategory.subcat_id).subscribe((subCategoryFields: []) => {
+      this.subcategoryFields = subCategoryFields;
     });
+    this.selectedSubcategory = subCategory.valueOf();
   }
 
   getCategoryFields(id: number) {
@@ -98,10 +103,23 @@ export class CategoryManagementComponent implements OnInit {
     instance.categoryFields = this.categoryFields;
   }
 
-  deleteCategoryField(field) {
+  deleteCategoryField(field: any) {
     this.categoryService.deleteCategoryField({ categoryID: this.selectedCategory.id, fieldID: field.field_id }).subscribe(() => {
       this.getCategoryFields(this.selectedCategory.id);
     });
+  }
+
+  deleteSubcategoryField(subcategoryField: any) {console.log(subcategoryField)
+    this.categoryService.deleteSubcategoryField({ identifier: 2, subcategoryID: this.selectedSubcategory.subcat_id, fieldID: subcategoryField.field_id }).subscribe(() => {
+      this.getSubcategoryFields(this.selectedSubcategory.subcat_id);
+    });
+  }
+
+  openAddSubcategoryFields() {
+    const dialogRef = this.dialog.open(AddSubcategoryFieldsComponent);
+    const instance = dialogRef.componentInstance;
+    instance.selectedSubcategory = this.selectedSubcategory;
+    instance.subcategoryFields = this.subcategoryFields;
   }
 
 }

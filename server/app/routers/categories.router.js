@@ -27,4 +27,8 @@ router.post('/saveNewCategoryField', controller.saveNewCategoryField);
 
 router.post('/deleteCategoryField', controller.deleteCategoryField);
 
+router.post('/saveNewSubcategoryField', controller.saveNewSubcategoryField);
+
+router.post('/deleteSubcategoryField', controller.deleteSubcategoryField);
+
 module.exports = router;

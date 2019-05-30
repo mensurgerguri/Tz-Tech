@@ -53,4 +53,13 @@ export class CategoryService {
     return this.http.post(`http://localhost:8080/categories/deleteCategoryField`, { tempObj });
   }
 
+  public saveNewSubcategoryField(fieldObj: any): Observable<any> {
+    return this.http.post(`http://localhost:8080/categories/saveNewSubcategoryField`, { fieldObj });
+  }
+
+  public deleteSubcategoryField(tempObj: any): Observable<any> {
+    return this.http.post(`http://localhost:8080/categories/deleteSubcategoryField`, { tempObj });
+  }
+
+
 }

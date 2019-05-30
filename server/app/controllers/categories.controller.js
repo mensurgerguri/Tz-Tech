@@ -143,7 +143,29 @@ exports.deleteCategoryField = (req, res) => {
     });
 }
 
+exports.saveNewSubcategoryField = (req, res) => {
 
+    let fieldObj = req.body.fieldObj;
+
+    let qry = "INSERT INTO cat_fields_list (cat_sub, cat_subcat_id, field_id) VALUES('" + fieldObj.identifier + "', '" + fieldObj.subcategoryID + "', '" + fieldObj.fieldID + "')";
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record inserted" });
+    });
+}
+
+exports.deleteSubcategoryField = (req, res) => {
+
+    let tempObj = req.body.tempObj;console.log(tempObj)
+
+    let qry = "DELETE from `cat_fields_list` WHERE `cat_sub` = 2 AND `cat_subcat_id` = " + tempObj.subcategoryID + " AND `field_id` = " + tempObj.fieldID;
+
+    db.query(qry, function (err, result) {
+        if (err) throw err;
+        return res.status(200).send({ "success": "1 record deleted" });
+    });
+}
 
 
 

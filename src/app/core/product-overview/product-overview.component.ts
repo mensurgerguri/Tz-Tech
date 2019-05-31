@@ -1,8 +1,10 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ItemsService } from 'src/app/shared/services/items.service';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { MatSnackBar } from '@angular/material';
+import { Items } from 'src/app/shared/models/Items.model';
+
 
 @Component({
   selector: 'app-product-overview',
@@ -11,22 +13,28 @@ import { MatSnackBar } from '@angular/material';
 })
 
 export class ProductOverviewComponent implements OnInit {
-  counter = 1;
+
+  constructor(private itemsService: ItemsService, private auth: AuthenticationService, public snackBar: MatSnackBar) { }
+  // counter = 0;
   total = 0;
   items: [];
   name: string;
   brand: string;
   category: string;
-  price: number;
-  perPage: number;
-
-  max = this.items;
-  constructor(private itemsService: ItemsService, private auth: AuthenticationService, public snackBar: MatSnackBar) { }
+   price: number;
+   perPage: number;
+   key = 'name';
+   reverse = false;
+  p = 1;
 
   ngOnInit() {
-this.itemsService.getItems().subscribe(res => {
+this.itemsService.getItems().subscribe((res => {
   this.items = res;
-});
+
+  console.log(res);
+
+
+}));
   }
 
   addToCart(id: number) {
@@ -43,17 +51,41 @@ this.itemsService.getItems().subscribe(res => {
     );
   }
 
-  increment(id: number){
-    const itemID = this.itemsService.getItems();
+    increase(item: any) {
+    console.log(item);
+
+    for (let i = 0; i < this.items.length; i++) {
+
+        const element: any = this.items[i];
+        if (element.id === item.id) {
+          if(element.counter <= item.quantity || element.counter > item.quantity && item.quantity > 0) {
+            element.counter += 1;
+            item.quantity--;
+          }
+        }
+
+      }
+    }
+
+
+    decrease(item: any) {
+
+      
+      for (let i = 0; i < this.items.length; i++) {
+        const element: any = this.items[i];
+        if (element.id === item.id) {
+          if(element.counter > 0 && item.quantity >= 0) {
+            item.quantity++;
+            element.counter--;
+          }
+        }
+      }
   }
 
-    increase():void {
-      this.counter += 1;
-    }
 
-    decrease(item_quantity) {
-      this.counter -= 1;
-    }
+
+
+
 
   openSnackBar(message: string, action: string, className: string) {
     // this.snackBar.open('Item has been added to wishlist', action, {
@@ -65,15 +97,10 @@ this.itemsService.getItems().subscribe(res => {
 
 }
 
-key: string = 'name';
-reverse: boolean = false;
-
 sort(key) {
   this.key = key;
   this.reverse = !this.reverse;
 }
-
-p: number = 1;
 }
 
 

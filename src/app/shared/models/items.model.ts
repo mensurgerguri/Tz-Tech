@@ -8,5 +8,6 @@ export interface Items {
     Price: number;
     discount: number;
     percentage: number;
+    counter: number;
 }
 

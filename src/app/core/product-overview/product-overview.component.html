@@ -28,21 +28,27 @@
         <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
             <span class="glyphicon sort-icon"  [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
           </th>
+          <th (click)="sort('price')" class="table-item">Total <i class="fas fa-sort"></i>
+            <span class="glyphicon sort-icon"  [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+          </th>
         <th>Confirmation</th>
       </thead>
     <tbody>
-     <tr *ngFor="let item of items | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 7, currentPage: p }; let i = index">
+     <tr *ngFor="let item of items | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
         <td>{{item.name}}</td>
         <td>{{item.brand}}</td>
         <td><form>
-          <button (click)="decrease()">-</button>
+          <button (click)="decrease(item)">-</button>
           <!-- <span><input type="text" id="quantity" name="quantity" value="{{counter}}" min="1" max="{{item.quantity}}"></span> -->
-          {{counter}}
-          <button (click)="increase()">+</button>
+          <!-- {{item.quantity}} -->
+         {{item.counter}} 
+          <!-- <span id="amount">{{item.quantity}}</span> -->
+          <button (click)="increase(item)">+</button>
         </form>
         <p>({{item.quantity}})</p>
         </td>
-        <td>{{item.Price * counter}}</td>
+        <td>{{item.Price}}</td>
+        <td>{{item.Price * item.counter}}</td>
         <td>
           <span class="btns">
             <button class="btn btn-success" (click)="addToCart(item.id)" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></button>

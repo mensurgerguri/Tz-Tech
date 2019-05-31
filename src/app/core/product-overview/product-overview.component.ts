@@ -1,7 +1,9 @@
 
 import { Component } from '@angular/core';
 import {PageEvent} from '@angular/material';
-
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import { ItemProfileComponent } from '../item-profile/item-profile.component';
+import { ClassName } from 'angular-bootstrap-md/lib/modals/modal.options';
 @Component({
   selector: 'app-product-overview',
   templateUrl: './product-overview.component.html',
@@ -104,6 +106,18 @@ export class ProductOverviewComponent {
   }
 
   p: number = 1;
+  
+  constructor(public snackBar: MatSnackBar) {}
+    
+  openSnackBar(message: string, action: string, className: string) {
+    // this.snackBar.open('Item has been added to wishlist', action, {
+     this.snackBar.open(message, action, {
 
+      duration: 2000,
+      panelClass: [className]
+    });
+
+  
+}
 
 }

@@ -1,6 +1,17 @@
+/* *{
+    background: red; 
+} */
+.blue-snackbar {
+    background: #2196F3;
+}
 thead>tr>th {
     cursor: pointer;
 }
+#snck{
+    background: #424242 !important;
+    font-size: 50px;
+}
+
 
 img{
     height: 120px;
@@ -30,6 +41,41 @@ img{
     margin: 0 auto;
 }
 
-pagination-controls{
-    width: 100%;
+@media (max-width: 770px){
+    th, td {
+        font-size: 0.85rem;
+        width: 90px;
+    }
+
+    .table-item {
+        width: 90px;
+    }
+
+    img{
+        height: 90px;
+        width: 90px;
+    }
+
+    .btn{
+        border-radius: 0;
+        height: 30px;
+        font-size: 0.7rem;
+        margin-bottom: 1px;
+    }
+    .fa-sort{
+        display: none;
+    }
+}
+
+@media (max-width: 650px){
+
+    img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .fa-sort{
+        display: none;
+    }
+    
 }

@@ -6,3 +6,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.dark-snackbar {
+    background: #424242;
+    font-size:  30px;
+    color: white;
+}
+

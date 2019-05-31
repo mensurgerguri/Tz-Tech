@@ -1,0 +1,28 @@
+.wrapper{
+  width:600px;
+  margin: 0 auto;
+}
+
+:host /deep/ ng2-smart-table td {
+  border-bottom: 1px solid rgba(0,0,0, 0.3);
+}
+:host /deep/ ng2-smart-table-title a:focus { color: #009ECE; }
+
+:host /deep/ ng2-smart-table thead > tr > th > div { color: #009ECE; }
+
+:host /deep/ td .ng2-smart-actions a {cursor: pointer;color: #009ECE; font-size: 2rem;}
+
+:host /deep/ ng2-smart-action a{
+  margin-right: 10px;
+}
+
+:host /deep/ ng2-st-thead-form-row{
+  background: red;
+}
+:host /deep/ ng2-smart-table-title a{
+  padding: 10px;
+}
+:host /deep/ .form-control{
+  width: 100px;
+
+}

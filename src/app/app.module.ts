@@ -1,3 +1,7 @@
+
+import { PurchaseService } from './shared/services/Purchase.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,7 +25,8 @@ import { PokusComponent } from './home/pokus/pokus.component';
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
 import { TableComponent } from './table/table.component';
-import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -34,6 +39,15 @@ import { AddSubcategoryComponent } from './category-management/add-subcategory/a
 import { AddCategoryFieldsComponent } from './category-management/add-category-fields/add-category-fields.component';
 import { AddSubcategoryFieldsComponent } from './category-management/add-subcategory-fields/add-subcategory-fields.component';
 import { FieldsComponent } from './category-management/fields/fields.component';
+import { WishListComponent } from './wish-list/wish-list.component';
+import { WishListService } from './shared/services/WishList.service';
+import { Ng2SmartTableModule} from 'ng2-smart-table';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
+import {HistoryTableComponent} from './history-table/history-table.component';
+import { from } from 'rxjs';
+import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+import { TableService } from './table/table.service';
+import { TrackOrderComponent } from './track-order/track-order.component';
 
 
 @NgModule({
@@ -61,6 +75,11 @@ import { FieldsComponent } from './category-management/fields/fields.component';
     AddCategoryFieldsComponent,
     AddSubcategoryFieldsComponent,
     FieldsComponent
+    WishListComponent,
+    ProfileCardComponent,
+    HistoryTableComponent,
+    TrackingOrderComponent,
+    TrackOrderComponent,
   ],
   entryComponents: [
     SignUpComponent,
@@ -90,9 +109,16 @@ import { FieldsComponent } from './category-management/fields/fields.component';
     MatInputModule,
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SmartTableModule,
+    HttpClientModule
   ],
-  providers: [AuthenticationService],
+  // exports: [
+  //   AppModule,
+  //   HeaderComponent,
+  //   FooterComponent,
+  // ],
+  providers: [AuthenticationService, TableService, WishListService, PurchaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
-export class TableService{
-    constructor(private http: HttpClient){}
+export class TableService {
+    constructor(private http: HttpClient) {}
         url = 'http://localhost:4000';
-        getCharacters(){
+        getCharacters() {
             return this.http.get(`${this.url}/characters`);
-        
+
     }
 }

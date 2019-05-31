@@ -46,8 +46,7 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
 import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
-import { TableService } from './table/table.service';
-import { TrackOrderComponent } from './track-order/track-order.component';
+
 
 
 @NgModule({
@@ -79,8 +78,8 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     ProfileCardComponent,
     HistoryTableComponent,
     TrackingOrderComponent,
-    TrackOrderComponent,
   ],
+  
   entryComponents: [
     SignUpComponent,
     SignInComponent,
@@ -118,7 +117,7 @@ import { TrackOrderComponent } from './track-order/track-order.component';
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService, TableService, WishListService, PurchaseService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

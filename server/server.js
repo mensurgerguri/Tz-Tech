@@ -57,6 +57,9 @@ app.use('/wish', wishRouter)
 app.use('/order', purchaseRouter)
 
 
+let categoriesRouter = require('./app/routers/categories.router.js');
+app.use('/categories', categoriesRouter)
+
 let server = app.listen(8080, () => {
 
   let host = server.address().address

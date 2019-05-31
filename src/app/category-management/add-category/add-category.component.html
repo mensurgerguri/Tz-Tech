@@ -1,0 +1,16 @@
+<div class="row" style="min-width: 600px;">
+  <div class="col-sm-12">
+    <p>New Category: </p>
+  </div>
+  <div class="col-sm-12">
+    <input type="text" class="form-control" [(ngModel)]="newCategory">
+  </div>
+  <div class="col-sm-12" *ngIf="successMsg">
+    <p>Successfully saved!</p>
+  </div>
+  <div class="col-sm-12">
+    <button mat-button class="" (click)="saveNewCategory()">Save</button>
+    <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
+  </div>
+
+</div>

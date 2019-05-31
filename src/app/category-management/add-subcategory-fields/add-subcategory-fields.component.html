@@ -1,0 +1,40 @@
+<div class="row" *ngIf="!selectedSubcategory">
+  <div class="col-sm-12">
+    Select subcategory first in order to add subcategory fields to it.
+  </div>
+</div>
+<div class="row" *ngIf="selectedSubcategory">
+  <div class="col-sm-12">
+    <h2>Add fields to <i>{{ selectedSubcategory.name }}</i> subcategory</h2>
+    <hr>
+  </div>
+</div>
+<div class="row" style="min-width: 600px" *ngIf="selectedSubcategory">
+  <div class="col-sm-5">
+    <p>Existing subcategory fields</p>
+    <mat-action-list>
+      <button mat-list-item *ngFor="let subcategoryField of subcategoryFields"> {{ subcategoryField.name }} </button>
+    </mat-action-list>
+  </div>
+  <div class="col-sm-7">
+    <div class="col-sm-12">
+      <p>Add Subcategory Fields: </p>
+    </div>
+    <select class="btn btn-primary" [(ngModel)]="selectedValue">
+      <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
+    </select>
+    <div class="col-sm-12">
+      <button mat-button class="" (click)="saveNewSubcategoryField()">Save</button>
+      <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
+    </div>
+    <div class="col-sm-12" *ngIf="successMsg">
+      <br>
+      <p><i>{{ newField }}</i> successfuly saved to {{ selectedSubcategory.name }}'s fields!</p>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="selectedSubcategory">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" (click)="opetFieldsDialog()">Add Fields</button>
+    </div>
+  </div>

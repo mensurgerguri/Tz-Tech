@@ -29,10 +29,18 @@ import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconM
 import {MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
 import { ProductOverviewComponent } from './core/product-overview/product-overview.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
+import { CategoryManagementComponent } from './category-management/category-management.component';
+import { AddCategoryComponent } from './category-management/add-category/add-category.component';
+import { AddSubcategoryComponent } from './category-management/add-subcategory/add-subcategory.component';
+import { AddCategoryFieldsComponent } from './category-management/add-category-fields/add-category-fields.component';
+import { AddSubcategoryFieldsComponent } from './category-management/add-subcategory-fields/add-subcategory-fields.component';
+import { FieldsComponent } from './category-management/fields/fields.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { WishListService } from './shared/services/WishList.service';
-import { Ng2OrderModule} from 'ng2-order-pipe';
-import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
@@ -40,8 +48,6 @@ import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { TableService } from './table/table.service';
 import { TrackOrderComponent } from './track-order/track-order.component';
-
-
 
 
 @NgModule({
@@ -63,20 +69,28 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
+    CategoryManagementComponent,
+    AddCategoryComponent,
+    AddSubcategoryComponent,
+    AddCategoryFieldsComponent,
+    AddSubcategoryFieldsComponent,
+    FieldsComponent
     WishListComponent,
     ProfileCardComponent,
     HistoryTableComponent,
-    ProfileCardComponent,
     TrackingOrderComponent,
     TrackOrderComponent,
-
-
   ],
   entryComponents: [
     SignUpComponent,
     SignInComponent,
     TermsComponent,
-    ForgotPassComponent
+    ForgotPassComponent,
+    AddCategoryComponent,
+    AddSubcategoryComponent,
+    AddCategoryFieldsComponent,
+    AddSubcategoryFieldsComponent,
+    FieldsComponent
   ],
   imports: [
     BrowserModule,
@@ -104,10 +118,7 @@ import { TrackOrderComponent } from './track-order/track-order.component';
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-
   providers: [AuthenticationService, TableService, WishListService, PurchaseService],
-
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }

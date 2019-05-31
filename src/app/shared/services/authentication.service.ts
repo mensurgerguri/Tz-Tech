@@ -25,6 +25,7 @@ export class AuthenticationService {
   public login(user: TokenPayload): Observable<any> {
     const base = this.http.post('http://localhost:8080/users/login', user);
 
+
     const request = base.pipe(
       map((data: TokenResponse) => {
         if (data.token) {
@@ -101,9 +102,9 @@ export class AuthenticationService {
   }
 
   public isTokenValid() {
-    let expiresOn = new Date(localStorage.getItem('expiresOn'));
+    const expiresOn = new Date(localStorage.getItem('expiresOn'));
     if (new Date() > expiresOn) {
-       this.logout();
+      this.logout();
     } else {
       this.setExpirationDate(expiresOn);
     }

@@ -50,6 +50,7 @@ global.__basedir = __dirname;
 
 let usersRouter = require('./app/routers/user.router.js');
 let wishRouter = require('./app/routers/wish.router.js');
+
 let cartRouter = require('./app/routers/cart.router.js');
 let itemsRouter = require('./app/routers/items.router.js');
 
@@ -60,6 +61,16 @@ app.use('/cart', cartRouter);
 app.use('/items', itemsRouter)
 // app.use('/order', PurchaseRouter)
 
+
+
+let purchaseRouter = require('./app/routers/purchase.router.js');
+app.use('/users', usersRouter)
+app.use('/wish', wishRouter)
+app.use('/order', purchaseRouter)
+
+
+let categoriesRouter = require('./app/routers/categories.router.js');
+app.use('/categories', categoriesRouter)
 
 let server = app.listen(8080, () => {
 

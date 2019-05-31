@@ -1,3 +1,4 @@
+
 // exports.orders = (req, res) => {
 //     let id = req.params.id;
 //     let Ordersqry = "SELECT `id` FROM `orders`" + 1;

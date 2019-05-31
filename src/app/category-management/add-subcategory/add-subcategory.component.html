@@ -1,0 +1,37 @@
+<div class="row" *ngIf="!selectedCategory">
+  <div class="col-sm-12">
+    Select category first in order to add subcategory to it.
+  </div>
+</div>
+<div class="row" *ngIf="selectedCategory">
+  <div class="col-sm-12">
+    <h2>Add subcategory to <i>{{ selectedCategory.name }}</i> category</h2>
+    <hr>
+  </div>
+</div>
+<div class="row" style="min-width: 600px" *ngIf="selectedCategory">
+  <div class="col-sm-5">
+    <p>Existing subcategories</p>
+    <mat-action-list>
+      <button mat-list-item *ngFor="let subCategory of subCategories"> {{ subCategory.name }} </button>
+    </mat-action-list>
+  </div>
+  <div class="col-sm-7">
+    <div class="col-sm-12">
+      <p>Add New Subcategory: </p>
+    </div>
+    <div class="col-sm-12">
+      <input type="text" class="form-control" [(ngModel)]="newSubcategory">
+    </div>
+    <div class="col-sm-12" *ngIf="successMsg">
+      <p>Successfully saved!</p>
+    </div>
+    <div class="col-sm-12">
+      <button mat-button class="" (click)="saveNewSubcategory()">Save</button>
+      <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
+    </div>
+    <div class="col-sm-12" *ngIf="successMsg">
+      <p><i>{{ savedSubcategory }}</i> successfuly saved!</p>
+    </div>
+  </div>
+</div>

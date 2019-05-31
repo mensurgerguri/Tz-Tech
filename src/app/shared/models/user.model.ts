@@ -11,6 +11,7 @@ export interface UserDetails {
     roleId: number;
     exp: number;
     iat: number;
+  subscribe(arg0: (data: any) => any);
 }
 
 export interface TokenResponse {

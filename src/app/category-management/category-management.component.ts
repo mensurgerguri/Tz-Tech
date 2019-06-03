@@ -61,7 +61,9 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   openAddCategoryDialog() {
-    this.dialog.open(AddCategoryComponent);
+    const dialogRef = this.dialog.open(AddCategoryComponent);
+    const instance = dialogRef.componentInstance;
+    instance.categories = this.categories;
   }
 
   openAddSubcategoryDialog() {

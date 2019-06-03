@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { MatDialog } from '@angular/material';
 import { FieldsComponent } from '../fields/fields.component';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-add-category-fields',
@@ -18,14 +19,17 @@ export class AddCategoryFieldsComponent implements OnInit {
   successMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
+  constructor(private categoryService: CategoryService, private dialog: MatDialog, private auth: AuthenticationService) { }
 
 
   fetchAllFields() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;
     });
+
   }
+
+
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -54,6 +58,7 @@ export class AddCategoryFieldsComponent implements OnInit {
         console.error(err);
       }
     );
+   
   }
 
   private getFieldName(id: number): string {

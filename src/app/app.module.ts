@@ -43,6 +43,7 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
 import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+import { ItemsService } from './shared/services/items.service';
 
 
 
@@ -114,7 +115,7 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-
+  providers: [AuthenticationService, ItemsService, PurchaseService, WishListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

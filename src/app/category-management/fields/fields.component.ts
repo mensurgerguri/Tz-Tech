@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-fields',
@@ -12,7 +13,7 @@ export class FieldsComponent implements OnInit {
   newField = '';
   successMsg = false;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private auth: AuthenticationService) { }
 
   ngOnInit() {
   }

@@ -8,9 +8,11 @@
   <div class="col-sm-12" *ngIf="successMsg">
     <p>Successfully saved!</p>
   </div>
+  <div class="col-sm-12" *ngIf="duplicatMsg">
+    <p>Category {{ newCategory }} already exist!</p>
+  </div>
   <div class="col-sm-12">
     <button mat-button class="" (click)="saveNewCategory()">Save</button>
     <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
   </div>
-
 </div>

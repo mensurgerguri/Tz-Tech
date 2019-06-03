@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { CategoryService } from '../shared/services/category.service';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AddCategoryComponent } from './add-category/add-category.component';
@@ -61,7 +61,9 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   openAddCategoryDialog() {
-    this.dialog.open(AddCategoryComponent);
+    const dialogRef = this.dialog.open(AddCategoryComponent);
+    const instance = dialogRef.componentInstance;
+    instance.categories = this.categories;
   }
 
   openAddSubcategoryDialog() {

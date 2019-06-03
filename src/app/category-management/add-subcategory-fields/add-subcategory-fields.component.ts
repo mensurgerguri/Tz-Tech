@@ -30,6 +30,12 @@ export class AddSubcategoryFieldsComponent implements OnInit {
       this.subcategoryFields = subcategoryFields;
     });
   }
+  
+  fetchAllFields() {
+    this.categoryService.getAllFields().subscribe((allFields: []) => {
+      this.allFields = allFields;
+    });
+  }
 
   saveNewSubcategoryField() {
     this.categoryService.saveNewSubcategoryField({ identifier: 2, subcategoryID: this.selectedSubcategory.subcat_id, fieldID: this.selectedValue.field_id }).subscribe(

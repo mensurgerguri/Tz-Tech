@@ -20,7 +20,7 @@
     <div class="col-sm-12">
       <p>Add Subcategory Fields: </p>
     </div>
-    <select class="btn btn-primary" [(ngModel)]="selectedValue">
+    <select class="btn btn-primary" [(ngModel)]="selectedValue" (click)="fetchAllFields()">
       <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
     </select>
     <div class="col-sm-12">
@@ -34,7 +34,7 @@
   </div>
 </div>
 <div class="row" *ngIf="selectedSubcategory">
-    <div class="col-sm-12">
-      <button class="btn btn-primary" (click)="opetFieldsDialog()">Add Fields</button>
-    </div>
+  <div class="col-sm-12">
+    <button class="btn btn-primary" (click)="opetFieldsDialog()">Add / Remove Fields</button>
   </div>
+</div>

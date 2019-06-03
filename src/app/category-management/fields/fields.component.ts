@@ -24,7 +24,6 @@ export class FieldsComponent implements OnInit {
         if (res.success) {
           this.successMsg = true;
           this.fetchAllFields();
-          this.auth.update(this.newField);
         }
       },
       err => {

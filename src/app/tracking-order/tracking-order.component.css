@@ -1,0 +1,40 @@
+.tracking-body{
+    border: 1px solid black;
+    height: 300px;
+    width: 500px;
+    margin: 20px auto;
+    border-bottom:3px solid darkblue;
+}
+.header{
+    background: darkblue;
+    color: white;
+    padding: 5px 0;
+    font-size: 0.95rem;
+}
+.progress{
+    width: 400px;
+    margin: 0 auto;
+
+}
+
+.nav{
+    background: rgb(122, 122, 224);
+    color: white;
+    font-size: 0.9rem;
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-shipped{
+margin: 0 5px;
+}
+
+.nav-status{
+margin-left: 100px;}
+.progress{
+    margin-top:20px;
+}

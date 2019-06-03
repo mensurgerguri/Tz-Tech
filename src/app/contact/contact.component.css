@@ -1,0 +1,25 @@
+.wrapper{
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.btn{
+    border-radius: 0;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+@media(max-width: 850px){
+    .wrapper{
+        max-width: 500px;
+    }
+}
+
+@media(max-width: 540px){
+    .wrapper{
+        max-width: 300px;
+    }
+}

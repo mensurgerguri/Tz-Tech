@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="nav bg-primary">
+    <h3>Your Cart</h3>
+  </div>
+<table class="table">
+  <thead>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Confirmation</th>
+  </thead>
+<tbody>
+ <tr *ngFor='let item of items'>
+    <td>{{item.name}}</td>
+    <td><form>
+      <button class="btn" (click)="decrement()">-</button>
+      <span>{{counter}}</span>
+      <button (click)="increment()">+</button>
+    </form>
+    </td>
+    <td>{{item.Price * counter}}</td>
+    <td>
+      <span class="btns">
+        <button class="btn btn-success"><i class="fas fa-check-square"></i></button>
+        <button (click)="cancelItem()" class="btn btn-secondary"><i class="fas fa-times-circle"></i></button>  
+      </span>     
+    </td>
+  </tr> 
+
+</tbody>
+</table>
+
+</div>

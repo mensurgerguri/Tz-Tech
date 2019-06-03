@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { MatButtonModule, MatButtonToggleModule, MatToolbarModule, MatMenuModule, MatInputModule, MatCheckboxModule, MatIconModule, MatListModule, MatCardModule,MatTableModule, 
-  MatPaginatorModule, MatSortModule } from '@angular/material';
+  MatPaginatorModule, MatSortModule, MatSnackBarModule } from '@angular/material';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule, WavesModule,CardsFreeModule,
@@ -23,7 +23,8 @@ const MaterialComponents = [
   MatCardModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatSnackBarModule
 ]
 @NgModule({
   imports: [

@@ -33,7 +33,9 @@ db.connect((err) => {
 global.db = db;
 
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
 
 
@@ -47,7 +49,25 @@ global.__basedir = __dirname;
 // app.use('/', fileRouter);
 
 let usersRouter = require('./app/routers/user.router.js');
+let wishRouter = require('./app/routers/wish.router.js');
+
+let cartRouter = require('./app/routers/cart.router.js');
+let itemsRouter = require('./app/routers/items.router.js');
+
+// let PurchaseRouter = require('./app/routers/purchase.router.js');
 app.use('/users', usersRouter)
+app.use('/wish', wishRouter)
+app.use('/cart', cartRouter);
+app.use('/items', itemsRouter)
+// app.use('/order', PurchaseRouter)
+
+
+
+let purchaseRouter = require('./app/routers/purchase.router.js');
+app.use('/users', usersRouter)
+app.use('/wish', wishRouter)
+app.use('/order', purchaseRouter)
+
 
 let categoriesRouter = require('./app/routers/categories.router.js');
 app.use('/categories', categoriesRouter)

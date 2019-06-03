@@ -20,7 +20,7 @@
     <div class="col-sm-12">
       <p>Add Category Fields: </p>
     </div>
-    <select class="btn btn-primary" [(ngModel)]="selectedValue">
+    <select class="btn btn-primary" [(ngModel)]="selectedValue" (click)="fetchAllFields()">
       <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
     </select>
     <div class="col-sm-12">

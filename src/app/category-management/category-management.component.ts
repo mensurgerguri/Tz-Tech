@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { CategoryService } from '../shared/services/category.service';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { AddCategoryComponent } from './add-category/add-category.component';

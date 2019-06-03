@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { MatDialog } from '@angular/material';
 import { FieldsComponent } from '../fields/fields.component';
@@ -10,6 +10,7 @@ import { FieldsComponent } from '../fields/fields.component';
 })
 export class AddCategoryFieldsComponent implements OnInit {
 
+
   selectedCategory: any;
   categoryFields = [];
   allFields = [];
@@ -18,6 +19,13 @@ export class AddCategoryFieldsComponent implements OnInit {
   selectedValue;
 
   constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
+
+
+  fetchAllFields() {
+    this.categoryService.getAllFields().subscribe((allFields: []) => {
+      this.allFields = allFields;
+    });
+  }
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -37,6 +45,7 @@ export class AddCategoryFieldsComponent implements OnInit {
 
         if (res.success) {
           this.successMsg = true;
+          this.ngOnInit();
           this.fetchCategoryFields();
           this.newField = this.getFieldName(this.selectedValue.field_id);
         }

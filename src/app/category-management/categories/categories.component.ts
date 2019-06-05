@@ -42,8 +42,9 @@ export class CategoriesComponent implements OnInit {
     });
   }
 
-  getSubcategories(category: any) {
+  fetchSubcategories(category: any) {
     this.selectedCategory = category;
-    this.categoryService.selectedCategory.next(this.selectedCategory)
+    this.categoryService.selectedCategory.next(this.selectedCategory);
   }
+
 }

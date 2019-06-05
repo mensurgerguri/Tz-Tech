@@ -1,0 +1,10 @@
+<h2>Subcategory fields</h2>
+<br>
+<button mat-button (click)="openAddSubcategoryFieldsDialog()" style="width: 100%;">Add new subcategory fields</button>
+<mat-action-list>
+  <div *ngFor="let subcategoryField of subcategoryFields">
+    <button mat-list-item style="width: 80%; display: inline-block;">{{ subcategoryField.name }}</button>
+    <button mat-list-item (click)="deleteSubcategoryField(subcategoryField)"
+      style="width: 20%; display:inline-block;">DEL</button>
+  </div>
+</mat-action-list>

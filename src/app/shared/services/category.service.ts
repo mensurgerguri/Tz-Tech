@@ -7,7 +7,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class CategoryService {
 
-  selectedCategory: BehaviorSubject<any> = new BehaviorSubject<any>('');
+  selectedCategory: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
+  selectedSubcategory: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
+  allFields: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
   constructor(private http: HttpClient) { }
 

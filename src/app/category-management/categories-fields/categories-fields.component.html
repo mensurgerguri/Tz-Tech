@@ -1,0 +1,10 @@
+<h2>Category fields</h2>
+<br>
+<button mat-button (click)="openAddCategoryFields()" style="width: 100%;">Add new category fields</button>
+<mat-action-list>
+  <div *ngFor="let categoryField of categoryFields">
+    <button mat-list-item style="width: 80%; display: inline-block;"> {{ categoryField.name }} </button>
+    <button mat-list-item (click)="deleteCategoryField(categoryField)"
+      style="width: 20%; display:inline-block;">DEL</button>
+  </div>
+</mat-action-list>

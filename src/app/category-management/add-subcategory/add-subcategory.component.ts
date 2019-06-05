@@ -22,7 +22,7 @@ export class AddSubcategoryComponent implements OnInit {
   }
 
   fetchSubcategories() {
-    if (!this.selectedCategory === undefined) {
+    if (this.selectedCategory !== undefined) {
       this.categoryService.getSubcategories(this.selectedCategory.id).subscribe((subCategories: []) => {
         this.subCategories = subCategories;
       });

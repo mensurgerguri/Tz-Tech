@@ -3,7 +3,7 @@
 <button mat-button (click)="openAddCategoryDialog()" style="width: 100%;">Add new category</button>
 <mat-action-list>
   <div *ngFor="let category of categories">
-    <button mat-list-item (click)="getSubcategories(category)" style="width: 80%; display: inline-block;">
+    <button mat-list-item (click)="fetchSubcategories(category)" style="width: 80%; display: inline-block;">
       {{ category.name }} </button>
     <button mat-list-item (click)="deleteCategory(category)" style="width: 20%; display:inline-block;">DEL</button>
   </div>

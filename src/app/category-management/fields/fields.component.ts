@@ -24,6 +24,7 @@ export class FieldsComponent implements OnInit {
         if (res.success) {
           this.successMsg = true;
           this.fetchAllFields();
+          this.categoryService.allFields.next(this.allFields);
         }
       },
       err => {

@@ -17,11 +17,17 @@ export class AddSubcategoryFieldsComponent implements OnInit {
   successMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
+  constructor(private categoryService: CategoryService, private dialog: MatDialog) {
+    this.categoryService.allFields.subscribe(allFields => {
+      this.allFields = allFields;
+      this.fetchAllFields();
+    });
+  }
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;
+      this.selectedValue = this.allFields[0].field_id;
     });
   }
 
@@ -30,7 +36,7 @@ export class AddSubcategoryFieldsComponent implements OnInit {
       this.subcategoryFields = subcategoryFields;
     });
   }
-  
+
   fetchAllFields() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;

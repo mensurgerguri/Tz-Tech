@@ -3,9 +3,9 @@
 <button mat-button (click)="openAddSubcategoryDialog()" style="width: 100%;">Add new subcategory</button>
 <mat-action-list>
   <div *ngFor="let subCategory of subCategories">
-    <button mat-list-item (click)="getSubcategoryFields(subCategory)" style="width: 80%; display: inline-block;">
+    <button mat-list-item (click)="fetchSubcategoriesFields(subCategory)" style="width: 80%; display: inline-block;">
       {{ subCategory.name }} </button>
-    <button mat-list-item (click)="deleteSubcategory(subCategory.subcat_id)"
+    <button mat-list-item (click)="deleteSubcategory(subCategory)"
       style="width: 20%; display:inline-block;">DEL</button>
   </div>
 </mat-action-list>

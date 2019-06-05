@@ -19,8 +19,12 @@ export class AddCategoryFieldsComponent implements OnInit {
   successMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService, private dialog: MatDialog, private auth: AuthenticationService) { }
-
+  constructor(private categoryService: CategoryService, private dialog: MatDialog, private auth: AuthenticationService) {
+    this.categoryService.allFields.subscribe(allFields => {
+      this.allFields = allFields;
+      this.fetchAllFields();
+    });
+  }
 
   fetchAllFields() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -28,8 +32,6 @@ export class AddCategoryFieldsComponent implements OnInit {
     });
 
   }
-
-
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
@@ -58,7 +60,6 @@ export class AddCategoryFieldsComponent implements OnInit {
         console.error(err);
       }
     );
-   
   }
 
   private getFieldName(id: number): string {

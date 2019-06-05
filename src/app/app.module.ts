@@ -46,6 +46,8 @@ import { TrackingOrderComponent } from './tracking-order/tracking-order.componen
 import { ItemsService } from './shared/services/items.service';
 import { CategoriesComponent } from './category-management/categories/categories.component';
 import { SubcategoriesComponent } from './category-management/subcategories/subcategories.component';
+import { CategoriesFieldsComponent } from './category-management/categories-fields/categories-fields.component';
+import { SubcategoriesFieldsComponent } from './category-management/subcategories-fields/subcategories-fields.component';
 
 
 
@@ -80,6 +82,8 @@ import { SubcategoriesComponent } from './category-management/subcategories/subc
     TrackingOrderComponent,
     CategoriesComponent,
     SubcategoriesComponent,
+    CategoriesFieldsComponent,
+    SubcategoriesFieldsComponent,
   ],
   
   entryComponents: [

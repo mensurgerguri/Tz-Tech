@@ -12,15 +12,21 @@ export class SubcategoriesComponent implements OnInit {
 
   subCategories: [];
   selectedCategory: any;
+  selectedSubcategory: any;
 
   constructor(private categoryService: CategoryService, private dialog: MatDialog) {
+    dialog.afterAllClosed.subscribe(() => {
+      this.ngOnInit();
+    });
+
     this.categoryService.selectedCategory.subscribe(selectedCategory => {
       this.selectedCategory = selectedCategory;
       this.fetchSubcategories();
-  });
+    });
   }
 
   ngOnInit() {
+    this.fetchSubcategories();
   }
 
   fetchSubcategories() {
@@ -36,6 +42,17 @@ export class SubcategoriesComponent implements OnInit {
     const instance = dialogRef.componentInstance;
     instance.selectedCategory = this.selectedCategory;
     instance.subCategories = this.subCategories;
+  }
+
+  deleteSubcategory(category: any) {
+    this.categoryService.deleteSubcategory(category.subcat_id).subscribe(() => {
+      this.fetchSubcategories();
+    });
+  }
+
+  fetchSubcategoriesFields(selectedSubcategory: any) {
+    this.selectedSubcategory = selectedSubcategory;
+    this.categoryService.selectedSubcategory.next(this.selectedSubcategory);
   }
 
 }

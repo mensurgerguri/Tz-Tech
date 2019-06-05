@@ -7,7 +7,7 @@ exports.listItems = (req, res) => {
         return res.status(500).send(err);
       }
       return res.status(200).send(result);
-    })
+    });
 }
 
 // exports.cancelItem = (req, res) => {

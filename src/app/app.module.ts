@@ -1,4 +1,4 @@
-
+//import { BlobService } from './shared/services/blob.service';
 import { PurchaseService } from './shared/services/Purchase.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
@@ -24,7 +24,7 @@ import { FeaturedProductsComponent } from './home/featured-products/featured-pro
 import { PokusComponent } from './home/pokus/pokus.component';
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
-import { TableComponent } from './table/table.component';
+// import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
@@ -36,11 +36,7 @@ import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
-import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
-import { TableService } from './table/table.service';
-import { TrackOrderComponent } from './track-order/track-order.component';
-
 
 
 
@@ -59,7 +55,7 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     NewProductsComponent,
     FeaturedProductsComponent,
     PokusComponent,
-    TableComponent,
+    // TableComponent,
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
@@ -67,9 +63,7 @@ import { TrackOrderComponent } from './track-order/track-order.component';
     ProfileCardComponent,
     HistoryTableComponent,
     ProfileCardComponent,
-    TrackingOrderComponent,
-    TrackOrderComponent,
-
+    TrackingOrderComponent
 
   ],
   entryComponents: [
@@ -105,9 +99,7 @@ import { TrackOrderComponent } from './track-order/track-order.component';
   //   FooterComponent,
   // ],
 
-  providers: [AuthenticationService, TableService, WishListService, PurchaseService],
-
-
+  providers: [AuthenticationService, WishListService, PurchaseService],//BlobService
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,7 +32,7 @@
 
           *ngFor="let wish of wish | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
 
-          <td><img src={{wish.Image}}></td>
+          <td><img src='imageBlobUrl'></td>
           <td class="table-item">{{wish.name}}</td>
           <td class="table-item">{{wish.brand}}</td>
           <td class="table-item">{{wish.Price}}</td>

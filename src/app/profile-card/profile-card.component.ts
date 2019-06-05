@@ -1,8 +1,8 @@
+import { AuthenticationService } from './../shared/services/authentication.service';
 
 import { UserDetails } from './../shared/models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { UserData } from './../core/dummy-component/dummy-component.component';
-import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -13,16 +13,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileCardComponent implements OnInit {
 
-  UserDetails: any;
-
   constructor(private auth: AuthenticationService, private HttpClient: HttpClient) { }
 
-  user: UserDetails;
+  UserDetails: any;
+
+  user: any;
 
   ngOnInit() {
-  this.user = this.auth.getUserDetails();
 
- }
+    this.address();
   }
 
+  public address() {
+
+    this.auth.address().subscribe((res: any) => {
+      console.log(res[0]);
+      this.user = res[0];
+  });
+}
+}
 

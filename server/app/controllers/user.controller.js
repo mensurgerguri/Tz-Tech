@@ -189,3 +189,19 @@ exports.emails = (req, res) => {
         return res.status(200).send(result);
     });
 }
+
+    exports.address = (req, res) => {
+     let id = req.params.id;
+     //console.log(id);
+      //let query = "SELECT address_id FROM `address` JOIN `users` ON address.id = users.address_id WHERE users.id = 1"
+      //let query = "SELECT address_id FROM `users` JOIN `address` ON users.address_id = address.id WHERE users.id = 1 ";
+      let query = "SELECT * FROM `users` JOIN `address` ON users.address_id = address.id WHERE users.id = 1";
+      console.log(query);
+      db.query(query, (err, result) => {
+              console.log(result);
+        if(err) {
+          return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+      });
+    }

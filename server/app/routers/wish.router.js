@@ -11,6 +11,7 @@ router.post('/addWish', controller.addwish);
 router.post('/addwish', controller.addwish);
 router.get('/getWishes/:id', controller.getWishes);
 router.get('/deleteWish/:id', controller.deleteWish);
+// router.post('/getThumbnail', controller.generateThumbnail)
 
 
 module.exports = router;

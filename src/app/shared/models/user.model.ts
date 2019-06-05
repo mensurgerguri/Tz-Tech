@@ -5,7 +5,7 @@ export interface UserDetails {
     password: string;
     firstName: string;
     lastName: string;
-    addressId: number;
+    addressId: any;
     phone: string;
     profileImage: string;
     roleId: number;

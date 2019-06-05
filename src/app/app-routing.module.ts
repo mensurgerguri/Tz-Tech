@@ -10,6 +10,14 @@ const routes: Routes = [
   { path: 'categories', component: CategoryManagementComponent },
   {path: 'profile', component: ProfileComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' }
+import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
+
+
+const routes: Routes = [
+  {path: '', component: HomeComponent },
+  {path: 'tracking-order', component: TrackingOrderComponent},
+  {path: 'profile', component: ProfileComponent}
+
 ];
 
 @NgModule({

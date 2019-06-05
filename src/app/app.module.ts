@@ -1,3 +1,4 @@
+//import { BlobService } from './shared/services/blob.service';
 import { PurchaseService } from './shared/services/Purchase.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DummyComponentComponent } from './core/dummy-component/dummy-component.component';
@@ -23,7 +24,7 @@ import { FeaturedProductsComponent } from './home/featured-products/featured-pro
 import { PokusComponent } from './home/pokus/pokus.component';
 import { SignInComponent } from './core/header/sign-in/sign-in.component';
 import { SignUpComponent } from './core/header/sign-up/sign-up.component';
-import { TableComponent } from './table/table.component';
+// import { TableComponent } from './table/table.component';
 import { MatTableModule, MatSortModule, MatSelectModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ForgotPassComponent } from './core/header/sign-in/forgot-pass/forgot-pass.component';
@@ -41,7 +42,6 @@ import { WishListService } from './shared/services/WishList.service';
 import { Ng2SmartTableModule} from 'ng2-smart-table';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
-import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { ItemsService } from './shared/services/items.service';
 
@@ -62,7 +62,7 @@ import { ItemsService } from './shared/services/items.service';
     NewProductsComponent,
     FeaturedProductsComponent,
     PokusComponent,
-    TableComponent,
+    // TableComponent,
     ForgotPassComponent,
     ProductOverviewComponent,
     DummyComponentComponent,
@@ -76,6 +76,9 @@ import { ItemsService } from './shared/services/items.service';
     ProfileCardComponent,
     HistoryTableComponent,
     TrackingOrderComponent,
+    ProfileCardComponent,
+    TrackingOrderComponent
+
   ],
   
   entryComponents: [
@@ -115,7 +118,8 @@ import { ItemsService } from './shared/services/items.service';
   //   HeaderComponent,
   //   FooterComponent,
   // ],
-  providers: [AuthenticationService, ItemsService, PurchaseService, WishListService],
+
+  providers: [AuthenticationService, WishListService, PurchaseService,ItemsService,],//BlobService
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,14 +3,13 @@ import { UserData } from './../../core/dummy-component/dummy-component.component
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { UserDetails } from './../models/user.model';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Wish } from '../models/Wish.model';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-
 
 
 @Injectable()

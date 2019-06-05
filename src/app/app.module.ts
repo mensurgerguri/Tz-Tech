@@ -44,6 +44,8 @@ import {HistoryTableComponent} from './history-table/history-table.component';
 import { from } from 'rxjs';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { ItemsService } from './shared/services/items.service';
+import { CategoriesComponent } from './category-management/categories/categories.component';
+import { SubcategoriesComponent } from './category-management/subcategories/subcategories.component';
 
 
 
@@ -76,6 +78,8 @@ import { ItemsService } from './shared/services/items.service';
     ProfileCardComponent,
     HistoryTableComponent,
     TrackingOrderComponent,
+    CategoriesComponent,
+    SubcategoriesComponent,
   ],
   
   entryComponents: [

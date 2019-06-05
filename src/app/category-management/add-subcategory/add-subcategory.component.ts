@@ -22,9 +22,11 @@ export class AddSubcategoryComponent implements OnInit {
   }
 
   fetchSubcategories() {
-    this.categoryService.getSubcategories(this.selectedCategory.id).subscribe((subCategories: []) => {
-      this.subCategories = subCategories;
-    });
+    if (!this.selectedCategory === undefined) {
+      this.categoryService.getSubcategories(this.selectedCategory.id).subscribe((subCategories: []) => {
+        this.subCategories = subCategories;
+      });
+    }
   }
 
   saveNewSubcategory() {

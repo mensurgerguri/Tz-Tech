@@ -44,8 +44,10 @@ import { ProfileCardComponent } from './profile-card/profile-card.component';
 import {HistoryTableComponent} from './history-table/history-table.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { ItemsService } from './shared/services/items.service';
-
-
+import { CartComponent} from './cart/cart.component'
+import { from } from 'rxjs';
+import { CartService } from './shared/services/cart.service';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { ItemsService } from './shared/services/items.service';
     HistoryTableComponent,
     TrackingOrderComponent,
     ProfileCardComponent,
-    TrackingOrderComponent
+    TrackingOrderComponent,
+    CartComponent,
+    ContactComponent
 
   ],
   
@@ -119,7 +123,7 @@ import { ItemsService } from './shared/services/items.service';
   //   FooterComponent,
   // ],
 
-  providers: [AuthenticationService, WishListService, PurchaseService,ItemsService,],//BlobService
+  providers: [AuthenticationService, WishListService, PurchaseService,ItemsService, CartService],//BlobService
   bootstrap: [AppComponent]
 })
 export class AppModule { }

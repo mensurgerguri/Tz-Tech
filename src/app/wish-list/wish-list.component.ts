@@ -21,7 +21,7 @@ export class WishListComponent implements OnInit {
   router: any;
   // imageBlobUrl: string | ArrayBuffer;
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private auth: AuthenticationService, private WishListService: WishListService) { }
+  constructor(private auth: AuthenticationService, private WishListService: WishListService, public snackBar: MatSnackBar) { }
 
   // details: UserDetails;
   wish: Wish[];
@@ -50,49 +50,33 @@ export class WishListComponent implements OnInit {
   });
 }
 
-  // getThumbnail(): void {
-  //   this.blobService.getBlobThumbnail()
-  //     .subscribe(
-  //       (val) => {
-  //         console.log("POST - getThumbnail- successful value returned in body", val);
-  //         //this.turl = val; //<====== Set value here
-  //         this.createImageFromBlob(val);
-  //       },
-  //       response => {
-  //         console.log("POST - getThumbnail - in error", response);
-  //       },
-  //       () => {
-  //         console.log("POST - getThumbnail - observable is now completed.");
-  //       });
-  // }
+addToCart(id: number) {
 
-  // createImageFromBlob(image: Blob) {
-  //   console.log("Call createImageFromBlob()", image);
-  //   let reader = new FileReader();
-  //   reader.addEventListener("load", () => {
-  //     this.imageBlobUrl = reader.result;
-  //   }, false);
+  const userID = this.auth.getUserDetails().id;
+  const location = 1;
+/////////////////////////////////
 
-  //   if (image) {
-  //     reader.readAsDataURL(image);
-  //   }
-  // }
-
-
+  this.WishListService.addToCart({ itemID: id, userID, location}).subscribe(
+  (res) => {},
+  err => {
+    console.error(err);
+  }
+  );
+}
   sort(key) {
     this.key = key;
     this.reverse = !this.reverse;
   }
 
-  // openSnackBar(message: string, action: string, className: string) {
-  //   // this.snackBar.open('Item has been added to wishlist', action, {
-  //   this.snackBar.open(message, action, {
+  openSnackBar(message: string, action: string, className: string) {
+    // this.snackBar.open('Item has been added to wishlist', action, {
+    this.snackBar.open(message, action, {
 
-  //     duration: 2000,
-  //     panelClass: [className]
-  //   });
+      duration: 2000,
+      panelClass: [className]
+    });
 
-  //   }
+    }
 
   }
 

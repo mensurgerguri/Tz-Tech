@@ -61,6 +61,8 @@ app.use('/wish', wishRouter);
 let categoriesRouter = require('./app/routers/categories.router.js');
 app.use('/categories', categoriesRouter);
 
+let purchaseRouter = require('./app/routers/purchase.router.js');
+app.use('/order', purchaseRouter);
 
 let server = app.listen(8080, () => {
 

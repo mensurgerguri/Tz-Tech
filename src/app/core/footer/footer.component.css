@@ -6,7 +6,7 @@
     bottom: 0;*/
     border-top: 3px solid white;
     height: 50px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 
 }
 
@@ -27,11 +27,12 @@ h3{
     bottom: 0; */
     width: 100%;
     background:#0046BE;
-     position: relative; 
+     /* position: absolute;  */
     height: 120px;
-    /* margin-top: -100px; */
+    margin-top: 100px;
     clear: both; 
     padding-bottom: 50px;
+    /* bottom: 0; */
     
 }
 
@@ -86,7 +87,7 @@ a:hover{
     bottom: 0;
     height: 400px;
     }*/
-    .footer-wrapper{
+    /* .footer-wrapper{
          position: relative;
         height: 400px;
         margin-top: -100px;
@@ -102,6 +103,10 @@ a:hover{
         display: block;
 
          width: 100% !important; 
-    } 
+    }  */
+
+    .footer-wrapper{
+        display: none;
+    }
     
 }

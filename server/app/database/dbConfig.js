@@ -3,7 +3,7 @@ var config = {
         database: {
             host: 'localhost',
             user: 'root',
-            password: '',
+            password: 'pass',
             database: 'tztech',
             multipleStatements: true,
             dialect: 'mysql',

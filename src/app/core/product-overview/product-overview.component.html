@@ -39,10 +39,7 @@
         <td>{{item.brand}}</td>
         <td><form>
           <button (click)="decrease(item)">-</button>
-          <!-- <span><input type="text" id="quantity" name="quantity" value="{{counter}}" min="1" max="{{item.quantity}}"></span> -->
-          <!-- {{item.quantity}} -->
          {{item.counter}} 
-          <!-- <span id="amount">{{item.quantity}}</span> -->
           <button (click)="increase(item)">+</button>
         </form>
         <p>({{item.quantity}})</p>

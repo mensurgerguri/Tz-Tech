@@ -13,6 +13,11 @@
 
 }
 
+.routed{
+    text-decoration: none;
+    color: white;
+}
+
 .tz{
     border: 5px solid white;
     border-right: 0px solid white;
@@ -130,7 +135,7 @@ font-size: 1.5rem;
     width: 180px;
     }
 }
-@media(max-width: 700px){
+@media(max-width: 730px){
     .gornji{
         display: none;
     }
@@ -145,7 +150,7 @@ font-size: 1.5rem;
 
 @media(max-width: 590px){
     .searchbox{
-        max-width: 300px;
+        max-width: 240px;
     }
 }
 @media(max-width: 500px ){
@@ -180,7 +185,9 @@ font-size: 1.5rem;
         color:red !important;
         font-size: 1rem;
     }
-
+    .deals{
+        display: none;
+    }
 }
 
 @media(max-width: 440px){

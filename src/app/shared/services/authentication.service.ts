@@ -37,6 +37,11 @@ export class AuthenticationService {
     return request;
   }
 
+  public address(): Observable<any> {
+return this.http.get <any>('http://localhost:8080/users/address');
+  }
+
+
   private saveToken(token: string): void {
     localStorage.setItem('usertoken', token);
     this.token = token;

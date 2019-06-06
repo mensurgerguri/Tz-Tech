@@ -70,7 +70,6 @@ this.itemsService.getItems().subscribe((res => {
 
     decrease(item: any) {
 
-      
       for (let i = 0; i < this.items.length; i++) {
         const element: any = this.items[i];
         if (element.id === item.id) {
@@ -81,11 +80,6 @@ this.itemsService.getItems().subscribe((res => {
         }
       }
   }
-
-
-
-
-
 
   openSnackBar(message: string, action: string, className: string) {
     // this.snackBar.open('Item has been added to wishlist', action, {

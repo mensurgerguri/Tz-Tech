@@ -39,8 +39,6 @@ export class HistoryTableComponent {
       duration: 2000,
       panelClass: [className]
     });
-
-
   }
 
 }

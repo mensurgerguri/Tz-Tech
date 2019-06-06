@@ -32,16 +32,18 @@
 
           *ngFor="let wish of wish | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
 
-          <td><img src={{wish.Image}}></td>
+          <!-- <td><img src='imageBlobUrl'></td> -->
+          <td>img</td>
           <td class="table-item">{{wish.name}}</td>
           <td class="table-item">{{wish.brand}}</td>
           <td class="table-item">{{wish.Price}}</td>
           <td class="table-item">
             <span class="btns">
-                <button type="button" class="btn btn-primary" (click)="deleteWish()">Delete</button>
+                <button type="button" class="btn btn-primary" (click)="deleteWish()"><i  class="fas fa-times-circle"></i></button>
+               <button class="btn btn-success" (click)="addToCart(wish.id)" (click)="openSnackBar('Item has been added to cart', 'X', 'dark-snackbar')"><i class="fas fa-shopping-cart"></i></button>
+
                 <br>
-                <button type="button" class="btn btn-secondary"(click)="AddtoCart()">Add cart</button>
-            </span>
+              </span>
           </td>
         </tr>
       </tbody>
@@ -51,5 +53,3 @@
 <div class="page-number d-flex justify-content-center">
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
-
-

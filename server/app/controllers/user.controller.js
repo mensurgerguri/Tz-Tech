@@ -2,7 +2,6 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const nodemailer = require('nodemailer');
 
-
 process.env.SECRET_KEY = 'secret'
 
 
@@ -50,7 +49,7 @@ exports.resetPassword = (req, res) => {
                 const hiddenEmailOutput = req.body.email.substring(0, 2) + '*****@tztech.com';
                 const output = `
                     <h3>TzTech account</h3>
-                    <h1>Password reset code</h1> 
+                    <h1>Password reset code</h1>
                     <br>
                     <p>Please use this code to reset the password for TzTech account</p>
                     <p><a>${ hiddenEmailOutput }</a></p>
@@ -68,7 +67,7 @@ exports.resetPassword = (req, res) => {
                         text: "Your login informations",
                         html: output
                     };
-                
+
                 sendMail(req, res, mailOptions);
 
             } else {
@@ -135,7 +134,7 @@ createUser = (req, res) => {
             const output = `
                 <p> Thank you for registering on TzTech website</p>
                 <p>Your Password is:<b> ${req.body.password}</b></p>
-                
+
                 <p>Please contact as for any information.</p>
                 <p>Thanks,</p>
                 <p>The TzTech account team</p>`;
@@ -156,7 +155,7 @@ createUser = (req, res) => {
 }
 
 sendMail = (req, res, mailOptions) => {
-    //create reusable transporter object using the default SMTP transport 
+    //create reusable transporter object using the default SMTP transport
     let transport = nodemailer.createTransport({
         host: 'smtp.live.com',
         port: 587,
@@ -190,3 +189,19 @@ exports.emails = (req, res) => {
         return res.status(200).send(result);
     });
 }
+
+    exports.address = (req, res) => {
+     let id = req.params.id;
+     //console.log(id);
+      //let query = "SELECT address_id FROM `address` JOIN `users` ON address.id = users.address_id WHERE users.id = 1"
+      //let query = "SELECT address_id FROM `users` JOIN `address` ON users.address_id = address.id WHERE users.id = 1 ";
+      let query = "SELECT * FROM `users` JOIN `address` ON users.address_id = address.id WHERE users.id = 1";
+      console.log(query);
+      db.query(query, (err, result) => {
+              console.log(result);
+        if(err) {
+          return res.status(500).send(err);
+        }
+        return res.status(200).send(result);
+      });
+    }

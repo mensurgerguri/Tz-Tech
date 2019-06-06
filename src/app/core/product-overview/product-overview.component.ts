@@ -1,114 +1,86 @@
 
-import { Component } from '@angular/core';
-import {PageEvent} from '@angular/material';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
-import { ItemProfileComponent } from '../item-profile/item-profile.component';
-import { ClassName } from 'angular-bootstrap-md/lib/modals/modal.options';
+import { Component, OnInit, Input } from '@angular/core';
+import { ItemsService } from 'src/app/shared/services/items.service';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+import { MatSnackBar } from '@angular/material';
+import { Items } from 'src/app/shared/models/Items.model';
+
+
 @Component({
   selector: 'app-product-overview',
   templateUrl: './product-overview.component.html',
   styleUrls: ['./product-overview.component.css']
 })
 
-export class ProductOverviewComponent {
-  img: string;
+export class ProductOverviewComponent implements OnInit {
+
+  constructor(private itemsService: ItemsService, private auth: AuthenticationService, public snackBar: MatSnackBar) { }
+  // counter = 0;
+  total = 0;
+  items: [];
   name: string;
   brand: string;
   category: string;
-  price: number;
-  perPage: number;
-  items = [
-    {
-      "id": "1",
-      "img": 'https://static.toiimg.com/photo/64171591/Samsung-Galaxy-S10.jpg',
-      "name": "Galaxy J3",
-      "brand": "Samsung",
-      "category": "Mobile",
-      "price": 250.00
-    },
-    {
-      "id": "2",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "X700",
-      "brand": "ASUS",
-      "category": "Laptop",
-      "price": 200.00
-    },
-    {
-      "id": "3",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "Notebook",
-      "brand": "HP",
-      "category": "Laptop",
-      "price": 300.00
-    },
-    {
-      "id": "4",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "9s",
-      "brand": "Apple",
-      "category": "Mobile",
-      "price": 375.00
-    },
-    {
-      "id": "5",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "A35",
-      "brand": "Tesla",
-      "category": "TV",
-      "price": 1000.00
-    },
-    {
-      "id": "6",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "ProBook",
-      "brand": "HP",
-      "category": "Laptop",
-      "price": 750.00
-    },
-    {
-      "id": "7",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "iMac",
-      "brand": "Apple",
-      "category": "PC",
-      "price": 2200.00
-    }, {
-      "id": "8",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "LT2",
-      "brand": "IBM",
-      "category": "Laptop",
-      "price": 100.00
-    }, {
-      "id": "9",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "G7000",
-      "brand": "ROG",
-      "category": "PC",
-      "price": 350.00
-    }, {
-      "id": "10",
-      "img": 'https://laptoping.com/specs/wp-content/uploads/2015/01/Lenovo-ThinkPad-T480s-20L70028US-20L7002BUS.jpg',
-      "name": "T210",
-      "brand": "Lenovo",
-      "category": "Laptop",
-      "price": 1000.00
-    }
-  ];
-  //sorting
-  key: string = 'name';
-  reverse: boolean = false;
+   price: number;
+   perPage: number;
+   key = 'name';
+   reverse = false;
+  p = 1;
 
-  sort(key) {
-    this.key = key;
-    this.reverse = !this.reverse;
+  ngOnInit() {
+this.itemsService.getItems().subscribe((res => {
+  this.items = res;
+
+  console.log(res);
+
+
+}));
   }
 
-  p: number = 1;
-  
-  constructor(public snackBar: MatSnackBar) {}
-    
+  addToCart(id: number) {
+
+    const userID = this.auth.getUserDetails().id;
+    const location = 1;
+  /////////////////////////////////
+
+    this.itemsService.addToCart({ itemID: id, userID, location}).subscribe(
+    (res) => {},
+    err => {
+      console.error(err);
+    }
+    );
+  }
+
+    increase(item: any) {
+    console.log(item);
+
+    for (let i = 0; i < this.items.length; i++) {
+
+        const element: any = this.items[i];
+        if (element.id === item.id) {
+          if(element.counter <= item.quantity || element.counter > item.quantity && item.quantity > 0) {
+            element.counter += 1;
+            item.quantity--;
+          }
+        }
+
+      }
+    }
+
+
+    decrease(item: any) {
+
+      for (let i = 0; i < this.items.length; i++) {
+        const element: any = this.items[i];
+        if (element.id === item.id) {
+          if(element.counter > 0 && item.quantity >= 0) {
+            item.quantity++;
+            element.counter--;
+          }
+        }
+      }
+  }
+
   openSnackBar(message: string, action: string, className: string) {
     // this.snackBar.open('Item has been added to wishlist', action, {
      this.snackBar.open(message, action, {
@@ -117,7 +89,12 @@ export class ProductOverviewComponent {
       panelClass: [className]
     });
 
-  
 }
 
+sort(key) {
+  this.key = key;
+  this.reverse = !this.reverse;
 }
+}
+
+

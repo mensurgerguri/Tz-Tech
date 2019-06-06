@@ -1,0 +1,108 @@
+
+/*########################## PROFILE CARD #############################*/
+#user-profile {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  width: 600px;
+  height: 350px;
+  margin: 20px 0 0 20px;
+}
+
+.user-profile__title {
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+}
+
+.user-info__list {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.user-info {
+  margin: 0 auto;
+  color: black;
+  /* padding: 0 25px 0 50px; */
+  padding-left: 75px;
+}
+
+.user-profile__container {
+  width: 100%;
+  /* height: 130px; */
+  height: 70px;
+  background: rgba(0, 0, 0, 0.8);
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.user-profile__image {
+  background: red;
+  width: 120px;
+  height: 120px;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.user-info__data {
+  margin-left: 5px;
+  text-align: left;
+}
+
+.user-info__data i {
+  margin-right: 5px;
+}
+
+.btn {
+  border-radius: 0;
+  margin-left: 5px;
+  width: 60px;
+}
+
+@media(max-width: 1250px) {
+  #user-profile {
+    width: 205px;
+
+  }
+  .btn {
+    margin-left: 50px;
+  }
+
+  .user-info__data {
+    margin-left: 60px;
+    text-align: left;
+  }
+
+  .user-info__data i {
+    margin-right: 5px;
+  }
+
+}
+
+@media(max-width: 1500px) {
+  #user-profile {
+    width: 410px;
+    margin: 10px auto;
+  }
+  .btn-block{
+    width: 410px;
+    margin-left: 0;
+  }
+  .user-info__data {
+    /* margin-left: 150px; */
+    text-align: left;
+  }
+
+  .user-info__data i {
+    margin-right: 5px;
+  }
+}
+
+@media(max-width: 750px){
+  #user-profile{
+    width: 350px;
+  }
+  .btn-block{
+    width: 410px;
+  }
+}
+

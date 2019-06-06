@@ -25,6 +25,7 @@ export class AuthenticationService {
   public login(user: TokenPayload): Observable<any> {
     const base = this.http.post('http://localhost:8080/users/login', user);
 
+
     const request = base.pipe(
       map((data: TokenResponse) => {
         if (data.token) {
@@ -35,6 +36,11 @@ export class AuthenticationService {
     );
     return request;
   }
+
+  public address(): Observable<any> {
+return this.http.get <any>('http://localhost:8080/users/address');
+  }
+
 
   private saveToken(token: string): void {
     localStorage.setItem('usertoken', token);
@@ -74,7 +80,7 @@ export class AuthenticationService {
 
   private getToken(): string {
     if (!this.token) {
-      this.token = localStorage.getItem('usertoken')
+      this.token = localStorage.getItem('usertoken');
     }
     return this.token;
   }
@@ -101,9 +107,9 @@ export class AuthenticationService {
   }
 
   public isTokenValid() {
-    let expiresOn = new Date(localStorage.getItem('expiresOn'));
+    const expiresOn = new Date(localStorage.getItem('expiresOn'));
     if (new Date() > expiresOn) {
-       this.logout();
+      this.logout();
     } else {
       this.setExpirationDate(expiresOn);
     }
@@ -122,6 +128,6 @@ export class AuthenticationService {
     this.token = '';
     window.localStorage.removeItem('usertoken');
     window.localStorage.removeItem('expiresOn');
-    this.router.navigateByUrl('/');
   }
+
 }

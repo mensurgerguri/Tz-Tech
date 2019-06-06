@@ -7,9 +7,9 @@
     <button mat-raised-button class="mfb" color="accent" (click)="openSignUpDialog()">Sign Up</button>
     <button mat-raised-button class="mfb" color="accent" (click)="openSignInDialog()">Sign In</button>
     
-    <button mat-raised-button class="mfb gornji" color="accent">Delivery</button>
-    <button mat-raised-button class="mfb" color="accent">Checkout</button>
-    <button mat-raised-button class="mfb gornji" color="accent">My Account</button>
+    <button mat-raised-button class="mfb gornji" color="accent" [routerLink]="['/tracking-order']">Delivery</button>
+    <button mat-raised-button class="mfb" color="accent" [routerLink]="['/cart']">Cart</button>
+    <button mat-raised-button class="mfb gornji" color="accent"  [routerLink]="['/profile']">My Account</button>
     <button mat-raised-button class="mfb gornji" color="accent" (click)="signOut()">Sign Out</button>
   </span>
     </mat-toolbar-row>
@@ -18,27 +18,11 @@
   <div>
       <a [matMenuTriggerFor]="appMenu" class="ddm">Menu</a>
      
-    <a class="options ostali ">Deals</a>
-    <a class="options ostali">About</a>
-    <a class="options ostali">Contact</a>
+      <a class="ddm deals routed" [routerLink]="['']">Deals</a> 
+         <a class="options ostali">About</a>
+    <a class="options ostali routed" [routerLink]="['/contact']">Contact</a>
  
 </div>
-  <!-- <div> 
-      <mat-form-field class="searchbox"color="warn" >
-        <input matInput placeholder="Search">
-      </mat-form-field>
-    </div>
-      -->
-
-     
-      <!-- <mat-form-field class="searchbox" color="warn">
-          <input matInput placeholder="Search" color="warn" class="searchinput">
-        </mat-form-field>
-  -->
-  <!-- <form>
-      <input class="form-control searchbox" type="text" placeholder="Search" aria-label="Search">
-    </form>   -->
-
     <form class="form-inline">
         <input class="form-control searchbox" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-secondary" type="submit">Search</button>

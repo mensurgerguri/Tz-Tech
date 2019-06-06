@@ -1,54 +1,45 @@
-<header>
+<div class="wrapper">
+  <header>
     <nav class="navbar navbar-default">
-    
+            <h3 class="table-name">Purchase History</h3>
     </nav>
   </header>
-  
   <div class="container">
     <div class="row">
       <nav class="navbar">
-        <form class="form-inline">
-       
-        <label class="search-label">Search</label>
-        <input class="form-control search-box" type="text" name="search" placeholder="Name, brand, model or price" [(ngModel)]="filter">      
-        </form>
+
       </nav>
       <table class="table">
-        <thead class="thead-light">
+        <thead class="thead table-dark">
           <tr>
-          
             <th></th>
+
             <th (click)="sort('name')" class="table-item">Name <i class="fas fa-sort"></i>
-              <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <span class="glyphicon sort-icon" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
             <th (click)="sort('brand')" class="table-item">Brand <i class="fas fa-sort"></i>
-              <span class="glyphicon sort-icon" *ngIf="key =='brand'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <span class="glyphicon sort-icon" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
             </th>
             <th (click)="sort('price')" class="table-item">Price <i class="fas fa-sort"></i>
-              <span class="glyphicon sort-icon" *ngIf="key =='price'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-            
+              <span class="glyphicon sort-icon" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+
             </th>
-            <th class="table-item"></th>
+            <th class="table-order"></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
-         
-            <td><img src={{item.img}}></td>
-            <td class="table-item">{{item.name}}</td>
-            <td class="table-item">{{item.brand}}</td>
-            <td class="table-item">{{item.price}}</td>
-            <td class="table-item">
-              <span class="btns">
-                  <a href="#" class="btn btn-secondary"><i class="fas fa-times-circle"></i></a>
-            </span>            
+
+          <tr *ngFor="let order of order | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+            <td><img src={{order.img}}></td>
+            <td class="table-order">{{order.name}}</td>
+            <td class="table-order">{{order.brand}}</td>
+            <td class="table-order">{{order.Price}}</td>
+            <td class="table-order">
+            <span class="btns">
+            </span>
               </td>
           </tr>
         </tbody>
       </table>
-      
     </div>
-  </div>
-  <div class="page-number d-flex justify-content-center" >
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>

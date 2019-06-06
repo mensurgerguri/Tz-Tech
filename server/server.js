@@ -33,9 +33,7 @@ db.connect((err) => {
 global.db = db;
 
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
@@ -49,9 +47,22 @@ global.__basedir = __dirname;
 // app.use('/', fileRouter);
 
 let usersRouter = require('./app/routers/user.router.js');
+app.use('/users', usersRouter);
+
+let itemsRouter = require('./app/routers/items.router.js');
+app.use('/items', itemsRouter);
+
+let cartRouter = require('./app/routers/cart.router.js');
+app.use('/cart', cartRouter);
+
 let wishRouter = require('./app/routers/wish.router.js');
-app.use('/users', usersRouter)
-app.use('/wish', wishRouter)
+app.use('/wish', wishRouter);
+
+let categoriesRouter = require('./app/routers/categories.router.js');
+app.use('/categories', categoriesRouter);
+
+let purchaseRouter = require('./app/routers/purchase.router.js');
+app.use('/order', purchaseRouter);
 
 let server = app.listen(8080, () => {
 

@@ -5,20 +5,23 @@
 <table class="table">
   <thead>
     <th>Product</th>
-    <th>Quantity</th>
+    <!-- <th>Quantity</th> -->
     <th>Price</th>
+    <!-- <th>Total</th> -->
     <th>Confirmation</th>
   </thead>
 <tbody>
  <tr *ngFor='let item of items'>
     <td>{{item.name}}</td>
-    <td><form>
-      <button class="btn" (click)="decrement()">-</button>
-      <span>{{counter}}</span>
-      <button (click)="increment()">+</button>
+    <!-- <td><form>
+      <button (click)="decrease(item)">-</button>
+     {{item.counter}} 
+      <button (click)="increase(item)">+</button>
     </form>
-    </td>
-    <td>{{item.Price * counter}}</td>
+    <p>({{item.quantity}})</p>
+    </td> -->
+    <td>{{item.Price}}</td>
+    <!-- <td>{{item.Price * item.counter}}</td> -->
     <td>
       <span class="btns">
         <button class="btn btn-success"><i class="fas fa-check-square"></i></button>

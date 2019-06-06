@@ -2,12 +2,9 @@
 /*########################## PROFILE CARD #############################*/
 #user-profile {
   border: 1px solid rgba(0, 0, 0, 0.6);
-  width: 300px;
-  height: 320px;
-  margin: 0 auto;
-  margin-top: 102px;
-  /* padding: 10px 25px; */
-  /* display: flex; */
+  width: 600px;
+  height: 350px;
+  margin: 20px 0 0 20px;
 }
 
 .user-profile__title {
@@ -47,7 +44,7 @@
 }
 
 .user-info__data {
-  margin-left: 100px;
+  margin-left: 5px;
   text-align: left;
 }
 
@@ -55,13 +52,19 @@
   margin-right: 5px;
 }
 
-.btn-block {
+.btn {
   border-radius: 0;
+  margin-left: 5px;
+  width: 60px;
 }
 
 @media(max-width: 1250px) {
   #user-profile {
     width: 205px;
+
+  }
+  .btn {
+    margin-left: 50px;
   }
 
   .user-info__data {
@@ -75,20 +78,31 @@
 
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1500px) {
   #user-profile {
     width: 410px;
-    margin-top: 50px;
-
+    margin: 10px auto;
   }
-
+  .btn-block{
+    width: 410px;
+    margin-left: 0;
+  }
   .user-info__data {
-    margin-left: 150px;
+    /* margin-left: 150px; */
     text-align: left;
   }
 
   .user-info__data i {
     margin-right: 5px;
+  }
+}
+
+@media(max-width: 750px){
+  #user-profile{
+    width: 350px;
+  }
+  .btn-block{
+    width: 410px;
   }
 }
 

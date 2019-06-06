@@ -16,8 +16,8 @@
 }
 
 img{
-    height: 120px;
-    width: 120px;
+    height: 90px;
+    width: 90px;
 }
 .btn{
     border-radius: 0;
@@ -119,6 +119,22 @@ img{
             width: 90px;
           }
       }
+
+      @media (max-width: 1200px){
+        .container{
+          width: 500px;
+        }
+      }
+      
+      @media (max-width: 700px){
+        .container{
+          width: 350px;
+        }
+        .fa-sort {
+          display: none;
+        }
+      }
+      
       @media (max-width: 770px) {
 
         th,
@@ -160,21 +176,6 @@ img{
         }
 
       }
-/*
-      @media(max-width: 575px){
-        .container {
-            width: 250px;
-            height: 500px;
-          }
-
-          img {
-            height: 50px;
-            width: 50px;
-          }
-          .table-item {
-            width: 75px;
-          }
-      } */
 
     .fa-sort{
         display: none;

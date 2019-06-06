@@ -31,5 +31,8 @@ public deleteWish(id): Observable<Wish[]> {
   return this.http.get<Wish[]>(`http://localhost:8080/wish/deleteWish/` + id);
 
 }
+public addToCart(cartItemObj: any): Observable<any> {
+  return this.http.post(`http://localhost:8080/items/addToCart`, { cartItemObj });
+}
 }
 

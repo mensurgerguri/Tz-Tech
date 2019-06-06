@@ -24,12 +24,12 @@ thead>tr>th {
 }
 
 .container {
-  width: 400px;
+  width: 500px;
 }
 
 img {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
 }
 
 .btn {
@@ -40,13 +40,13 @@ img {
 
 .btn-primary {
   margin-left: 1px;
-  width: 100px;
+  width: 40px;
   background-color:red;
 }
 
 .btn-secondary {
   height: 35px;
-  width: 100px;
+  width: 40px;
   font-size: 0.8rem;
   margin-bottom: 2px;
   background-color: green;
@@ -89,7 +89,21 @@ img {
   }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1200px){
+  .container{
+    width: 500px;
+  }
+}
+
+@media (max-width: 700px){
+  .container{
+    width: 350px;
+  }
+  .fa-sort {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
 
   th,
   td {
@@ -131,20 +145,4 @@ img {
   }
 
 }
-
-/*
-      @media(max-width: 575px){
-        .container {
-            width: 250px;
-            height: 500px;
-          }
-
-          img {
-            height: 50px;
-            width: 50px;
-          }
-          .table-item {
-            width: 75px;
-          }
-      } */
 

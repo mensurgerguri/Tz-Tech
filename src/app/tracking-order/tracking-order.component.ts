@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { transition } from '@angular/animations';
 import { Order } from '../shared/models/order.model';
+import {UserDetails} from './../shared/models/user.model';
 
 
 
@@ -22,17 +23,22 @@ export class TrackingOrderComponent implements OnInit {
   // start = 0;
   // mid = 50;
   // end = 100;
-
-  order: Order;
+  UserDetails: any;
+  order: any;
 
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private purchaseservice: PurchaseService, private auth: AuthenticationService, private HttpClient: HttpClient) { }
 
   ngOnInit() {
-    this.purchaseservice.getOrder(this.auth.getUserDetails().id).subscribe((res: Order) => {
-      this.order = res;
+    this.purchaseservice.getOrder(this.auth.getUserDetails().id).subscribe((res: any) => {
 
-      console.log(res);
+      if (res !== undefined) {
+        this.order = res[0].Status_code;
+      }
+      
+      //this.order = this.UserDetails;
+
+      
     });
   }
 }

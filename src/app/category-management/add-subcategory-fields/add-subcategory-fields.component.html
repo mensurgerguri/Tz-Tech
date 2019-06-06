@@ -21,7 +21,7 @@
       <p>Add Subcategory Fields: </p>
     </div>
     <select class="btn btn-primary my-btn" [(ngModel)]="selectedValue">
-      <option *ngFor="let field of allFields; index as i"  [ngValue]="field">{{ field.name }}</option>
+      <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
     </select>
     <div class="col-sm-12">
       <br>
@@ -32,6 +32,9 @@
     <div class="col-sm-12" *ngIf="successMsg">
       <br>
       <p><i>{{ newField }}</i> successfuly saved to {{ selectedSubcategory.name }}'s fields!</p>
+    </div>
+    <div class="col-sm-12" *ngIf="duplicatMsg">
+      <p>Subcategory Field <i>{{ newFieldTried }}</i> already exist!</p>
     </div>
   </div>
 </div>

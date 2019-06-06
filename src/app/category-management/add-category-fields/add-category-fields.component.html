@@ -26,11 +26,15 @@
     <div class="col-sm-12">
       <br>
       <button mat-button class="my-btn btn btn-primary" (click)="saveNewCategoryField()">Save</button>
+      <br>
       <button mat-button class="my-btn btn btn-primary" mat-dialog-close>Close</button>
     </div>
     <div class="col-sm-12" *ngIf="successMsg">
       <br>
       <p><i>{{ newField }}</i> successfuly saved to {{ selectedCategory.name }}'s fields!</p>
+    </div>
+    <div class="col-sm-12" *ngIf="duplicatMsg">
+      <p>Category Field <i>{{ newFieldTried }}</i> already exist!</p>
     </div>
   </div>
 </div>

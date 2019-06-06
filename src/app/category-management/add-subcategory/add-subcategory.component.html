@@ -24,16 +24,16 @@
       <input type="text" class="form-control" [(ngModel)]="newSubcategory">
     </div>
     <div class="col-sm-12" *ngIf="successMsg">
-      <p>Successfully saved!</p>
+      <p>Subcategory <i>{{ newSubcategoryTried }}</i> successfuly saved!</p>
+    </div>
+    <div class="col-sm-12" *ngIf="duplicatMsg">
+      <p>Subcategory <i>{{ newSubcategoryTried }}</i> already exist!</p>
     </div>
     <div class="col-sm-12">
       <br>
       <button mat-button class="my-btn btn btn-primary" (click)="saveNewSubcategory()">Save</button>
       <br>
       <button mat-button class="my-btn btn btn-primary" mat-dialog-close>Close</button>
-    </div>
-    <div class="col-sm-12" *ngIf="successMsg">
-      <p><i>{{ savedSubcategory }}</i> successfuly saved!</p>
     </div>
   </div>
 </div>

@@ -16,8 +16,10 @@ export class AddCategoryFieldsComponent implements OnInit {
   categoryFields = [];
   allFields = [];
   newField = '';
+  newFieldTried = '';
   successMsg = false;
   selectedValue;
+  duplicatMsg = false;
 
   constructor(private categoryService: CategoryService, private dialog: MatDialog, private auth: AuthenticationService) {
     this.categoryService.allFields.subscribe(allFields => {
@@ -36,6 +38,7 @@ export class AddCategoryFieldsComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;
+      this.selectedValue = this.allFields[0];
     });
   }
 
@@ -46,9 +49,30 @@ export class AddCategoryFieldsComponent implements OnInit {
   }
 
   saveNewCategoryField() {
+    const exist = this.doesCategoryFieldExist();
+
+    if (exist) {
+      this.duplicatMsg = true;
+    } else {
+      this.duplicatMsg = false;
+      this.writeToDB();
+    }
+
+    this.newFieldTried = this.getFieldName(this.selectedValue.field_id);
+  }
+
+  doesCategoryFieldExist() {
+    for (const field of this.categoryFields) {
+      if (field.field_id === this.selectedValue.field_id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  writeToDB() {
     this.categoryService.saveNewCategoryField({ identifier: 1, categoryID: this.selectedCategory.id, fieldID: this.selectedValue.field_id }).subscribe(
       (res) => {
-
         if (res.success) {
           this.successMsg = true;
           this.ngOnInit();

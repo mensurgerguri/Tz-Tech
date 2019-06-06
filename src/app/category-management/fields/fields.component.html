@@ -11,7 +11,14 @@
     <br><br>
   </div>
   <div class="col-sm-12" *ngIf="successMsg">
-    <p>Succcesfuly saved!</p>
+    <p><i>{{ newFieldTried }}</i> succcesfuly saved!</p>
+  </div>
+  <div class="col-sm-12" *ngIf="duplicatMsg">
+    <p>Fields <i>{{ newFieldTried }}</i> already exist!</p>
+  </div>
+  <div class="col-sm-12" *ngIf="cannotDeleteMsg">
+    <p>There are existing records for selected field and deletation is not allowed.</p>
+    <p>You can delete existing records for this field and then delete the field.</p>
   </div>
 </div>
 <div class="row">

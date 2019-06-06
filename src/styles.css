@@ -36,7 +36,9 @@ body {
 }
 
 h4 {
+  padding-top: 10px;
   text-align: center;
+  color: royalblue;
 }
 
 .component {

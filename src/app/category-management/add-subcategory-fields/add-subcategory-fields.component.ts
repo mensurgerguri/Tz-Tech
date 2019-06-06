@@ -14,14 +14,22 @@ export class AddSubcategoryFieldsComponent implements OnInit {
   subcategoryFields = [];
   allFields = [];
   newField = '';
+  newFieldTried = '';
   successMsg = false;
+  duplicatMsg = false;
   selectedValue;
 
-  constructor(private categoryService: CategoryService, private dialog: MatDialog) { }
+  constructor(private categoryService: CategoryService, private dialog: MatDialog) {
+    this.categoryService.allFields.subscribe(allFields => {
+      this.allFields = allFields;
+      this.fetchAllFields();
+    });
+  }
 
   ngOnInit() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;
+      this.selectedValue = this.allFields[0];
     });
   }
 
@@ -30,7 +38,7 @@ export class AddSubcategoryFieldsComponent implements OnInit {
       this.subcategoryFields = subcategoryFields;
     });
   }
-  
+
   fetchAllFields() {
     this.categoryService.getAllFields().subscribe((allFields: []) => {
       this.allFields = allFields;
@@ -38,9 +46,20 @@ export class AddSubcategoryFieldsComponent implements OnInit {
   }
 
   saveNewSubcategoryField() {
+    const exist = this.doesSubcategoryFieldExist();
+
+    if (exist) {
+      this.duplicatMsg = true;
+    } else {
+      this.duplicatMsg = false;
+      this.writeToDB();
+    }
+    this.newFieldTried = this.getFieldName(this.selectedValue.field_id);
+  }
+
+  writeToDB() {
     this.categoryService.saveNewSubcategoryField({ identifier: 2, subcategoryID: this.selectedSubcategory.subcat_id, fieldID: this.selectedValue.field_id }).subscribe(
       (res) => {
-
         if (res.success) {
           this.successMsg = true;
           this.fetchSubcategoryFields();
@@ -51,6 +70,15 @@ export class AddSubcategoryFieldsComponent implements OnInit {
         console.error(err);
       }
     );
+  }
+
+  doesSubcategoryFieldExist() {
+    for (const field of this.subcategoryFields) {
+      if (field.field_id === this.selectedValue.field_id) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private getFieldName(id: number): string {

@@ -35,4 +35,6 @@ router.post('/saveNewField', controller.saveNewField);
 
 router.get('/deleteField/:id', controller.deleteField);
 
+router.get('/getFieldsUsage', controller.getFieldsUsage);
+
 module.exports = router;

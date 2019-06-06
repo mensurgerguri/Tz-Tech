@@ -10,6 +10,7 @@ export class AddCategoryComponent implements OnInit {
 
   categories = [];
   newCategory: string;
+  newCategoryTried: string;
   successMsg = false;
   duplicatMsg = false;
 
@@ -19,14 +20,16 @@ export class AddCategoryComponent implements OnInit {
   }
 
   saveNewCategory() {
-
     const exist = this.doesCategoryExist();
 
     if (exist) {
       this.duplicatMsg = true;
     } else {
+      this.duplicatMsg = false;
       this.writeToDB();
+      this.categories.push({id: undefined, name: this.newCategory});
     }
+    this.newCategoryTried = this.newCategory;
   }
 
   doesCategoryExist() {

@@ -191,3 +191,15 @@ exports.deleteField = (req, res) => {
         return res.status(200).send(result);
     });
 }
+
+exports.getFieldsUsage = (req, res) => {
+
+    let qry = "SELECT * FROM `cat_fields_list`";
+
+    db.query(qry, (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        return res.status(200).send(result)
+    });
+}

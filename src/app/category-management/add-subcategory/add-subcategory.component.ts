@@ -8,12 +8,12 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 })
 export class AddSubcategoryComponent implements OnInit {
 
-  subCategories: [] = [];
+  subCategories: any[] = [];
   selectedCategory: any;
   newSubcategory = '';
   successMsg = false;
-  savedSubcategory = '';
-
+  newSubcategoryTried = '';
+  duplicatMsg = false;
 
   constructor(private categoryService: CategoryService) { }
 
@@ -22,19 +22,41 @@ export class AddSubcategoryComponent implements OnInit {
   }
 
   fetchSubcategories() {
-    this.categoryService.getSubcategories(this.selectedCategory.id).subscribe((subCategories: []) => {
-      this.subCategories = subCategories;
-    });
+    if (this.selectedCategory !== undefined) {
+      this.categoryService.getSubcategories(this.selectedCategory.id).subscribe((subCategories: []) => {
+        this.subCategories = subCategories;
+      });
+    }
   }
 
   saveNewSubcategory() {
+    const exist = this.doesSubcategoryExist();
+
+    if (exist) {
+      this.duplicatMsg = true;
+    } else if (this.newSubcategory !== '') {
+      this.duplicatMsg = false;
+      this.writeToDB();
+    }
+    this.newSubcategoryTried = this.newSubcategory;
+  }
+
+  doesSubcategoryExist() {
+    for (const subcategory of this.subCategories) {
+      if (subcategory.name.toLowerCase() === this.newSubcategory.toLowerCase()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+
+  writeToDB() {
     this.categoryService.saveNewSubcategory({ categoryID: this.selectedCategory.id, subcategoryName: this.newSubcategory }).subscribe(
       (res) => {
-
         if (res.success) {
           this.successMsg = true;
           this.fetchSubcategories();
-          this.savedSubcategory = this.newSubcategory.valueOf();
         }
       },
       err => {

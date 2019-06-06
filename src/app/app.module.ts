@@ -48,6 +48,11 @@ import { CartComponent} from './cart/cart.component'
 import { from } from 'rxjs';
 import { CartService } from './shared/services/cart.service';
 import { ContactComponent } from './contact/contact.component';
+import { CategoriesComponent } from './category-management/categories/categories.component';
+import { SubcategoriesComponent } from './category-management/subcategories/subcategories.component';
+import { CategoriesFieldsComponent } from './category-management/categories-fields/categories-fields.component';
+import { SubcategoriesFieldsComponent } from './category-management/subcategories-fields/subcategories-fields.component';
+
 
 @NgModule({
   declarations: [
@@ -78,10 +83,15 @@ import { ContactComponent } from './contact/contact.component';
     ProfileCardComponent,
     HistoryTableComponent,
     TrackingOrderComponent,
+
     ProfileCardComponent,
     TrackingOrderComponent,
     CartComponent,
-    ContactComponent
+    ContactComponent,
+    CategoriesComponent,
+    SubcategoriesComponent,
+    CategoriesFieldsComponent,
+    SubcategoriesFieldsComponent,
 
   ],
   

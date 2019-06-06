@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
+
+  selectedCategory: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
+  selectedSubcategory: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
+  allFields: BehaviorSubject<any> = new BehaviorSubject<any>(undefined);
 
   constructor(private http: HttpClient) { }
 
@@ -60,13 +64,16 @@ export class CategoryService {
   public deleteSubcategoryField(tempObj: any): Observable<any> {
     return this.http.post(`http://localhost:8080/categories/deleteSubcategoryField`, { tempObj });
   }
-  
+
   public saveNewField(fieldObj: any): Observable<any> {
     return this.http.post(`http://localhost:8080/categories/saveNewField`, { fieldObj });
   }
 
   public deleteField(id: number) {
     return this.http.get('http://localhost:8080/categories/deleteField/' + id);
+  }
+  public getFieldsUsage() {
+    return this.http.get('http://localhost:8080/categories/getFieldsUsage');
   }
 
 }

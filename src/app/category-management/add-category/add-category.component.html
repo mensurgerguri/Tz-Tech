@@ -6,10 +6,10 @@
     <input type="text" class="form-control" [(ngModel)]="newCategory">
   </div>
   <div class="col-sm-12" *ngIf="successMsg">
-    <p>Successfully saved!</p>
+    <p>Category <i>{{ newCategoryTried }}</i> successfully saved!</p>
   </div>
   <div class="col-sm-12" *ngIf="duplicatMsg">
-    <p>Category {{ newCategory }} already exist!</p>
+    <p>Category <i>{{ newCategoryTried }}</i> already exist!</p>
   </div>
   <div class="col-sm-12">
     <button mat-button class="" (click)="saveNewCategory()">Save</button>

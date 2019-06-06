@@ -5,14 +5,14 @@
 </div>
 <div class="row" *ngIf="selectedCategory">
   <div class="col-sm-12">
-    <h2>Add subcategory to <i>{{ selectedCategory.name }}</i> category</h2>
+    <h4>Add subcategory to <i>{{ selectedCategory.name }}</i> category</h4>
     <hr>
   </div>
 </div>
 <div class="row" style="min-width: 600px" *ngIf="selectedCategory">
   <div class="col-sm-5">
     <p>Existing subcategories</p>
-    <mat-action-list>
+    <mat-action-list class="add-list">
       <button mat-list-item *ngFor="let subCategory of subCategories"> {{ subCategory.name }} </button>
     </mat-action-list>
   </div>
@@ -27,8 +27,10 @@
       <p>Successfully saved!</p>
     </div>
     <div class="col-sm-12">
-      <button mat-button class="" (click)="saveNewSubcategory()">Save</button>
-      <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
+      <br>
+      <button mat-button class="my-btn btn btn-primary" (click)="saveNewSubcategory()">Save</button>
+      <br>
+      <button mat-button class="my-btn btn btn-primary" mat-dialog-close>Close</button>
     </div>
     <div class="col-sm-12" *ngIf="successMsg">
       <p><i>{{ savedSubcategory }}</i> successfuly saved!</p>

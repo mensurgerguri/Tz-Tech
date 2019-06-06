@@ -1,12 +1,14 @@
 <div class="row" style="min-width: 600px">
   <div class="col-sm-12">
-    <h3>ALL FIELDS</h3>
+    <h4>Add / Remove fields</h4>
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-12">
-    <div class="col-sm-6"><input type="text" [(ngModel)]="newField"></div>
-    <div class="col-sm-6"><button class="btn btn-primary" (click)="saveField()">Save field</button></div>
+  <br>
+  <div class="col-sm-12"><input type="text" [(ngModel)]="newField" class="my-btn" placeholder="Enter new field name">
+    <br>
+    <button class="my-btn btn btn-primary" (click)="saveField()">Save field</button>
+    <br><br>
   </div>
   <div class="col-sm-12" *ngIf="successMsg">
     <p>Succcesfuly saved!</p>
@@ -14,11 +16,10 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <mat-action-list>
+    <mat-action-list class="add-list">
       <div *ngFor="let field of allFields">
         <button mat-list-item style="width: 80%; display: inline-block;">{{ field.name }}</button>
-        <button mat-list-item (click)="deleteField(field)"
-          style="width: 20%; display:inline-block;">DEL</button>
+        <button mat-list-item (click)="deleteField(field)" style="width: 20%; display:inline-block;">DEL</button>
       </div>
     </mat-action-list>
   </div>

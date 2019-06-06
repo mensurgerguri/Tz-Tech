@@ -5,29 +5,28 @@
 </div>
 <div class="row" *ngIf="selectedCategory">
   <div class="col-sm-12">
-    <h2>Add fields to <i>{{ selectedCategory.name }}</i> category</h2>
+    <h4>Add fields to <i>{{ selectedCategory.name }}</i> category</h4>
     <hr>
   </div>
 </div>
 <div class="row" style="min-width: 600px" *ngIf="selectedCategory">
   <div class="col-sm-5">
     <p>Existing category fields</p>
-    <mat-action-list>
+    <mat-action-list class="add-list">
       <button mat-list-item *ngFor="let categoryField of categoryFields"> {{ categoryField.name }} </button>
     </mat-action-list>
   </div>
   <div class="col-sm-7">
     <div class="col-sm-12">
       <p>Add Category Fields: </p>
-    </div> 
-
-      <select class="btn btn-primary" [(ngModel)]="selectedValue">
-        <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
-      </select>
-
+    </div>
+    <select class="btn btn-primary my-btn" [(ngModel)]="selectedValue">
+      <option *ngFor="let field of allFields" [ngValue]="field">{{ field.name }}</option>
+    </select>
     <div class="col-sm-12">
-      <button mat-button class="" (click)="saveNewCategoryField()">Save</button>
-      <button mat-button class="cancelbtn" mat-dialog-close>Close</button>
+      <br>
+      <button mat-button class="my-btn btn btn-primary" (click)="saveNewCategoryField()">Save</button>
+      <button mat-button class="my-btn btn btn-primary" mat-dialog-close>Close</button>
     </div>
     <div class="col-sm-12" *ngIf="successMsg">
       <br>
@@ -37,6 +36,7 @@
 </div>
 <div class="row" *ngIf="selectedCategory">
   <div class="col-sm-12">
-    <button class="btn btn-primary" (click)="opetFieldsDialog()">Add Fields</button>
+    <br>
+    <button class="btn btn-primary my-btn" (click)="opetFieldsDialog()">Add Fields</button>
   </div>
 </div>

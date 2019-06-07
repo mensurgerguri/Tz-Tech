@@ -20,7 +20,7 @@
 
     <button type="submit" mat-raised-button class="login-btn" mat-button [disabled]="!formIsValid">Login</button>
     
-    <span *ngIf="!rememberMeShowing"><mat-checkbox [(ngModel)]="rememberMe" name="rememberMe">Keep me logged in</mat-checkbox></span>
+    <span *ngIf="!rememberMeShowing"><mat-checkbox [(ngModel)]="rememberMe" name="rememberMe" color="warn">Keep me logged in</mat-checkbox></span>
     <span *ngIf="rememberMeShowing" (click)="forgetMe()" style="cursor: pointer">Do not keep me logged in</span>
 
   </div>

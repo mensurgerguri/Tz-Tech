@@ -1,7 +1,6 @@
 
 .wrapper {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
   width: 1200px;
   margin: 0 auto;
 }
@@ -11,7 +10,17 @@
 }
 
 .group{
-  display: block;
+  display: inline;
+}
+
+.group-tables{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.wish{
+  margin-right: 10px;
 }
 /* 
 .first {
@@ -28,16 +37,19 @@
   align-content: flex-end;
 } */
 @media(max-width:1500px){
-  .wrapper{
+  /* .wrapper{
     width: 80%;
     margin: 0 auto;
-  }
+  } */
 }
 @media(max-width:1200px) {
   .wrapper {
     width: 80%;
     flex-direction: column;
     margin: 0 auto;
+  }
+  .group-tables{
+    display: block;
   }
   }
 
